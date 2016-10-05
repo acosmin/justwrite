@@ -12,26 +12,30 @@
 
 if( ! class_exists( 'AC_Section_Social_Profiles' ) ) {
 	class AC_Section_Social_Profiles extends AC_Section {
-		
+
 		protected $defaults;
-		
+
 		/*  Constructor
 		/* ------------------------------------ */
 		function __construct() {
-			
+
 			/* Variables */
 			$this->widget_title = __( 'AC SEC: Social Profiles' , 'justwrite' );
 			$this->widget_id = 'social-profiles';
-			
+
 			/* Settings */
-			$widget_ops = array( 'classname' => 'sp-social', 'description' => 'This is used to display links to your social profiles.' );
+			$widget_ops = array(
+				'classname' => 'sp-social',
+				'description' => 'This is used to display links to your social profiles.',
+				'customize_selective_refresh' => true
+			);
 
 			/* Control settings */
 			$control_ops = array( 'width' => NULL, 'height' => NULL, 'id_base' => 'ac-widget-' . $this->widget_id );
-			
+
 			/* Create the widget */
 			parent::__construct( 'ac-widget-' . $this->widget_id, $this->widget_title, $widget_ops, $control_ops );
-			
+
 			/* Set some widget defaults */
 			$this->defaults = array (
 				'title' 			=> '',
@@ -68,7 +72,7 @@ if( ! class_exists( 'AC_Section_Social_Profiles' ) ) {
 				'css_p_top'			=> false,
 				'css_p_bot'			=> false,
 			);
-			
+
 			/* Profiles */
 			$this->profiles = array (
 				'twitter' => array(
@@ -124,22 +128,22 @@ if( ! class_exists( 'AC_Section_Social_Profiles' ) ) {
 					'anchor'	=> 'github_anc',
 				),
 			);
-			
+
 		}
-		
-		
+
+
 		/*  Front-end display
 		/* ------------------------------------ */
 		function widget( $args, $instance ) {
 			// Turn $args array into variables.
 			extract( $args );
-			
+
 			// $instance Defaults
 			$instance_defaults = $this->defaults;
-			
+
 			// Parse $instance
 			$instance = wp_parse_args( (array) $instance, $instance_defaults );
-			
+
 			// Options output
 			$section_title = ! empty( $instance['title'] ) ? $instance['title'] : '';
 			$cnmt	= ! empty( $instance['css_no_mt'] ) ? '1' : '0';
@@ -166,7 +170,7 @@ if( ! class_exists( 'AC_Section_Social_Profiles' ) ) {
 					$args['before_widget'] = str_replace('class="', 'class="'. esc_attr( $css_classes ) . ' ', $args['before_widget']);
 				}
 			}
-			
+
 			$profiles = (array) $this->profiles;
 
 			// Output
@@ -175,10 +179,10 @@ if( ! class_exists( 'AC_Section_Social_Profiles' ) ) {
 				// Check if a title is set
 				if ( ! empty( $section_title ) ) { ?>
                 <header class="twelvecol sh-large-smaller">
-                    <h2 class="section-title-2nd st-small st-bold"><?php echo esc_html( $section_title ); ?></h2>	
+                    <h2 class="section-title-2nd st-small st-bold"><?php echo esc_html( $section_title ); ?></h2>
                 </header><!-- END .section-heading -->
                 <?php } ?>
-                
+
                 <ul class="sp-social-list clearfix">
                 	<?php
 					foreach ( $profiles as $profile => $data ) :
@@ -191,24 +195,24 @@ if( ! class_exists( 'AC_Section_Social_Profiles' ) ) {
                 <?php
 
 			echo $args['after_widget']; // After widget template
-			
+
 		}
-		
-		
+
+
 		/*  Update Widget
 		/* ------------------------------------ */
 		function update( $new_instance, $old_instance ) {
 			$instance = $old_instance;
-			
+
 			// Text fields
 			$instance['title'] = strip_tags( $new_instance['title'] );
-			
+
 			foreach ( (array) $this->profiles as $profile => $data ) {
 				$anc 					= strip_tags( $data['anchor'] );
 				$instance[$profile] 	= esc_url_raw( $new_instance[$profile] );
 				$instance[$anc] 		= strip_tags( $new_instance[$anc] );
 			}
-			
+
 			// Checkboxes
 			$instance['css_no_mt']	= !empty($new_instance['css_no_mt']) ? 1 : 0;
 			$instance['css_no_mb']	= !empty($new_instance['css_no_mb']) ? 1 : 0;
@@ -216,26 +220,26 @@ if( ! class_exists( 'AC_Section_Social_Profiles' ) ) {
 			$instance['css_b_bot']	= !empty($new_instance['css_b_bot']) ? 1 : 0;
 			$instance['css_p_top']	= !empty($new_instance['css_p_top']) ? 1 : 0;
 			$instance['css_p_bot']	= !empty($new_instance['css_p_bot']) ? 1 : 0;
-			
+
 			// Return
 			return $instance;
 		}
-		
-		
+
+
 		/*  Form
 		/* ------------------------------------ */
 		function form( $instance ){
 			// Parse $instance
 			$instance = wp_parse_args( (array) $instance, $this->defaults );
 			extract( $instance, EXTR_SKIP );
-			
+
 			$css_nmt = isset( $instance['css_no_mt'] ) ? (bool) $instance['css_no_mt'] : false;
 			$css_nmb = isset( $instance['css_no_mb'] ) ? (bool) $instance['css_no_mb'] : false;
 			$css_bot = isset( $instance['css_b_top'] ) ? (bool) $instance['css_b_top'] : false;
 			$css_bob = isset( $instance['css_b_bot'] ) ? (bool) $instance['css_b_bot'] : false;
 			$css_pat = isset( $instance['css_p_top'] ) ? (bool) $instance['css_p_top'] : false;
 			$css_pab = isset( $instance['css_p_bot'] ) ? (bool) $instance['css_p_bot'] : false;
-			
+
 			?>
                 <p>
                     <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php esc_html_e( 'Section title:', 'justwrite' ); ?></label>
@@ -252,7 +256,7 @@ if( ! class_exists( 'AC_Section_Social_Profiles' ) ) {
 						printf( '<label for="%s">%s:</label>', esc_attr( $this->get_field_id( $anc ) ), __( 'Anchor text', 'justwrite') );
 						printf( '<input type="text" id="%s" name="%s" value="%s" class="widefat" />', esc_attr( $this->get_field_id( $anc ) ), esc_attr( $this->get_field_name( $anc ) ), esc_attr( $instance[$anc] ) );
 						printf( '<hr style="height: 2px; background-color: #e1e1e1;" /></p>' );
-			
+
 					}
 				?>
                 </div>
@@ -263,24 +267,24 @@ if( ! class_exists( 'AC_Section_Social_Profiles' ) ) {
 
                     <input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('css_no_mb'); ?>" name="<?php echo $this->get_field_name('css_no_mb'); ?>"<?php checked( $css_nmb ); ?> />
                     <label for="<?php echo $this->get_field_id('css_no_mb'); ?>"><?php _e( 'Remove bottom margin', 'justwrite' ); ?></label><br />
-                    
+
                     <input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('css_b_top'); ?>" name="<?php echo $this->get_field_name('css_b_top'); ?>"<?php checked( $css_bot ); ?> />
                     <label for="<?php echo $this->get_field_id('css_b_top'); ?>"><?php _e( 'Add border top', 'justwrite' ); ?></label><br />
-                    
+
                     <input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('css_b_bot'); ?>" name="<?php echo $this->get_field_name('css_b_bot'); ?>"<?php checked( $css_bob ); ?> />
                     <label for="<?php echo $this->get_field_id('css_b_bot'); ?>"><?php _e( 'Add border bottom', 'justwrite' ); ?></label><br />
-                    
+
                     <input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('css_p_top'); ?>" name="<?php echo $this->get_field_name('css_p_top'); ?>"<?php checked( $css_pat ); ?> />
                     <label for="<?php echo $this->get_field_id('css_p_top'); ?>"><?php _e( 'Add padding top', 'justwrite' ); ?></label><br />
-                    
+
                     <input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('css_p_bot'); ?>" name="<?php echo $this->get_field_name('css_p_bot'); ?>"<?php checked( $css_pab ); ?> />
                     <label for="<?php echo $this->get_field_id('css_p_bot'); ?>"><?php _e( 'Add padding bottom', 'justwrite' ); ?></label>
 				</p>
             <?php
 		}
-		
+
 	} // AC_Section_Social_Profiles .END
-	
+
 	// Register this widget
 	register_widget( 'AC_Section_Social_Profiles' );
 }
