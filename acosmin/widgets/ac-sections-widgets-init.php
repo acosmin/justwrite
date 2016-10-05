@@ -10,21 +10,21 @@
 
 
 class AC_Sections {
-	
+
 	private static $instance;
-	
+
 	/*  Initiator
 	/* ------------------------------------ */
 
 	public static function init() {
 		return self::$instance;
 	}
-	
+
 	/*  Constructor
 	/* ------------------------------------ */
 	public function __construct() {
-		
-		// Widgets/Sections 
+
+		// Widgets/Sections
 		require_once ( get_template_directory() . '/acosmin/widgets/section-basic-widget.php' ); // Basic - starter widget
 		require_once ( get_template_directory() . '/acosmin/widgets/section-slider-widget.php' ); // Slider
 		require_once ( get_template_directory() . '/acosmin/widgets/section-categories-2col-widget.php' ); // Categories (two columns)
@@ -40,53 +40,30 @@ class AC_Sections {
 		// Enqueue styles & scripts
 		add_action( 'admin_enqueue_scripts' , array( $this, 'ac_admin_widgets_js_files' ) );
 		add_action( 'wp_enqueue_scripts' , array( $this, 'ac_widgets_js_files' ), 5 );
-		
+
 		//add_action( 'admin_enqueue_scripts', array( $this, 'ac_builder_css_styles' ) , 50 );
 
 	}
-	
-	
+
+
 	/*  JS Files
 	/* ------------------------------------ */
 	// Customizer and Admin area
 	public function ac_admin_widgets_js_files() {
-		wp_enqueue_script( 
-			'ac-admin-widgets-js', 
+		wp_enqueue_script(
+			'ac-admin-widgets-js',
 			get_template_directory_uri() . '/assets/js/admin/widgets-js.js',
-			array( 'jquery' ), 
-			'1.0', 
-			FALSE 
+			array( 'jquery' ),
+			'1.0',
+			FALSE
 		);
 	}
-	
+
 	// Front end
 	public function ac_widgets_js_files() {
-		if ( is_active_widget( false, false, 'ac-widget-masonry-small', true ) || is_active_widget( false, false, 'ac-widget-masonry-large', true ) ) {
-			// ImagesLoaded
-			wp_enqueue_script( 
-				'ac-images-loaded-js', 
-				get_template_directory_uri() . '/assets/js/imagesloaded.min.js', 
-				array( 'jquery' ), 
-				'3.1.8', 
-				TRUE 
-			);
-			
-			// Masonry
-			wp_enqueue_script( 'jquery-masonry' );
-		}
-		
-		if ( is_active_widget( false, false, 'ac-widget-featured-posts-slider', true ) ) {
-			// Owl carousel
-			wp_enqueue_script(
-				'ac-owl-carousel-js', 
-				get_template_directory_uri() . '/assets/js/owl.carousel.min.js', 
-				array('jquery'), 
-				'2.0.0', 
-				false 
-			);
-		}
+		// add some files
 	}
-	
+
 }
 
 

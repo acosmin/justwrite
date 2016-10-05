@@ -85,6 +85,9 @@ if ( ! function_exists( 'ac_setup' ) ) {
 		// This theme uses its own gallery styles.
 		add_filter( 'use_default_gallery_style', '__return_false' );
 
+		// Add support for widgets selective refresh
+		add_theme_support( 'customize-selective-refresh-widgets' );
+
 	}
 }
 add_action( 'after_setup_theme', 'ac_setup' );
