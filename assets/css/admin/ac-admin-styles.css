@@ -1,0 +1,218 @@
+/* ------------------------------------------- */
+/* Used for the WordPress Administration Panel */
+/* ------------------------------------------- */
+
+/* All Around */
+a.ac-pro-theme-link {
+	text-decoration: none !important;
+	border-bottom: 3px solid #FFD587 !important;
+}
+a.ac-pro-theme-link:hover {
+	text-decoration: none !important;
+	border-bottom: 3px solid #E0E0E0 !important;
+}
+
+/* Widgets in Customizer */
+.ac_bright-blue-tag {
+	display: inline-block;
+	padding: 2px 6px;
+	border-radius: 4px;
+	background-color: aliceblue;
+}
+#available-widgets-list .widget-tpl[class*="ac-widget"] {
+	background: aliceblue;
+	border-bottom-color: #dee4ff;	
+}
+#available-widgets .widget-tpl[class*="ac-widget"].selected, 
+#available-widgets .widget-tpl[class*="ac-widget"]:hover {
+	background: #eee;
+    border-bottom-color: #ccc;
+}
+
+/* Widgets in default page */
+.widgets-php .widget[id*="ac-widget"] .widget-top,
+#main-page-after, #main-page-before, #all-pages-footer-before, #all-pages-header-after  {
+	background: aliceblue;
+}
+#main-page-after .widget-top, #main-page-before .widget-top, #all-pages-footer-before .widget-top, #all-pages-header-after .widget-top {
+	background: #fafafa;
+}
+
+/* Upsell in widgets */
+.ac-pro-widget.widefat {
+	display: inline-block;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+	
+}
+.ac-pro-widget .ac-pro-title {
+	display: block;
+	width: 100%;
+	height: 36px;
+	border: 1px solid #e1e1e1;
+	background-color: #fafafa;
+	position: relative;
+}
+.ac-pro-widget .ac-pro-title:focus {
+	-webkit-box-shadow: none;
+	box-shadow: none;	
+}
+.ac-pro-widget .ac-pro-title:hover {
+	border-color: #999;	
+}
+.ac-pro-widget .ac-pro-title span.ac-pt {
+	display: inline-block;
+	float: left;
+	line-height: 20px;
+	padding: 0 6px;
+	font-size: 10px;
+	font-weight: 700;
+	color: #fff;
+	background-color: #FF7F00;
+	border-radius: 4px;	
+	text-transform: uppercase;
+	margin: 8px 0 0 8px;
+	letter-spacing: 0.06em;
+}
+.ac-pro-widget .ac-pro-title span.dashicons {
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	margin-top: -8px;
+	color: #a0a5aa;
+	font-size: 16px;	
+}
+.ac-pro-widget .ac-pro-content {
+	display: none;
+	width: 100%;
+	position: relative;
+	border: 1px solid #e1e1e1;
+	border-top: none;
+	padding: 20px 10px 10px 10px;	
+}
+.ac-pro-widget .ac-pro-content p {
+	margin-bottom: 5px;
+	margin-top: 0;	
+}
+.ac-pro-widget .ac-pro-content p.ac-pro-buttons {
+	text-align: center;
+	margin: 15px 0 10px 0;	
+}
+.ac-pro-widget .ac-pro-content p.ac-pro-buttons a {
+	margin-bottom: 5px;	
+}
+.ac-pro-widget .ac-pro-content p.ac-pro-buttons em {
+	opacity: 0.6;	
+}
+.ac-pro-widget .ac-pro-title, .ac-pro-widget .ac-pro-content {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-ms-box-sizing: border-box; 
+}
+
+/* Upsell + Docs in Customizer Header */
+.ac_btns-docs-upsell {
+	overflow: hidden;
+	padding: 0 20px 15px 20px;	
+}
+.ac_btns-docs-upsell .button {
+	width: 47%;
+	text-align: center;	
+}
+.ac_btns-docs-upsell .ac_btn-prov {
+	float: left;
+	border-color: #D28A07;
+    background-color: rgba(255, 152, 0, 0.73);
+    color: #fff;
+    font-weight: 700;	
+}
+.ac_btns-docs-upsell .ac_btn-docs {
+	float: right;	
+}
+
+/* Upsell Pro Options */
+.ac_pro-option { display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    background-color: orange;
+    padding: 1px 4px;
+    border-radius: 4px;
+    color: #fff;
+    margin-right: 2px;
+	margin-top: 5px;
+}
+#accordion-section-ac_customize_colorfulcats .accordion-section-title:after { content: "\f160"; }
+#accordion-section-ac_customize_woocommerce .accordion-section-title:after { content: "\f160"; }
+#accordion-section-ac_customize_colorfulcats .accordion-section-title:before,
+#accordion-section-ac_customize_woocommerce .accordion-section-title:before {  
+	content: "Pro";
+	display: inline-block;
+	text-transform: uppercase;
+	font-size: 11px;
+	line-height: 18px;
+	padding: 0 5px;
+	border-radius: 3px;
+	background-color: orange;
+	color:	#fff;
+	margin-right: 2px;
+	vertical-align: middle;
+}
+.ac_btn-inner-section {
+	width: 100%;
+	text-align: center;	
+}
+.ac_divider {
+	width: 100%;
+	display: inline-block;
+	height: 1px;
+	background-color: black;
+	opacity: 0.1;	
+}
+#accordion-section-ac_customize_posts .customize-section-description,
+#accordion-section-ac_customize_slider .customize-section-description,
+#accordion-section-ac_customize_woocommerce .customize-section-description,
+#accordion-section-ac_customize_colorfulcats .customize-section-description {   
+	background-color: #fff;
+    padding: 25px;
+    border: 1px solid #e1e1e1;
+    border-radius: 6px;
+}
+
+/* Upsell Pro Options - Post Editor */
+.ac_overlay_bg_color {
+	position: relative;
+	box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+	margin-bottom: 0;
+}
+.ac_overlay_bg_upsell {
+	position: absolute;
+	display: inline-block;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255,255,255,0.6);
+	z-index: 2;	
+}
+a.ac_overlay_bg_upsell_link, a.ac_overlay_bg_upsell_link:visited {
+	display: inline-block;
+    position: absolute;
+    top: 13px;
+    right: 10px;
+    background-color: orange;
+    text-transform: uppercase;
+    padding: 0 3px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.05em;
+}
+a.ac_overlay_bg_upsell_link:hover {
+	color: #fff;
+	opacity: 0.8;
+}

@@ -1,0 +1,34 @@
+body, .post-template-1 .details .detail em, .single-template-1 .details detail em, textarea, input, select, .about-share, .logo .description, .content-wrap .review-wrap-up, .content-wrap #review-statistics .review-wu-bars h3, .content-wrap .review-wu-bars span, .content-wrap #review-statistics .review-wrap-up .review-wu-right ul li, .comments-area #cwp-slider-comment .comment-form-meta-option label,.ac-featured-posts .category, .ac-recent-posts .category, .slider .details .info, .comments-number, .post-template-1 .details .detail, .single-template-1 .details, .detail, .ac-popular-posts .category, .ac-twitter-tweet-time, .post-template-1 .details .p-share .contents em, .sidebar #recentcomments a.url, .sidebar #recentcomments, .comments-title .comments-number, .comment-main .vcard .comm-edit, .comment-main .comment-reply-link, label, .s-sd, .sa-year, .s-info, .pl-info .details {
+	/* Same Font - 'Source Serif Pro', serif */
+	font-family: 'Source Serif Pro', serif;
+}
+
+.menu-main,  .browse-more, .sidebar-heading, .tabs-widget-navigation, .post-template-1 .title, .single-template-1 .title, .sidebar .social-btn, .ac-popular-posts .position, .ac-popular-posts .title, .ac-featured-posts .thumbnail .details .title, .ac-ad-title-300px, .posts-pagination .paging-wrap, .page-links-wrap .page-links, .comments-pagination .paging-wrap, .footer-credits .copyright, .browse-by-title, #wp-calendar tbody td, #wp-calendar thead th, #wp-calendar #prev, #wp-calendar #next, .single-content h1, .single-content h2, .single-content h3, .single-content h4, .single-content h5, .single-content h6, .comment-text h1, .comment-text h2, .comment-text h3, .comment-text h4, .comment-text h5, .comment-text h6, .ac-recent-posts .title, .sidebar #recentcomments li a, .slider .title, .about-share .title, .comments-title, .comment-main .vcard .fn, .comment-reply-title, .form-submit input[type=submit], .page-404 h1, .main-page-title, .menu-wrap .search-field, .menu-wrap .search-submit, .banner-small-title, .post-thumbnail .sticky-badge, .no-comments, .content-wrap #review-statistics .review-wrap-up .review-wu-right h2, .content-wrap #review-statistics h1, .content-wrap #review-statistics h2, .content-wrap #review-statistics h3, .content-wrap #review-statistics h4, .content-wrap #review-statistics h5, .content-wrap #review-statistics h6, .content-wrap  #review-statistics .cwp-review-percentage span, .content-wrap .cwp-item-price, .content-wrap .affiliate-button a span, .second-menu-wrap, .section-heading, .section-title, .section-col-title, .sc-popular-position, .section-title-2nd, .sa-months, .sp-social-list, .footer-widgets .social-btn, .logo, .footer-credits .blog-title, .pl-info .title {
+	/* Same Font - 'Roboto Slab', serif */
+	font-family: 'Roboto Slab', serif;
+}
+
+/* Custom styles */
+.logo .description { line-height: 48px; }
+.second-menu-wrap { font-size: 10px; letter-spacing: 0.05em }
+.section-title, .post-template-1 .title, .single-template-1 .title { letter-spacing: -0.02em; }
+.section-title.st-wrapped { line-height: 1.5; }
+.section-title.st-wrapped.st-wrapped.st-small { line-height: 1.7; }
+.st-overlay .s-info { top: -26px; }
+.col-large:not(.col-2x) .s-info { top: -29px; }
+.single-template-1 .title { font-size: 60px; }
+.single-template-1 .single-content, p { line-height: 160%; word-spacing: 0.03em; letter-spacing: -0.01em; }
+.single-content h1, .single-content h2, .single-content h3, .single-content h4, .single-content h5, .single-content h6, .comment-text h1, .comment-text h2, .comment-text h3, .comment-text h4, .comment-text h5, .comment-text h6 {
+	font-weight: 700;	
+}
+
+/* Some media queries */
+@media screen and (max-width: 1366px) {
+	.single-template-1 .title { font-size: 50px; }
+}
+@media screen and (max-width: 650px) {
+	.single-template-1 .title { font-size: 46px; }
+}
+@media screen and (max-width: 500px) {
+	.single-template-1 .title { font-size: 34px; }	
+}
