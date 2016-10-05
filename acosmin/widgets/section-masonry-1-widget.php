@@ -27,6 +27,7 @@ if( ! class_exists( 'AC_Section_Masonry_1' ) ) {
 			$widget_ops = array(
 				'classname' => 'sm-small-masonary',
 				'description' => 'This is used to display your posts using Masonry',
+				'customize_selective_refresh' => true
 			);
 
 			/* Control settings */
