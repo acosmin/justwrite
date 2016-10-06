@@ -1254,18 +1254,6 @@ if ( ! function_exists( 'ac_return_inactive_widgets' ) ) {
 
 
 
-/*  Options Framework Fallback
-/* ------------------------------------ */
-if ( ! function_exists( 'of_get_option' ) ) {
-
-	function of_get_option( $name, $default = false ) {
-		return;
-	}
-
-}
-
-
-
 /*  Social sharing action
 /* ------------------------------------ */
 if ( ! function_exists( 'ac_action_show_social_sharing' ) ) {
