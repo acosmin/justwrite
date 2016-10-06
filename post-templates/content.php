@@ -3,16 +3,13 @@
  *  The template used to display articles on your main page.
 /* ------------------------------------------------------------------------- */
 
-// Options
-// $disable_share = of_get_option( 'ac_dont_share_options' );
-
 // Custom Post Classes
 $classes = array(
     'post-template-1',
     'clearfix',
 );
 
-$newlayout = get_theme_mod( 'ac_main_posts_layout', 'lthumb' ); 
+$newlayout = get_theme_mod( 'ac_main_posts_layout', 'lthumb' );
 if( $newlayout == 'nthumb' ) {
 	$classes[] = 'nthumb';
 }
@@ -27,15 +24,15 @@ $classes = join(' ', $classes);
 			if ( is_sticky() ) :
 				echo '<span class="sticky-badge">' . __('Sticky Post', 'justwrite') . '</span>';
 			endif;
-			
+
 			if ( has_post_thumbnail() ) :
 					the_post_thumbnail( 'ac-post-thumbnail' );
 			else :
 					echo '<img src="' . get_template_directory_uri() . '/images/no-thumbnail.png" alt="' . __( 'No Thumbnail', 'justwrite' ) . '" />';
 			endif;
-			
+
 			do_action( 'ac_action_content_thumbnail_after' ); // After thumbnail action
-			
+
 			// Post Formats Icons
 			if ( has_post_format( 'video' ) && !is_sticky() ) echo'<span class="post-format-icon">' . ac_icon( 'play', false ) . '</span>';
 			if ( has_post_format( 'audio' ) && !is_sticky() ) echo'<span class="post-format-icon">' . ac_icon( 'volume-up', false ) . '</span>';
