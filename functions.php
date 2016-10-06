@@ -94,19 +94,6 @@ add_action( 'after_setup_theme', 'ac_content_width', 0 );
 
 
 
-/*  Title - Backwards compatibility
-/* ------------------------------------ */
-if ( ! function_exists( '_wp_render_title_tag' ) ) {
-    function ac_render_title() {
-		?>
-		<title><?php wp_title( '|', true, 'right' ); ?></title>
-		<?php
-	}
-    add_action( 'wp_head', 'ac_render_title' );
-}
-
-
-
 /*  Load CSS files
 /* ------------------------------------ */
 if ( ! function_exists( 'ac_css_files' ) ) {
