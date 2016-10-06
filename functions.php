@@ -23,16 +23,6 @@ require_once ( get_template_directory() . '/acosmin/widgets/ac-sections-widgets-
 
 
 
-/*  Setup some info
-/* ------------------------------------ */
-
-// 	Content width
-if ( ! isset( $content_width ) ) {
-	$content_width = 940;
-}
-
-
-
 /*  Theme setup
 /* ------------------------------------ */
 if ( ! function_exists( 'ac_setup' ) ) {
@@ -91,6 +81,16 @@ if ( ! function_exists( 'ac_setup' ) ) {
 	}
 }
 add_action( 'after_setup_theme', 'ac_setup' );
+
+
+
+/*  Sets the content width in pixels, based on the theme's
+ *	design and stylesheet
+/* ------------------------------------ */
+function ac_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'ac_content_width___filter', 940 );
+}
+add_action( 'after_setup_theme', 'ac_content_width', 0 );
 
 
 
