@@ -87,8 +87,12 @@ add_action( 'after_setup_theme', 'ac_setup' );
 /*  Sets the content width in pixels, based on the theme's
  *	design and stylesheet
 /* ------------------------------------ */
-function ac_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'ac_content_width___filter', 940 );
+if ( ! function_exists( 'ac_content_width' ) ) {
+
+	function ac_content_width() {
+		$GLOBALS['content_width'] = apply_filters( 'ac_content_width___filter', 940 );
+	}
+
 }
 add_action( 'after_setup_theme', 'ac_content_width', 0 );
 
