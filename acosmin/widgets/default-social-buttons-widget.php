@@ -11,12 +11,12 @@ class AC_Social_Buttons_Widget extends WP_Widget {
 		// Settings
 		$widget_ops = array(
 			'classname' => 'ac-social-buttons-widget',
-			'description' => __('Displays buttons for your social profiles.', 'justwrite'),
+			'description' => esc_html__('Displays buttons for your social profiles.', 'justwrite'),
 			'customize_selective_refresh' => true
 		);
 
 		// Create the widget
-		parent::__construct('ac_social_buttons_widget', __('AC: Social Buttons', 'justwrite'), $widget_ops);
+		parent::__construct('ac_social_buttons_widget', esc_html__('AC: Social Buttons', 'justwrite'), $widget_ops);
 
 		// Default values
 		$this->defaults = array (

@@ -8,10 +8,10 @@ class AC_Tabs_Widget extends WP_Widget {
 
 	function __construct() {
 		// Settings
-		$widget_ops = array( 'classname' => 'ac_tabs_widget', 'description' => 'Custom designed tabs for your main sidebar' );
+		$widget_ops = array( 'classname' => 'ac_tabs_widget', 'description' => esc_html__('Custom designed tabs for your main sidebar', 'justwrite') );
 
 		// Create the widget
-		parent::__construct( 'ac_tabs_widget', __('AC: Tabs', 'justwrite'), $widget_ops );
+		parent::__construct( 'ac_tabs_widget', esc_html__('AC: Tabs', 'justwrite'), $widget_ops );
 
 		// Default values
 		$this->defaults = array (
@@ -63,11 +63,11 @@ class AC_Tabs_Widget extends WP_Widget {
 			// Navigation
 			echo '<nav class="tabs-widget-navigation clearfix">';
         	echo '<ul class="ac-tabs-init">';
-        	if( $show_popular_posts )		{ echo '<li class="current"><a href="#' . esc_html( $this->id ) .'_tab-1" title="' . __('Popular Posts', 'justwrite') . '">' . ac_icon( 'list-ol', false ) . '</a></li>'; }
-        	if( $show_featured_posts )		{ echo '<li><a href="#' . esc_html( $this->id ) .'_tab-2" title="' . __('Featured Posts', 'justwrite') . '">' . ac_icon( 'star', false ) . '</a></li>'; }
-        	if( $show_recent_posts )		{ echo '<li><a href="#' . esc_html( $this->id ) .'_tab-3" title="' . __('Latest Posts', 'justwrite') . '">' . ac_icon( 'bell', false ) . '</a></li>'; }
-        	if( $show_recent_comments )		{ echo '<li><a href="#' . esc_html( $this->id ) .'_tab-4" title="' . __('Recent Comments', 'justwrite') . '">' . ac_icon( 'comments', false ) . '</a></li>'; }
-        	if( $show_tags )				{ echo '<li><a href="#' . esc_html( $this->id ) .'_tab-5" title="' . __('Tag Cloud', 'justwrite') . '">' . ac_icon( 'tags', false ) . '</a></li>'; }
+        	if( $show_popular_posts )		{ echo '<li class="current"><a href="#' . esc_html( $this->id ) .'_tab-1" title="' . esc_attr__('Popular Posts', 'justwrite') . '">' . ac_icon( 'list-ol', false ) . '</a></li>'; }
+        	if( $show_featured_posts )		{ echo '<li><a href="#' . esc_html( $this->id ) .'_tab-2" title="' . esc_attr__('Featured Posts', 'justwrite') . '">' . ac_icon( 'star', false ) . '</a></li>'; }
+        	if( $show_recent_posts )		{ echo '<li><a href="#' . esc_html( $this->id ) .'_tab-3" title="' . esc_attr__('Latest Posts', 'justwrite') . '">' . ac_icon( 'bell', false ) . '</a></li>'; }
+        	if( $show_recent_comments )		{ echo '<li><a href="#' . esc_html( $this->id ) .'_tab-4" title="' . esc_attr__('Recent Comments', 'justwrite') . '">' . ac_icon( 'comments', false ) . '</a></li>'; }
+        	if( $show_tags )				{ echo '<li><a href="#' . esc_html( $this->id ) .'_tab-5" title="' . esc_attr__('Tag Cloud', 'justwrite') . '">' . ac_icon( 'tags', false ) . '</a></li>'; }
         	echo '</ul>';
         	echo '</nav>';
 
@@ -75,11 +75,11 @@ class AC_Tabs_Widget extends WP_Widget {
 			// -- Popular Posts
 			if( $show_popular_posts ) {
 				?>
-                	<div class="sb-content tabs-widget-tab clearfix" id="<?php echo esc_html( $this->id ); ?>_tab-1">
+                	<div class="sb-content tabs-widget-tab clearfix" id="<?php echo esc_attr( $this->id ); ?>_tab-1">
                     	<?php
 						$args = array(
 							'orderby' => 'comment_count',
-							'posts_per_page' => $popular_posts_number,
+							'posts_per_page' => intval($popular_posts_number),
 							'ignore_sticky_posts' => 1
 						);
 						$wp_query = new WP_Query();
@@ -117,10 +117,10 @@ class AC_Tabs_Widget extends WP_Widget {
 			// -- Featured Posts
 			if( $show_featured_posts ) {
 				?>
-                	<div class="sb-content tabs-widget-tab clearfix" id="<?php echo esc_html( $this->id ); ?>_tab-2">
+                	<div class="sb-content tabs-widget-tab clearfix" id="<?php echo esc_attr( $this->id ); ?>_tab-2">
                     	<?php
 						$args = array(
-							'posts_per_page'		=> $featured_posts_number,
+							'posts_per_page'		=> intval($featured_posts_number),
 							'meta_key'				=> 'ac_featured_article',
 							'meta_value'			=> 1,
 							'ignore_sticky_posts'	=> 1
@@ -137,13 +137,13 @@ class AC_Tabs_Widget extends WP_Widget {
 									if ( has_post_thumbnail() ) :
 										the_post_thumbnail( 'ac-sidebar-featured' );
 									else :
-										echo '<img src="' . get_template_directory_uri() . '/images/no-thumbnail.png" alt="' . __( 'No Thumbnail', 'justwrite' ) . '" />';
+										echo '<img src="' . get_template_directory_uri() . '/images/no-thumbnail.png" alt="' . esc_attr__( 'No Thumbnail', 'justwrite' ) . '" />';
 									endif;
 									?>
                             		<figcaption class="details">
-                            			<span class="category"><?php ac_output_first_category(); echo get_post_meta('ac_featured_post') ?></span>
+                            			<span class="category"><?php ac_output_first_category(); ?></span>
                                         <?php the_title( '<a href="' . esc_url( get_permalink() ) . '" class="title" rel="bookmark">', '</a>' ); ?>
-                                		<a href="<?php the_permalink(); ?>" title="<?php _e('Read More', 'justwrite'); ?>" class="read-more"><?php ac_icon('ellipsis-h fa-lg') ?></a>
+                                		<a href="<?php the_permalink(); ?>" title="<?php esc_attr_e('Read More', 'justwrite'); ?>" class="read-more"><?php ac_icon('ellipsis-h fa-lg') ?></a>
                             		</figcaption>
                         		</figure>
                     		</li>
@@ -156,10 +156,10 @@ class AC_Tabs_Widget extends WP_Widget {
 			// -- Recent Posts
 			if( $show_recent_posts ) {
 				?>
-                	<div class="sb-content tabs-widget-tab clearfix" id="<?php echo esc_html( $this->id ); ?>_tab-3">
+                	<div class="sb-content tabs-widget-tab clearfix" id="<?php echo esc_attr( $this->id ); ?>_tab-3">
                     	<?php
 						$args = array(
-							'posts_per_page' => $recent_posts_number,
+							'posts_per_page' => intval($recent_posts_number),
 							'ignore_sticky_posts' => 1
 						);
 						$wp_query = new WP_Query();
@@ -177,7 +177,7 @@ class AC_Tabs_Widget extends WP_Widget {
 									if ( has_post_thumbnail() ) :
 										the_post_thumbnail( 'ac-sidebar-small-thumbnail' );
 									else :
-										echo '<img src="' . get_template_directory_uri() . '/images/no-thumbnail.png" alt="' . __( 'No Thumbnail', 'justwrite' ) . '" class="no-thumbnail" />';
+										echo '<img src="' . get_template_directory_uri() . '/images/no-thumbnail.png" alt="' . esc_attr__( 'No Thumbnail', 'justwrite' ) . '" class="no-thumbnail" />';
 									endif;
 									?>
                                 </figure>
@@ -199,7 +199,7 @@ class AC_Tabs_Widget extends WP_Widget {
 			// -- Recent Comments
 			if( $show_recent_comments ) {
 				?>
-                	<div class="sb-content tabs-widget-tab clearfix" id="<?php echo esc_html( $this->id ); ?>_tab-4">
+                	<div class="sb-content tabs-widget-tab clearfix" id="<?php echo esc_attr( $this->id ); ?>_tab-4">
                     	<?php
 							$args = array(
 										'before_widget'		=> '',
@@ -209,7 +209,7 @@ class AC_Tabs_Widget extends WP_Widget {
 									);
 							$instance = array(
 										'title'		=> ' ',
-										'number'	=> $recent_comments_number
+										'number'	=> intval($recent_comments_number)
 									);
 							the_widget( 'WP_Widget_Recent_Comments', $instance, $args );
 						?>
@@ -313,22 +313,22 @@ class AC_Tabs_Widget extends WP_Widget {
 
         <p class="ac_two_columns">
 		<label for="<?php echo $this->get_field_id( 'popular_posts_number' ); ?>"><?php _e('Popular Posts', 'justwrite'); ?>:</label>
-		<input  type="text" id="<?php echo $this->get_field_id( 'popular_posts_number' ); ?>" name="<?php echo $this->get_field_name( 'popular_posts_number' ); ?>" value="<?php echo $instance['popular_posts_number']; ?>" size="3" />
+		<input  type="text" id="<?php echo $this->get_field_id( 'popular_posts_number' ); ?>" name="<?php echo $this->get_field_name( 'popular_posts_number' ); ?>" value="<?php echo intval($instance['popular_posts_number']); ?>" size="3" />
 		</p>
 
         <p class="ac_two_columns">
 		<label for="<?php echo $this->get_field_id( 'featured_posts_number' ); ?>"><?php _e('Featured Posts', 'justwrite'); ?>:</label>
-		<input  type="text" id="<?php echo $this->get_field_id( 'featured_posts_number' ); ?>" name="<?php echo $this->get_field_name( 'featured_posts_number' ); ?>" value="<?php echo $instance['featured_posts_number']; ?>" size="3" />
+		<input  type="text" id="<?php echo $this->get_field_id( 'featured_posts_number' ); ?>" name="<?php echo $this->get_field_name( 'featured_posts_number' ); ?>" value="<?php echo intval($instance['featured_posts_number']); ?>" size="3" />
 		</p>
 
         <p class="ac_two_columns">
 		<label for="<?php echo $this->get_field_id( 'recent_posts_number' ); ?>"><?php _e('Recent Posts', 'justwrite'); ?>:</label>
-		<input  type="text" id="<?php echo $this->get_field_id( 'recent_posts_number' ); ?>" name="<?php echo $this->get_field_name( 'recent_posts_number' ); ?>" value="<?php echo $instance['recent_posts_number']; ?>" size="3" />
+		<input  type="text" id="<?php echo $this->get_field_id( 'recent_posts_number' ); ?>" name="<?php echo $this->get_field_name( 'recent_posts_number' ); ?>" value="<?php echo intval($instance['recent_posts_number']); ?>" size="3" />
 		</p>
 
         <p class="ac_two_columns">
 		<label for="<?php echo $this->get_field_id( 'recent_comments_number' ); ?>"><?php _e('Recent Comments', 'justwrite'); ?>:</label>
-		<input  type="text" id="<?php echo $this->get_field_id( 'recent_comments_number' ); ?>" name="<?php echo $this->get_field_name( 'recent_comments_number' ); ?>" value="<?php echo $instance['recent_comments_number']; ?>" size="3" />
+		<input  type="text" id="<?php echo $this->get_field_id( 'recent_comments_number' ); ?>" name="<?php echo $this->get_field_name( 'recent_comments_number' ); ?>" value="<?php echo intval($instance['recent_comments_number']); ?>" size="3" />
 		</p>
 
         <p class="ac_break_line"></p>

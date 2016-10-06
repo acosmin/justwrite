@@ -10,7 +10,7 @@ class AC_Recent_Posts_Widget extends WP_Widget {
 		// Settings
 		$widget_ops = array(
 			'classname' => 'ac_recent_posts_widget',
-			'description' => 'Displays your most recent articles. With or without thumbnails',
+			'description' => esc_html__('Displays your most recent articles. With or without thumbnails', 'justwrite'),
 			'customize_selective_refresh' => true
 		);
 
@@ -19,7 +19,7 @@ class AC_Recent_Posts_Widget extends WP_Widget {
 
 		// Default values
 		$this->defaults = array (
-				'title'						=> 'Recent Posts',
+				'title'						=> esc_html__('Recent Posts', 'justwrite'),
 				'recent_posts_number' 		=> 5,
 				'hide_recent_thumbs'		=> false,
 		);
@@ -64,7 +64,7 @@ class AC_Recent_Posts_Widget extends WP_Widget {
 					if ( has_post_thumbnail() ) :
 						the_post_thumbnail( 'ac-sidebar-small-thumbnail' );
 					else :
-						echo '<img src="' . get_template_directory_uri() . '/images/no-thumbnail.png" alt="' . __( 'No Thumbnail', 'justwrite' ) . '" class="no-thumbnail" />';
+						echo '<img src="' . get_template_directory_uri() . '/images/no-thumbnail.png" alt="' . esc_attr__( 'No Thumbnail', 'justwrite' ) . '" class="no-thumbnail" />';
 					endif;
 					?>
 				</figure>
@@ -105,7 +105,7 @@ class AC_Recent_Posts_Widget extends WP_Widget {
 
 		<p>
 		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title', 'justwrite'); ?>:</label><br />
-		<input type="text" class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo $instance['title']; ?>" />
+		<input type="text" class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo esc_attr($instance['title']); ?>" />
 		</p>
 
         <p class="ac_break_line"></p>
@@ -114,7 +114,7 @@ class AC_Recent_Posts_Widget extends WP_Widget {
 
         <p class="ac_two_columns">
 		<label for="<?php echo $this->get_field_id( 'recent_posts_number' ); ?>"><?php _e('Recent Posts', 'justwrite'); ?>:</label>
-		<input  type="text" id="<?php echo $this->get_field_id( 'recent_posts_number' ); ?>" name="<?php echo $this->get_field_name( 'recent_posts_number' ); ?>" value="<?php echo $instance['recent_posts_number']; ?>" size="3" />
+		<input  type="text" id="<?php echo $this->get_field_id( 'recent_posts_number' ); ?>" name="<?php echo $this->get_field_name( 'recent_posts_number' ); ?>" value="<?php echo intval($instance['recent_posts_number']); ?>" size="3" />
 		</p>
 
         <p class="ac_break_line"></p>

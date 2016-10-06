@@ -20,13 +20,13 @@ if( ! class_exists( 'AC_Section_Slider' ) ) {
 		function __construct() {
 
 			/* Variables */
-			$this->widget_title = __( 'AC SEC: Slider #1' , 'justwrite' );
+			$this->widget_title = esc_html__( 'AC SEC: Slider #1', 'justwrite' );
 			$this->widget_id = 'featured-posts-slider';
 
 			/* Settings */
 			$widget_ops = array(
 				'classname' => 'ss-slider',
-				'description' => 'This widget is used to display your featured posts in a jQuery slider.',
+				'description' => esc_html__( 'This widget is used to display your featured posts in a jQuery slider.', 'justwrite' ),
 				'customize_selective_refresh' => true
 			);
 
@@ -236,7 +236,7 @@ if( ! class_exists( 'AC_Section_Slider' ) ) {
 						'name'       => $this->get_field_name( 'category' ),
 						'id'         => $this->get_field_id( 'category' ),
 						'class'      => 'widefat',
-						'selected'   => $instance['category'],
+						'selected'   => intval($instance['category']),
 
 					) );
 
@@ -244,11 +244,11 @@ if( ! class_exists( 'AC_Section_Slider' ) ) {
                 </p>
                 <p>
                     <label for="<?php echo $this->get_field_id( 'posts_nr' ); ?>"><?php esc_html_e( 'Number of posts (more than 3):', 'justwrite' ); ?></label>
-                    <input class="widefat" id="<?php echo $this->get_field_id( 'posts_nr' ); ?>" name="<?php echo $this->get_field_name( 'posts_nr' ); ?>" type="text" value="<?php echo esc_attr( $instance['posts_nr'] ); ?>"/>
+                    <input class="widefat" id="<?php echo $this->get_field_id( 'posts_nr' ); ?>" name="<?php echo $this->get_field_name( 'posts_nr' ); ?>" type="text" value="<?php echo intval( $instance['posts_nr'] ); ?>"/>
                 </p>
                 <p>
                     <label for="<?php echo $this->get_field_id( 'offset' ); ?>"><?php esc_html_e( 'Offset (number of posts to "displace" or pass over):', 'justwrite' ); ?></label>
-                    <input class="widefat" disabled id="<?php echo $this->get_field_id( 'offset' ); ?>" name="<?php echo $this->get_field_name( 'offset' ); ?>" type="text" value="<?php echo esc_attr( $instance['offset'] ); ?>"/>
+                    <input class="widefat" disabled id="<?php echo $this->get_field_id( 'offset' ); ?>" name="<?php echo $this->get_field_name( 'offset' ); ?>" type="text" value="<?php echo intval( $instance['offset'] ); ?>"/>
                 </p>
                 <p>
                     <input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('autoplay'); ?>" name="<?php echo $this->get_field_name('autoplay'); ?>"<?php checked( $autoplay ); ?> />

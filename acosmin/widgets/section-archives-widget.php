@@ -20,13 +20,13 @@ if( ! class_exists( 'AC_Section_Archives' ) ) {
 		function __construct() {
 
 			/* Variables */
-			$this->widget_title = __( 'AC SEC: Archives' , 'justwrite' );
+			$this->widget_title = esc_html__( 'AC SEC: Archives' , 'justwrite' );
 			$this->widget_id = 'extended-archives';
 
 			/* Settings */
 			$widget_ops = array(
 				'classname' => 'sa-archives',
-				'description' => 'This is used to display monthly archives by year.',
+				'description' => esc_html__('This is used to display monthly archives by year.', 'justwrite' ),
 				'customize_selective_refresh' => true
 			);
 

@@ -20,13 +20,13 @@ if( ! class_exists( 'AC_Section_Masonry_2' ) ) {
 		function __construct() {
 
 			/* Variables */
-			$this->widget_title = __( 'AC SEC: Masonry #2' , 'justwrite' );
+			$this->widget_title = esc_html__( 'AC SEC: Masonry #2' , 'justwrite' );
 			$this->widget_id = 'masonry-large';
 
 			/* Settings */
 			$widget_ops = array(
 				'classname' => 'sm-large-masonary',
-				'description' => 'This is used to display your posts using Masonry',
+				'description' => esc_html__( 'This is used to display your posts using Masonry', 'justwrite' ),
 				'customize_selective_refresh' => true
 			);
 
@@ -225,7 +225,7 @@ if( ! class_exists( 'AC_Section_Masonry_2' ) ) {
 						'name'       => $this->get_field_name( 'category' ),
 						'id'         => $this->get_field_id( 'category' ),
 						'class'      => 'widefat',
-						'selected'   => $instance['category'],
+						'selected'   => intval($instance['category']),
 
 					) );
 
@@ -237,7 +237,7 @@ if( ! class_exists( 'AC_Section_Masonry_2' ) ) {
                 </p>
                 <p>
                     <label for="<?php echo $this->get_field_id( 'offset' ); ?>"><?php esc_html_e( 'Offset (number of posts to "displace" or pass over):', 'justwrite' ); ?></label>
-                    <input disabled class="widefat" id="<?php echo $this->get_field_id( 'offset' ); ?>" name="<?php echo $this->get_field_name( 'offset' ); ?>" type="text" value="<?php echo esc_attr( $instance['offset'] ); ?>" />
+                    <input disabled class="widefat" id="<?php echo $this->get_field_id( 'offset' ); ?>" name="<?php echo $this->get_field_name( 'offset' ); ?>" type="text" value="<?php echo intval( $instance['offset'] ); ?>" />
                 </p>
                 <p>
                 	<b><?php _e( 'Display options:', 'justwrite' ); ?></b><br />

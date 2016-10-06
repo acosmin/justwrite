@@ -20,13 +20,13 @@ if( ! class_exists( 'AC_Section_Popular_Posts' ) ) {
 		function __construct() {
 
 			/* Variables */
-			$this->widget_title = __( 'AC SEC: Popular Posts' , 'justwrite' );
+			$this->widget_title = esc_html__( 'AC SEC: Popular Posts' , 'justwrite' );
 			$this->widget_id = 'popular-posts-big';
 
 			/* Settings */
 			$widget_ops = array(
 				'classname' => 'sp-popular',
-				'description' => 'This widget is used to display popular posts in a podium style ranking.',
+				'description' => esc_html__( 'This widget is used to display popular posts in a podium style ranking.', 'justwrite' ),
 				'customize_selective_refresh' => true
 			);
 

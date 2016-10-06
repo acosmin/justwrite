@@ -10,7 +10,7 @@ class AC_Popular_Posts_Widget extends WP_Widget {
 		// Settings
 		$widget_ops = array(
 			'classname' => 'ac_popular_posts_widget',
-			'description' => 'Displays your most popular articles.',
+			'description' => esc_html__('Displays your most popular articles.', 'justwrite'),
 			'customize_selective_refresh' => true
 		);
 
@@ -19,8 +19,8 @@ class AC_Popular_Posts_Widget extends WP_Widget {
 
 		// Default values
 		$this->defaults = array (
-				'title'					=> 'Popular Posts',
-				'popular_posts_number' 	=> 3,
+				'title' => esc_html__('Popular Posts', 'justwrite'),
+				'popular_posts_number' => 3,
 		);
 	}
 
@@ -102,14 +102,14 @@ class AC_Popular_Posts_Widget extends WP_Widget {
 
 		<p>
 		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title', 'justwrite'); ?>:</label><br />
-		<input type="text" class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo $instance['title']; ?>" />
+		<input type="text" class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo esc_attr($instance['title']); ?>" />
 		</p>
 
         <p><strong><?php _e('How many', 'justwrite'); ?> &not;</strong></p>
 
         <p class="ac_two_columns">
 		<label for="<?php echo $this->get_field_id( 'popular_posts_number' ); ?>"><?php _e('Popular Posts', 'justwrite'); ?>:</label>
-		<input  type="text" id="<?php echo $this->get_field_id( 'popular_posts_number' ); ?>" name="<?php echo $this->get_field_name( 'popular_posts_number' ); ?>" value="<?php echo $instance['popular_posts_number']; ?>" size="3" />
+		<input  type="text" id="<?php echo $this->get_field_id( 'popular_posts_number' ); ?>" name="<?php echo $this->get_field_name( 'popular_posts_number' ); ?>" value="<?php echo intval($instance['popular_posts_number']); ?>" size="3" />
 		</p>
 
 		<?php

@@ -20,13 +20,13 @@ if( ! class_exists( 'AC_Section_Cat_4_Columns' ) ) {
 		function __construct() {
 
 			/* Variables */
-			$this->widget_title = __( 'AC SEC: Categories 4 Columns' , 'justwrite' );
+			$this->widget_title = esc_html__( 'AC SEC: Categories 4 Columns' , 'justwrite' );
 			$this->widget_id = 'four-columns-categories';
 
 			/* Settings */
 			$widget_ops = array(
 				'classname' => 'sc-small',
-				'description' => 'Adds a row displaying posts from categories (four columns)',
+				'description' => esc_html__( 'Adds a row displaying posts from categories (four columns)', 'justwrite' ),
 				'customize_selective_refresh' => true
 			);
 
@@ -196,7 +196,7 @@ if( ! class_exists( 'AC_Section_Cat_4_Columns' ) ) {
 						'name'       => $this->get_field_name( 'category_1' ),
 						'id'         => $this->get_field_id( 'category_1' ),
 						'class'      => 'widefat',
-						'selected'   => $instance['category_1'],
+						'selected'   => intval($instance['category_1']),
 
 					) );
 
@@ -213,7 +213,7 @@ if( ! class_exists( 'AC_Section_Cat_4_Columns' ) ) {
 						'name'       => $this->get_field_name( 'category_2' ),
 						'id'         => $this->get_field_id( 'category_2' ),
 						'class'      => 'widefat',
-						'selected'   => $instance['category_2'],
+						'selected'   => intval($instance['category_2']),
 
 					) );
 
@@ -230,7 +230,7 @@ if( ! class_exists( 'AC_Section_Cat_4_Columns' ) ) {
 						'name'       => $this->get_field_name( 'category_3' ),
 						'id'         => $this->get_field_id( 'category_3' ),
 						'class'      => 'widefat',
-						'selected'   => $instance['category_3'],
+						'selected'   => intval($instance['category_3']),
 
 					) );
 
@@ -247,7 +247,7 @@ if( ! class_exists( 'AC_Section_Cat_4_Columns' ) ) {
 						'name'       => $this->get_field_name( 'category_4' ),
 						'id'         => $this->get_field_id( 'category_4' ),
 						'class'      => 'widefat',
-						'selected'   => $instance['category_4'],
+						'selected'   => intval($instance['category_4']),
 
 					) );
 
@@ -255,11 +255,11 @@ if( ! class_exists( 'AC_Section_Cat_4_Columns' ) ) {
                 </p>
                 <p>
                     <label for="<?php echo $this->get_field_id( 'posts_nr' ); ?>"><?php esc_html_e( 'Number of posts (3 or more):', 'justwrite' ); ?></label>
-                    <input class="widefat" id="<?php echo $this->get_field_id( 'posts_nr' ); ?>" name="<?php echo $this->get_field_name( 'posts_nr' ); ?>" type="text" value="<?php echo esc_attr( $instance['posts_nr'] ); ?>"/>
+                    <input class="widefat" id="<?php echo $this->get_field_id( 'posts_nr' ); ?>" name="<?php echo $this->get_field_name( 'posts_nr' ); ?>" type="text" value="<?php echo intval( $instance['posts_nr'] ); ?>"/>
                 </p>
                 <p>
                     <label for="<?php echo $this->get_field_id( 'offset' ); ?>"><?php esc_html_e( 'Offset (number of posts to "displace" or pass over):', 'justwrite' ); ?></label>
-                    <input disabled class="widefat" id="<?php echo $this->get_field_id( 'offset' ); ?>" name="<?php echo $this->get_field_name( 'offset' ); ?>" type="text" value="<?php echo esc_attr( $instance['offset'] ); ?>"/>
+                    <input disabled class="widefat" id="<?php echo $this->get_field_id( 'offset' ); ?>" name="<?php echo $this->get_field_name( 'offset' ); ?>" type="text" value="<?php echo intval( $instance['offset'] ); ?>"/>
                 </p>
                 <p>
                 	<b><?php _e( 'Display options:', 'justwrite' ); ?></b><br />

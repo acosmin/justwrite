@@ -20,13 +20,13 @@ if( ! class_exists( 'AC_Section_Social_Profiles' ) ) {
 		function __construct() {
 
 			/* Variables */
-			$this->widget_title = __( 'AC SEC: Social Profiles' , 'justwrite' );
+			$this->widget_title = esc_html__( 'AC SEC: Social Profiles', 'justwrite' );
 			$this->widget_id = 'social-profiles';
 
 			/* Settings */
 			$widget_ops = array(
 				'classname' => 'sp-social',
-				'description' => 'This is used to display links to your social profiles.',
+				'description' => esc_html__( 'This is used to display links to your social profiles.', 'justwrite' ),
 				'customize_selective_refresh' => true
 			);
 
@@ -76,55 +76,55 @@ if( ! class_exists( 'AC_Section_Social_Profiles' ) ) {
 			/* Profiles */
 			$this->profiles = array (
 				'twitter' => array(
-					'label'   	=> __( 'Twitter URI', 'justwrite' ),
+					'label'   	=> esc_html__( 'Twitter URI', 'justwrite' ),
 					'anchor'	=> 'twitter_anc',
 				),
 				'facebook' => array(
-					'label'   	=> __( 'Facebook URI', 'justwrite' ),
+					'label'   	=> esc_html__( 'Facebook URI', 'justwrite' ),
 					'anchor'	=> 'facebook_anc',
 				),
 				'google-plus' => array(
-					'label'   	=> __( 'Google Plus URI', 'justwrite' ),
+					'label'   	=> esc_html__( 'Google Plus URI', 'justwrite' ),
 					'anchor'	=> 'google-plus_anc',
 				),
 				'rss' => array(
-					'label'   	=> __( 'RSS URI', 'justwrite' ),
+					'label'   	=> esc_html__( 'RSS URI', 'justwrite' ),
 					'anchor'	=> 'rss_anc',
 				),
 				'youtube' => array(
-					'label'   	=> __( 'Youtube URI', 'justwrite' ),
+					'label'   	=> esc_html__( 'Youtube URI', 'justwrite' ),
 					'anchor'	=> 'youtube_anc',
 				),
 				'instagram' => array(
-					'label'   	=> __( 'Instagram URI', 'justwrite' ),
+					'label'   	=> esc_html__( 'Instagram URI', 'justwrite' ),
 					'anchor'	=> 'instagram_anc',
 				),
 				'flickr' => array(
-					'label'   	=> __( 'Flickr URI', 'justwrite' ),
+					'label'   	=> esc_html__( 'Flickr URI', 'justwrite' ),
 					'anchor'	=> 'flickr_anc',
 				),
 				'tumblr' => array(
-					'label'   	=> __( 'Tumblr URI', 'justwrite' ),
+					'label'   	=> esc_html__( 'Tumblr URI', 'justwrite' ),
 					'anchor'	=> 'tumblr_anc',
 				),
 				'vk' => array(
-					'label'   	=> __( 'VK URI', 'justwrite' ),
+					'label'   	=> esc_html__( 'VK URI', 'justwrite' ),
 					'anchor'	=> 'vk_anc',
 				),
 				'pinterest' => array(
-					'label'   	=> __( 'Pinterest URI', 'justwrite' ),
+					'label'   	=> esc_html__( 'Pinterest URI', 'justwrite' ),
 					'anchor'	=> 'pinterest_anc',
 				),
 				'linkedin' => array(
-					'label'   	=> __( 'LinkedIn URI', 'justwrite' ),
+					'label'   	=> esc_html__( 'LinkedIn URI', 'justwrite' ),
 					'anchor'	=> 'linkedin_anc',
 				),
 				'dribbble' => array(
-					'label'   	=> __( 'Dribbble URI', 'justwrite' ),
+					'label'   	=> esc_html__( 'Dribbble URI', 'justwrite' ),
 					'anchor'	=> 'dribbble_anc',
 				),
 				'github' => array(
-					'label'   	=> __( 'GitHub URI', 'justwrite' ),
+					'label'   	=> esc_html__( 'GitHub URI', 'justwrite' ),
 					'anchor'	=> 'github_anc',
 				),
 			);

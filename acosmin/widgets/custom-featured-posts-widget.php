@@ -10,7 +10,7 @@ class AC_Featured_Posts_Widget extends WP_Widget {
 		// Settings
 		$widget_ops = array(
 			'classname' => 'ac_featured_posts_widget',
-			'description' => 'Displays posts you set as featured in the editor area.',
+			'description' => esc_html__('Displays posts you set as featured in the editor area.', 'justwrite'),
 			'customize_selective_refresh' => true
 		);
 
@@ -19,8 +19,8 @@ class AC_Featured_Posts_Widget extends WP_Widget {
 
 		// Default values
 		$this->defaults = array (
-				'title'						=> 'Featured Posts',
-				'featured_posts_number' 	=> 3,
+			'title'	=> esc_html__('Featured Posts', 'justwrite'),
+			'featured_posts_number' => 3,
 		);
 	}
 
@@ -63,13 +63,13 @@ class AC_Featured_Posts_Widget extends WP_Widget {
 					if ( has_post_thumbnail() ) :
 						the_post_thumbnail( 'ac-sidebar-featured' );
 					else :
-						echo '<img src="' . get_template_directory_uri() . '/images/no-thumbnail.png" alt="' . __( 'No Thumbnail', 'justwrite' ) . '" />';
+						echo '<img src="' . get_template_directory_uri() . '/images/no-thumbnail.png" alt="' . esc_attr__( 'No Thumbnail', 'justwrite' ) . '" />';
 					endif;
 					?>
 					<figcaption class="details">
 						<span class="category"><?php ac_output_first_category(); ?></span>
 						<?php the_title( '<a href="' . esc_url( get_permalink() ) . '" class="title" rel="bookmark">', '</a>' ); ?>
-						<a href="<?php the_permalink(); ?>" title="<?php _e('Read More', 'justwrite'); ?>" class="read-more"><?php ac_icon('ellipsis-h fa-lg') ?></a>
+						<a href="<?php the_permalink(); ?>" title="<?php esc_attr_e('Read More', 'justwrite'); ?>" class="read-more"><?php ac_icon('ellipsis-h fa-lg') ?></a>
 					</figcaption>
 				</figure>
 			</li>
@@ -99,14 +99,14 @@ class AC_Featured_Posts_Widget extends WP_Widget {
 
 		<p>
 		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title', 'justwrite'); ?>:</label><br />
-		<input type="text" class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo $instance['title']; ?>" />
+		<input type="text" class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo esc_attr($instance['title']); ?>" />
 		</p>
 
         <p><strong><?php _e('How many', 'justwrite'); ?> &not;</strong></p>
 
         <p class="ac_two_columns">
 		<label for="<?php echo $this->get_field_id( 'featured_posts_number' ); ?>"><?php _e('Featured Posts', 'justwrite'); ?>:</label>
-		<input  type="text" id="<?php echo $this->get_field_id( 'featured_posts_number' ); ?>" name="<?php echo $this->get_field_name( 'featured_posts_number' ); ?>" value="<?php echo $instance['featured_posts_number']; ?>" size="3" />
+		<input  type="text" id="<?php echo $this->get_field_id( 'featured_posts_number' ); ?>" name="<?php echo $this->get_field_name( 'featured_posts_number' ); ?>" value="<?php echo intval($instance['featured_posts_number']); ?>" size="3" />
 		</p>
 
 		<?php
