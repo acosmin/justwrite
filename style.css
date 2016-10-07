@@ -4000,7 +4000,15 @@ li .comment-reply-title small {
 	padding-bottom: 20px;
 }
 .sa-mainad .mainad-container {
-	display: inline-block;
+    display: block;
+    width: 100%;
+    max-width: 728px;
+    height: auto;
+    margin: 0 auto;
+}
+.sa-mainad .mainad-container ins {
+	background: transparent !important;
+	border: none !important;
 }
 .sa-mainad .mainad-container embed,
 .sa-mainad .mainad-container iframe,

@@ -20,13 +20,13 @@ if( ! class_exists( 'AC_Section_Advertising' ) ) {
 		function __construct() {
 
 			/* Variables */
-			$this->widget_title = esc_html__( 'AC SEC: Advertising', 'justwrite' );
+			$this->widget_title = esc_html__( 'AC SEC: Responsive Ad Banner', 'justwrite' );
 			$this->widget_id = 'mainad';
 
 			/* Settings */
 			$widget_ops = array(
 				'classname' => 'sa-mainad',
-				'description' => esc_html__( 'This is used to display an ad, any size, centered', 'justwrite' )
+				'description' => esc_html__( 'This is used to display an ad, any size, centered and responsive. Great for Google Adsense.', 'justwrite' )
 			);
 
 			/* Control settings */
@@ -38,6 +38,7 @@ if( ! class_exists( 'AC_Section_Advertising' ) ) {
 			/* Set some widget defaults */
 			$this->defaults = array (
 				'ad_code'		=> '',
+				'ad_width'		=> '',
 				'css_no_mt'		=> true,
 				'css_no_mb'		=> true,
 				'css_no_bg'		=> true,
@@ -65,6 +66,7 @@ if( ! class_exists( 'AC_Section_Advertising' ) ) {
 
 			// Options output
 			$ad_code = ! empty( $instance['ad_code'] ) ? $instance['ad_code'] : '';
+			$ad_width = ! empty( $instance['ad_width'] ) ? $instance['ad_width'] : '';
 			$cnmt	= ! empty( $instance['css_no_mt'] ) ? 1 : 0;
 			$cnmb	= ! empty( $instance['css_no_mb'] ) ? 1 : 0;
 			$cnbg	= ! empty( $instance['css_no_bg'] ) ? 1 : 0;
@@ -92,9 +94,11 @@ if( ! class_exists( 'AC_Section_Advertising' ) ) {
 				}
 			}
 
+			$ad_style = ($ad_width != '') ? ' style="max-width: ' . esc_attr( $ad_width ) . ';"' : '';
+
 			echo $args['before_widget']; // Before widget template
 			?>
-				<div class="mainad-container">
+				<div class="mainad-container"<?php echo $ad_style; ?>>
                 	<?php
 						// Output AD code using wp_kses to allow some tags
 						echo ac_sanitize_ads( $ad_code );
@@ -112,7 +116,14 @@ if( ! class_exists( 'AC_Section_Advertising' ) ) {
 			$instance = $old_instance;
 
 			// Ad code
-			$instance['ad_code'] 	= ac_sanitize_ads( $new_instance['ad_code'] );
+			if( current_user_can( 'edit_theme_options') ) {
+				$instance['ad_code'] = ac_sanitize_ads( $new_instance['ad_code'] );
+			} else {
+				$instance['ad_code'] = $instance['ad_code'];
+			}
+
+			// Ad width
+			$instance['ad_width'] = sanitize_text_field( $new_instance['ad_width'] );
 
 			// Checkboxes
 			$instance['css_no_mt']	= ! empty($new_instance['css_no_mt']) ? 1 : 0;
@@ -137,6 +148,8 @@ if( ! class_exists( 'AC_Section_Advertising' ) ) {
 			extract( $instance, EXTR_SKIP );
 
 			// $instance Defaults
+			$ad_code = $instance['ad_code'];
+			$ad_width = $instance['ad_width'];
 			$css_nmt = isset( $instance['css_no_mt'] ) ? (bool) $instance['css_no_mt'] : false;
 			$css_nmb = isset( $instance['css_no_mb'] ) ? (bool) $instance['css_no_mb'] : false;
 			$css_nbg = isset( $instance['css_no_bg'] ) ? (bool) $instance['css_no_bg'] : false;
@@ -146,10 +159,19 @@ if( ! class_exists( 'AC_Section_Advertising' ) ) {
 			$css_pab = isset( $instance['css_p_bot'] ) ? (bool) $instance['css_p_bot'] : false;
 
 			?>
+				<?php if( current_user_can( 'edit_theme_options') ) { ?>
             	<p>
                 	<label for="<?php echo $this->get_field_id( 'ad_code' ); ?>"><?php _e( 'Ad code:', 'justwrite' ); ?></label>
 					<textarea class="widefat" rows="8" cols="20" id="<?php echo $this->get_field_id('ad_code'); ?>" name="<?php echo $this->get_field_name('ad_code'); ?>"><?php echo ac_sanitize_ads( $ad_code ); ?></textarea></p>
                 <p>
+				<?php } ?>
+
+				<p>
+                    <label for="<?php echo $this->get_field_id( 'ad_width' ); ?>"><?php esc_html_e( 'Ad max width:', 'justwrite' ); ?></label>
+                    <input class="widefat" id="<?php echo $this->get_field_id( 'ad_width' ); ?>" name="<?php echo $this->get_field_name( 'ad_width' ); ?>" type="text" placeholder="<?php esc_attr_e( '728px', 'justwrite' ); ?>" value="<?php echo esc_attr( $instance['ad_width'] ); ?>"/>
+					<em><?php esc_html_e( 'In this field you can enter the maximum width (in pixels or percentage) for this ad. 728px is the default value. 100% willd make the add strech as much as it can.', 'justwrite' ); ?></em>
+                </p>
+
                 	<b><?php _e( 'Styling options:', 'justwrite' ); ?></b><br />
                     <input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('css_no_mt'); ?>" name="<?php echo $this->get_field_name('css_no_mt'); ?>"<?php checked( $css_nmt ); ?> />
                     <label for="<?php echo $this->get_field_id('css_no_mt'); ?>"><?php _e( 'Remove top margin', 'justwrite' ); ?></label><br />
