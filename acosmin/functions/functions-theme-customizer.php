@@ -629,13 +629,6 @@ function ac_customize_init($wp_customize) {
 		'default'			=> false,
 		'capability'		=> 'edit_theme_options',
 	) );
-	if ( ! function_exists( 'has_site_icon' ) ) {
-	$wp_customize->add_setting( 'ac_favicon_image', array(
-    	'default'			=> '',
-		'sanitize_callback' => 'esc_url_raw',
-    	'capability'		=> 'edit_theme_options',
-		'transport'         => 'refresh',
-	) ); }
 	// -- Posts
 	$wp_customize->add_setting( 'ac_main_posts_layout', array(
 		'default'			=> 'lthumb',
@@ -1108,13 +1101,6 @@ function ac_customize_init($wp_customize) {
     	'settings'			=> 'ac_enable_160px_link',
 	) );
 	// -- Misc
-	if ( ! function_exists( 'has_site_icon' ) ) {
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ac_favicon_image', array(
-    	'label'				=> __( 'Favicon image', 'justwrite' ),
-		'description'		=> __( 'The Favicon is used as a browser and app icon for your site. Icons must be square, and at least 512px wide and tall.', 'justwrite' ),
-    	'section'			=> 'ac_customize_misc',
-    	'settings'			=> 'ac_favicon_image',
-	) ) ); }
 	$wp_customize->add_control('ac_disable_comments', array(
 		'settings' 		=> 'ac_disable_comments',
 		'label'    		=> __( 'Disable comments.', 'justwrite' ),

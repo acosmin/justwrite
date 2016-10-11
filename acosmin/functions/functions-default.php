@@ -10,7 +10,7 @@
 function ac_output_first_category( $class = '', $span_wrap = false ) {
 	global $post;
 	$output_category = '';
-	
+
 	$gpt = get_post_type( get_the_ID() );
 
 	if( has_filter( 'ac_output_first_category_class_filter' ) ) {
@@ -28,10 +28,10 @@ function ac_output_first_category( $class = '', $span_wrap = false ) {
 
 	$category = get_the_category();
 	if ( $category ) {
-		$output_category = 
+		$output_category =
 			'<a href="' . get_category_link( $category[0]->term_id ) . '" ' . $show_class . 'title="' . sprintf( __( "View all posts in %s", "justwrite" ), $category[0]->name ) . '" ' . '>' . $category[0]->name.'</a> ';
 	}
-	
+
 	if( ! $span_wrap ) {
 		if( $gpt != 'page' && ! empty( $category ) ) {
 			echo $output_category;
@@ -49,7 +49,7 @@ function ac_output_first_category( $class = '', $span_wrap = false ) {
 function ac_comments_number() {
 	$num_comments = get_comments_number();
 	$comments = '';
-	
+
 	if ( comments_open() ) {
 		if ( $num_comments == 0 ) {
 			$comments = __('0 Comments', 'justwrite');
@@ -59,7 +59,7 @@ function ac_comments_number() {
 			$comments = __('1 Comment', 'justwrite');
 		}
 	}
-	
+
 	echo esc_html( $comments );
 }
 
@@ -118,7 +118,7 @@ function ac_check_paged() {
 function ac_custom_rss_feed( $output, $feed ) {
     if ( strpos( $output, 'comments' ) )
         return $output;
-	
+
 	$custom_feed = get_theme_mod( 'ac_social_profile_rss', '' );
 
     return esc_url( $custom_feed );
@@ -127,21 +127,4 @@ function ac_custom_rss_feed( $output, $feed ) {
 if ( get_theme_mod( 'ac_social_profile_rss', '' ) != '' ) {
 	add_action( 'feed_link', 'ac_custom_rss_feed', 10, 2 );
 }
-
-
-
-/*  Favicon
-/* ------------------------------------ */
-function ac_favicon() {
-    $favicon_desktop = get_theme_mod( 'ac_favicon_image', '' );
-	
-	$output = '<link rel="shortcut icon" href="' . esc_url( $favicon_desktop ) . '">';
-	
-	if ( $favicon_desktop != '') {
-		echo $output . "\n";
-	} else {
-		return;	
-	}
-}
-add_action( 'wp_head', 'ac_favicon', 2);
 ?>
