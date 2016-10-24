@@ -23,16 +23,6 @@ require_once ( get_template_directory() . '/acosmin/widgets/ac-sections-widgets-
 
 
 
-/*  Setup some info
-/* ------------------------------------ */
-
-// 	Content width
-if ( ! isset( $content_width ) ) {
-	$content_width = 940;
-}
-
-
-
 /*  Theme setup
 /* ------------------------------------ */
 if ( ! function_exists( 'ac_setup' ) ) {
@@ -85,22 +75,26 @@ if ( ! function_exists( 'ac_setup' ) ) {
 		// This theme uses its own gallery styles.
 		add_filter( 'use_default_gallery_style', '__return_false' );
 
+		// Add support for widgets selective refresh
+		add_theme_support( 'customize-selective-refresh-widgets' );
+
 	}
 }
 add_action( 'after_setup_theme', 'ac_setup' );
 
 
 
-/*  Title - Backwards compatibility
+/*  Sets the content width in pixels, based on the theme's
+ *	design and stylesheet
 /* ------------------------------------ */
-if ( ! function_exists( '_wp_render_title_tag' ) ) {
-    function ac_render_title() {
-		?>
-		<title><?php wp_title( '|', true, 'right' ); ?></title>
-		<?php
+if ( ! function_exists( 'ac_content_width' ) ) {
+
+	function ac_content_width() {
+		$GLOBALS['content_width'] = apply_filters( 'ac_content_width___filter', 940 );
 	}
-    add_action( 'wp_head', 'ac_render_title' );
+
 }
+add_action( 'after_setup_theme', 'ac_content_width', 0 );
 
 
 
@@ -114,7 +108,7 @@ if ( ! function_exists( 'ac_css_files' ) ) {
 		wp_register_style( 'ac_webfonts_' . ac_get_selected_ff(), ac_font_url( ac_get_selected_ff() ), array(), null);
 
 		// Enqueue
-		wp_enqueue_style( 'ac_style', get_stylesheet_uri(), array(), '2.0.3.3', 'all' );
+		wp_enqueue_style( 'ac_style', get_stylesheet_uri(), array(), '2.0.3.4', 'all' );
 		wp_enqueue_style( 'ac_icons', get_template_directory_uri() . '/assets/icons/css/font-awesome.min.css', array(), '4.6.3', 'all' );
 		wp_enqueue_style( 'ac_webfonts_' . ac_get_selected_ff() );
 
@@ -1264,18 +1258,6 @@ if ( ! function_exists( 'ac_return_inactive_widgets' ) ) {
 
 
 
-/*  Options Framework Fallback
-/* ------------------------------------ */
-if ( ! function_exists( 'of_get_option' ) ) {
-
-	function of_get_option( $name, $default = false ) {
-		return;
-	}
-
-}
-
-
-
 /*  Social sharing action
 /* ------------------------------------ */
 if ( ! function_exists( 'ac_action_show_social_sharing' ) ) {
@@ -1319,62 +1301,47 @@ add_action( 'init', 'ac_compatibility_unreg_icons' );
 
 /*  TGM Setup & Plugins
 /* ------------------------------------ */
-add_action( 'tgmpa_register', 'my_theme_register_required_plugins' );
+if ( ! function_exists( 'ac_register_required_plugins' ) ) {
+	function ac_register_required_plugins() {
 
-function my_theme_register_required_plugins() {
+	    $plugins = array(
 
-    $plugins = array(
+			array(
+	            'name'      => 'Contact Form 7',
+	            'slug'      => 'contact-form-7',
+	            'required'  => false,
+	        ),
 
-		array(
-            'name'      => 'Contact Form 7',
-            'slug'      => 'contact-form-7',
-            'required'  => false,
-        ),
+			array(
+	            'name'      => 'Revive Old Post',
+	            'slug'      => 'tweet-old-post',
+	            'required'  => false,
+	        ),
 
-		array(
-            'name'      => 'Revive Old Post',
-            'slug'      => 'tweet-old-post',
-            'required'  => false,
-        ),
+			array(
+	            'name'      => 'WP Product Review',
+	            'slug'      => 'wp-product-review',
+	            'required'  => false,
+	        ),
 
-		array(
-            'name'      => 'WP Product Review',
-            'slug'      => 'wp-product-review',
-            'required'  => false,
-        ),
+	    );
 
-    );
+		$config = array(
+			'id'           => 'justwrite',                 // Unique ID for hashing notices for multiple instances of TGMPA.
+			'default_path' => '',                      // Default absolute path to bundled plugins.
+			'menu'         => 'tgmpa-install-plugins', // Menu slug.
+			'has_notices'  => true,                    // Show admin notices or not.
+			'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
+			'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
+			'is_automatic' => false,                   // Automatically activate plugins after installation or not.
+			'message'      => '',
+			'strings'      => array(
+				'notice_can_install_recommended'  => _n_noop( 'This theme recommends the following plugin: %1$s.', '<em><a class="ac-pro-theme-link" target="_blank" href="http://www.acosmin.com/theme/justwrite-pro/">JustWrite Pro with WooCommerce compatibility</a></em> in now available. Also, this theme recommends the following plugins: %1$s.', 'justwrite' ),
+			)
+		);
 
-    $config = array(
-        'default_path' => '',
-        'menu'         => 'tgmpa-install-plugins',
-        'has_notices'  => true,
-        'dismissable'  => true,
-        'dismiss_msg'  => '',
-        'is_automatic' => false,
-        'message'      => '',
-        'strings'      => array(
-            'page_title'                      => __( 'Install Required Plugins', 'justwrite' ),
-            'menu_title'                      => __( 'Install Plugins', 'justwrite' ),
-            'installing'                      => __( 'Installing Plugin: %s', 'justwrite' ),
-            'oops'                            => __( 'Something went wrong with the plugin API.', 'justwrite' ),
-            'notice_can_install_required'     => _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.', 'justwrite' ),
-            'notice_can_install_recommended'  => _n_noop( 'This theme recommends the following plugin: %1$s.', '<em><a class="ac-pro-theme-link" target="_blank" href="http://www.acosmin.com/theme/justwrite-pro/">JustWrite Pro with WooCommerce compatibility</a></em> in now available. Also, this theme recommends the following plugins: %1$s.', 'justwrite' ),
-            'notice_cannot_install'           => _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.', 'justwrite' ),
-            'notice_can_activate_required'    => _n_noop( 'The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.', 'justwrite' ),
-            'notice_can_activate_recommended' => _n_noop( 'The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.', 'justwrite' ),
-            'notice_cannot_activate'          => _n_noop( 'Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.', 'justwrite' ),
-            'notice_ask_to_update'            => _n_noop( 'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.', 'justwrite' ),
-            'notice_cannot_update'            => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.', 'justwrite' ),
-            'install_link'                    => _n_noop( 'Begin installing plugin', 'Begin installing plugins', 'justwrite' ),
-            'activate_link'                   => _n_noop( 'Begin activating plugin', 'Begin activating plugins', 'justwrite' ),
-            'return'                          => __( 'Return to Required Plugins Installer', 'justwrite' ),
-            'plugin_activated'                => __( 'Plugin activated successfully.', 'justwrite' ),
-            'complete'                        => __( 'All plugins installed and activated successfully. %s', 'justwrite' ),
-            'nag_type'                        => 'updated'
-        )
-    );
+	    tgmpa( $plugins, $config );
 
-    tgmpa( $plugins, $config );
-
+	}
 }
+add_action( 'tgmpa_register', 'ac_register_required_plugins' );

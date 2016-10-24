@@ -12,29 +12,33 @@
 
 if( ! class_exists( 'AC_Section_Advertising' ) ) {
 	class AC_Section_Advertising extends AC_Section {
-		
+
 		protected $defaults;
-		
+
 		/*  Constructor
 		/* ------------------------------------ */
 		function __construct() {
-			
+
 			/* Variables */
-			$this->widget_title = __( 'AC SEC: Advertising' , 'justwrite' );
+			$this->widget_title = esc_html__( 'AC SEC: Responsive Ad Banner', 'justwrite' );
 			$this->widget_id = 'mainad';
-			
+
 			/* Settings */
-			$widget_ops = array( 'classname' => 'sa-mainad', 'description' => 'This is used to display an ad, any size, centered' );
+			$widget_ops = array(
+				'classname' => 'sa-mainad',
+				'description' => esc_html__( 'This is used to display an ad, any size, centered and responsive. Great for Google Adsense.', 'justwrite' )
+			);
 
 			/* Control settings */
 			$control_ops = array( 'width' => NULL, 'height' => NULL, 'id_base' => 'ac-widget-' . $this->widget_id );
-			
+
 			/* Create the widget */
 			parent::__construct( 'ac-widget-' . $this->widget_id, $this->widget_title, $widget_ops, $control_ops );
-			
+
 			/* Set some widget defaults */
 			$this->defaults = array (
 				'ad_code'		=> '',
+				'ad_width'		=> '',
 				'css_no_mt'		=> true,
 				'css_no_mb'		=> true,
 				'css_no_bg'		=> true,
@@ -43,10 +47,10 @@ if( ! class_exists( 'AC_Section_Advertising' ) ) {
 				'css_p_top'		=> false,
 				'css_p_bot'		=> false,
 			);
-			
+
 		}
-		
-		
+
+
 		/*  Front-end display
 		/* ------------------------------------ */
 		function widget( $args, $instance ) {
@@ -55,13 +59,14 @@ if( ! class_exists( 'AC_Section_Advertising' ) ) {
 
 			// $instance Defaults
 			$instance_defaults = $this->defaults;
-			
-						
+
+
 			// Parse $instance
 			$instance = wp_parse_args( $instance, $instance_defaults );
-			
+
 			// Options output
 			$ad_code = ! empty( $instance['ad_code'] ) ? $instance['ad_code'] : '';
+			$ad_width = ! empty( $instance['ad_width'] ) ? $instance['ad_width'] : '';
 			$cnmt	= ! empty( $instance['css_no_mt'] ) ? 1 : 0;
 			$cnmb	= ! empty( $instance['css_no_mb'] ) ? 1 : 0;
 			$cnbg	= ! empty( $instance['css_no_bg'] ) ? 1 : 0;
@@ -88,29 +93,38 @@ if( ! class_exists( 'AC_Section_Advertising' ) ) {
 					$args['before_widget'] = str_replace('class="', 'class="'. esc_attr( $css_classes ) . ' ', $args['before_widget']);
 				}
 			}
-			
+
+			$ad_style = ($ad_width != '') ? ' style="max-width: ' . esc_attr( $ad_width ) . ';"' : '';
+
 			echo $args['before_widget']; // Before widget template
 			?>
-				<div class="mainad-container">
-                	<?php 
+				<div class="mainad-container"<?php echo $ad_style; ?>>
+                	<?php
 						// Output AD code using wp_kses to allow some tags
-						echo ac_sanitize_ads( $ad_code ); 
-					?> 
+						echo ac_sanitize_ads( $ad_code );
+					?>
                 </div>
 			<?php
 			echo $args['after_widget']; // After widget template
 
 		}
-		
-		
+
+
 		/*  Update Widget
 		/* ------------------------------------ */
 		function update( $new_instance, $old_instance ) {
 			$instance = $old_instance;
-			
+
 			// Ad code
-			$instance['ad_code'] 	= ac_sanitize_ads( $new_instance['ad_code'] );
-			
+			if( current_user_can( 'edit_theme_options') ) {
+				$instance['ad_code'] = ac_sanitize_ads( $new_instance['ad_code'] );
+			} else {
+				$instance['ad_code'] = $instance['ad_code'];
+			}
+
+			// Ad width
+			$instance['ad_width'] = sanitize_text_field( $new_instance['ad_width'] );
+
 			// Checkboxes
 			$instance['css_no_mt']	= ! empty($new_instance['css_no_mt']) ? 1 : 0;
 			$instance['css_no_mb']	= ! empty($new_instance['css_no_mb']) ? 1 : 0;
@@ -119,12 +133,12 @@ if( ! class_exists( 'AC_Section_Advertising' ) ) {
 			$instance['css_b_bot']	= ! empty($new_instance['css_b_bot']) ? 1 : 0;
 			$instance['css_p_top']	= ! empty($new_instance['css_p_top']) ? 1 : 0;
 			$instance['css_p_bot']	= ! empty($new_instance['css_p_bot']) ? 1 : 0;
-			
+
 			// Return
 			return $instance;
 		}
-		
-		
+
+
 		/*  Form
 		/* ------------------------------------ */
 		function form( $instance ){
@@ -132,8 +146,10 @@ if( ! class_exists( 'AC_Section_Advertising' ) ) {
 			$instance_defaults = $this->defaults;
 			$instance = wp_parse_args( $instance, $instance_defaults );
 			extract( $instance, EXTR_SKIP );
-			
+
 			// $instance Defaults
+			$ad_code = $instance['ad_code'];
+			$ad_width = $instance['ad_width'];
 			$css_nmt = isset( $instance['css_no_mt'] ) ? (bool) $instance['css_no_mt'] : false;
 			$css_nmb = isset( $instance['css_no_mb'] ) ? (bool) $instance['css_no_mb'] : false;
 			$css_nbg = isset( $instance['css_no_bg'] ) ? (bool) $instance['css_no_bg'] : false;
@@ -143,37 +159,46 @@ if( ! class_exists( 'AC_Section_Advertising' ) ) {
 			$css_pab = isset( $instance['css_p_bot'] ) ? (bool) $instance['css_p_bot'] : false;
 
 			?>
+				<?php if( current_user_can( 'edit_theme_options') ) { ?>
             	<p>
                 	<label for="<?php echo $this->get_field_id( 'ad_code' ); ?>"><?php _e( 'Ad code:', 'justwrite' ); ?></label>
 					<textarea class="widefat" rows="8" cols="20" id="<?php echo $this->get_field_id('ad_code'); ?>" name="<?php echo $this->get_field_name('ad_code'); ?>"><?php echo ac_sanitize_ads( $ad_code ); ?></textarea></p>
                 <p>
+				<?php } ?>
+
+				<p>
+                    <label for="<?php echo $this->get_field_id( 'ad_width' ); ?>"><?php esc_html_e( 'Ad max width:', 'justwrite' ); ?></label>
+                    <input class="widefat" id="<?php echo $this->get_field_id( 'ad_width' ); ?>" name="<?php echo $this->get_field_name( 'ad_width' ); ?>" type="text" placeholder="<?php esc_attr_e( '728px', 'justwrite' ); ?>" value="<?php echo esc_attr( $instance['ad_width'] ); ?>"/>
+					<em><?php esc_html_e( 'In this field you can enter the maximum width (in pixels or percentage) for this ad. 728px is the default value. 100% willd make the add strech as much as it can.', 'justwrite' ); ?></em>
+                </p>
+
                 	<b><?php _e( 'Styling options:', 'justwrite' ); ?></b><br />
                     <input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('css_no_mt'); ?>" name="<?php echo $this->get_field_name('css_no_mt'); ?>"<?php checked( $css_nmt ); ?> />
                     <label for="<?php echo $this->get_field_id('css_no_mt'); ?>"><?php _e( 'Remove top margin', 'justwrite' ); ?></label><br />
 
                     <input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('css_no_mb'); ?>" name="<?php echo $this->get_field_name('css_no_mb'); ?>"<?php checked( $css_nmb ); ?> />
                     <label for="<?php echo $this->get_field_id('css_no_mb'); ?>"><?php _e( 'Remove bottom margin', 'justwrite' ); ?></label><br />
-                    
+
                     <input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('css_no_bg'); ?>" name="<?php echo $this->get_field_name('css_no_bg'); ?>"<?php checked( $css_nbg ); ?> />
                     <label for="<?php echo $this->get_field_id('css_no_bg'); ?>"><?php _e( 'Remove background-color', 'justwrite' ); ?></label><br />
-                    
+
                     <input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('css_b_top'); ?>" name="<?php echo $this->get_field_name('css_b_top'); ?>"<?php checked( $css_bot ); ?> />
                     <label for="<?php echo $this->get_field_id('css_b_top'); ?>"><?php _e( 'Add border top', 'justwrite' ); ?></label><br />
-                    
+
                     <input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('css_b_bot'); ?>" name="<?php echo $this->get_field_name('css_b_bot'); ?>"<?php checked( $css_bob ); ?> />
                     <label for="<?php echo $this->get_field_id('css_b_bot'); ?>"><?php _e( 'Add border bottom', 'justwrite' ); ?></label><br />
-                    
+
                     <input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('css_p_top'); ?>" name="<?php echo $this->get_field_name('css_p_top'); ?>"<?php checked( $css_pat ); ?> />
                     <label for="<?php echo $this->get_field_id('css_p_top'); ?>"><?php _e( 'Add padding top', 'justwrite' ); ?></label><br />
-                    
+
                     <input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('css_p_bot'); ?>" name="<?php echo $this->get_field_name('css_p_bot'); ?>"<?php checked( $css_pab ); ?> />
                     <label for="<?php echo $this->get_field_id('css_p_bot'); ?>"><?php _e( 'Add padding bottom', 'justwrite' ); ?></label>
 				</p>
             <?php
 		}
-		
+
 	} // AC_Section_Advertising .END
-	
+
 	// Register this widget
 	register_widget( 'AC_Section_Advertising' );
 }

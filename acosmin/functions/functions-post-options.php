@@ -6,7 +6,7 @@
  *	This will help us display a few meta options when you write a post:
  *	- Mark this post as featured
  *	- Display post thumbnail in single view
- *	- Post layout 
+ *	- Post layout
 /* ------------------------------------------------------------------------- */
 
 
@@ -15,7 +15,12 @@
 /* ------------------------------------ */
 add_action('admin_menu', 'ac_options_box');
 function ac_options_box() {
-	add_meta_box('ac_post_side_meta', 'Post Options:', 'ac_post_options', 'post', 'side', 'high');
+	add_meta_box(
+		'ac_post_side_meta',
+		esc_html__('Post Options:', 'justwrite'),
+		'ac_post_options',
+		'post', 'side', 'high'
+	);
 }
 
 
@@ -30,18 +35,18 @@ function ac_post_options() {
 	$ac_post_layout_options 	= get_post_meta( $post->ID, 'ac_post_layout_options', true );
 	$ac_color_field_select 		= get_post_meta( $post->ID, 'ac_color_field_select', true );
 	$ac_cover_overlay_opacity 	= get_post_meta( $post->ID, 'ac_cover_overlay_opacity', true );
-	
+
 	if( $ac_color_field_select == '' ) {
 		$ac_color_field_select = apply_filters( 'ac_color_field_select_filter', $acfs = '#000000' );
 	}
-	
-	if( $ac_post_layout_options == 'ac_post_layout_cover' || $ac_post_layout_options == 'ac_post_layout_cover_parallax' || 
+
+	if( $ac_post_layout_options == 'ac_post_layout_cover' || $ac_post_layout_options == 'ac_post_layout_cover_parallax' ||
 		( $ac_post_layout_customizer != 'ac_post_layout_normal' && $ac_post_layout_options != 'ac_post_layout_normal' ) ) {
 		$ac_overlay_options_display = 'style="display: block;"';
 	} else {
 		$ac_overlay_options_display = 'style="display: none;"';
 	}
-	
+
 	?>
     <form>
 		<p>
@@ -87,14 +92,14 @@ function ac_post_options() {
             </p>
 		</div>
     </form>
-    
+
     <?php
 }
 
 
 
 /*  Save meta information
-/* ------------------------------------ */	
+/* ------------------------------------ */
 function ac_save_added_options( $postID ) {
 	global $post;
 	$ac_featured_article 		= ! empty( $_POST['ac_featured_article'] ) ? 1 : 0;
@@ -106,14 +111,14 @@ function ac_save_added_options( $postID ) {
 	if( $parent_id = wp_is_post_revision( $postID ) ) {
 	  $postID = $parent_id;
 	}
-	
+
 	if ( isset( $_POST[ 'save' ] ) || isset( $_POST[ 'publish' ] ) ) {
 		ac_update_this_custom_meta( $postID, absint( $ac_featured_article ), 'ac_featured_article' );
 		ac_update_this_custom_meta( $postID, absint( $ac_show_post_thumbnail ), 'ac_show_post_thumbnail' );
 		ac_update_this_custom_meta( $postID, esc_html( $ac_post_layout_options ), 'ac_post_layout_options' );
 		ac_update_this_custom_meta( $postID, esc_html( $ac_cover_overlay_opacity ), 'ac_cover_overlay_opacity' );
 	}
-	
+
 }
 add_action( 'save_post', 'ac_save_added_options' );
 
@@ -138,9 +143,9 @@ function ac_post_editor_add_color_picker( $hook ) {
 	if ( ( 'post.php' || 'post-new.php' ) != $hook ) {
         return;
     }
-    if( is_admin() ) {  
-        wp_enqueue_style( 'wp-color-picker' ); 
-        wp_enqueue_script( 'ac-post-editor', get_template_directory_uri() . '/assets/js/admin/post-editor.js', array( 'wp-color-picker' ), false, true ); 
+    if( is_admin() ) {
+        wp_enqueue_style( 'wp-color-picker' );
+        wp_enqueue_script( 'ac-post-editor', get_template_directory_uri() . '/assets/js/admin/post-editor.js', array( 'wp-color-picker' ), false, true );
     }
 }
 
@@ -148,7 +153,7 @@ function ac_post_editor_add_color_picker( $hook ) {
 
 /*  Check colorpicker color
 /* ------------------------------------ */
-function ac_check_colorpiker_color( $value ) { 
+function ac_check_colorpiker_color( $value ) {
     if ( preg_match( '/^#[a-f0-9]{6}$/i', $value ) ) {
         return true;
     }
@@ -186,13 +191,13 @@ function ac_spl_selected( $option_name ) {
 	$option = get_post_meta( $post->ID, 'ac_post_layout_options', true );
 	$post_layout_customizer = get_theme_mod( 'ac_single_post_layout_select', 'ac_post_layout_normal' );
 	$selected = ' selected="selected"';
-	
+
 	if( $option == '' ) {
 		$new_option = $post_layout_customizer;
 	} else {
 		$new_option = $option;
 	}
-	
+
 	if( $new_option == $option_name ) {
 		echo $selected;
 	} elseif ( $new_option == $option_name ) {
@@ -211,13 +216,13 @@ function ac_spt_selected( $option_name ) {
 	$option = get_post_meta( $post->ID, 'ac_cover_overlay_opacity', true );
 	$cover_opacity_customizer = get_theme_mod( 'ac_single_post_opacity_select', '0.5' );
 	$selected = ' selected="selected"';
-	
+
 	if( $option == '' ) {
 		$new_option = $cover_opacity_customizer;
 	} else {
 		$new_option = $option;
 	}
-	
+
 	if( $new_option == $option_name ) {
 		echo $selected;
 	} elseif ( $new_option == $option_name ) {

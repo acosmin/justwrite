@@ -29,7 +29,7 @@ function ac_generate_css( $selector, $style, $mod_name, $prefix='', $postfix='',
 /* ------------------------------------ */
 function ac_hex2rgb($hex) {
 	$hex = str_replace("#", "", $hex);
-	
+
 	if(strlen($hex) == 3) {
 	  $r = hexdec(substr($hex,0,1).substr($hex,0,1));
 	  $g = hexdec(substr($hex,1,1).substr($hex,1,1));
@@ -39,7 +39,7 @@ function ac_hex2rgb($hex) {
 	  $g = hexdec(substr($hex,2,2));
 	  $b = hexdec(substr($hex,4,2));
 	}
-   
+
    	echo $r . ',' . $g . ','. $b;
 }
 
@@ -49,7 +49,7 @@ function ac_hex2rgb($hex) {
 /* ------------------------------------ */
 function ac_hex2rgba($hex, $alpha = 1, $ret = false) {
 	$hex = str_replace("#", "", $hex);
-	
+
 	if(strlen($hex) == 3) {
 	  $r = hexdec(substr($hex,0,1).substr($hex,0,1));
 	  $g = hexdec(substr($hex,1,1).substr($hex,1,1));
@@ -59,9 +59,9 @@ function ac_hex2rgba($hex, $alpha = 1, $ret = false) {
 	  $g = hexdec(substr($hex,2,2));
 	  $b = hexdec(substr($hex,4,2));
 	}
-	
+
 	$output = $r . ',' . $g . ','. $b . ',' . $alpha;
-	
+
 	if( $ret ) {
 		return $output;
 	} else {
@@ -77,7 +77,7 @@ function ac_checkdefault($mod_name, $default) {
 	$mod = get_theme_mod($mod_name);
 	if ( $mod != $default || $mod == '')	{
 		return true;
-	} 
+	}
 }
 
 
@@ -103,34 +103,7 @@ function ac_sanitize_ff( $fontfamily ) {
 
 // Ads
 function ac_sanitize_ads( $input ) {
-	global $allowedposttags;
-	
-	$custom_allowedtags["embed"] = array(
-		"src" => array(),
-      	"type" => array(),
-      	"allowfullscreen" => array(),
-      	"allowscriptaccess" => array(),
-      	"height" => array(),
-		"width" => array()
-	);
-	
-	$custom_allowedtags["script"] = array(
-		"type" => array(),
-		"async" => array(),
-		"src" => array(),
-	);
-	
-	$allowedposttags["ins"] = array(
-		"data-ad-client" => array(),
-		"data-ad-slot" => array(),
-		"class" => array(),
-		"style" => array(),
-	);
-	
-	$custom_allowedtags = array_merge($custom_allowedtags, $allowedposttags);
-	$output = wp_kses( $input, $custom_allowedtags);
-	
-    return $output;
+    return $input;
 }
 
 
@@ -138,7 +111,7 @@ function ac_sanitize_ads( $input ) {
 /*  Customisation Function
 /* ------------------------------------ */
 function ac_customize_init($wp_customize) {
-	
+
 	// Variables
 	$main_color 		= '#e1e1e1';
 	$locations      	= get_registered_nav_menus();
@@ -146,21 +119,21 @@ function ac_customize_init($wp_customize) {
 	$menu_locations 	= get_nav_menu_locations();
 	$num_locations  	= count( array_keys( $locations ) );
 	$filtered_options	= '';
-	
+
 	// Select Options
 	$choices = array( 0 => __( '&mdash; Select &mdash;', 'justwrite' ) );
 	foreach ( $menus as $menu ) {
 		$choices[ $menu->term_id ] = wp_html_excerpt( $menu->name, 40, '&hellip;' );
 	}
-	
+
 	// Remove some of the default sections
 	$wp_customize->remove_section( 'static_front_page' );
 	$wp_customize->remove_section( 'nav' );
-	
+
 	// Get some settings
 	$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
-	
+
 	// Add new panels
 	$wp_customize->add_panel( 'ac_panel_header_options', array(
 	  'title' 				=> __( 'Header Options', 'justwrite' ),
@@ -174,9 +147,9 @@ function ac_customize_init($wp_customize) {
 	  'title' 				=> __( 'Global Options', 'justwrite' ),
 	  'priority'			=> 37
 	) );
-	
-	
-	
+
+
+
 	// Add new sections
 	$wp_customize->add_section( 'ac_customize_logo', array(
     	'title'				=> __( 'Logo and Description', 'justwrite' ),
@@ -266,10 +239,10 @@ function ac_customize_init($wp_customize) {
 		'description'		=> __( '<small><b class="ac_pro-option">Pro Option</b></small>: <b>Colorful Categories</b> is available only with <b>JustWrite Pro</b>.<br /><br /><a href="http://www.acosmin.com/theme/justwrite-pro/" class="button button-primary ac_btn-inner-section" target="_blank">JustWrite Pro</a>', 'justwrite' ),
     	'priority'			=> 47,
 	) );
-	
-	
-	
-	
+
+
+
+
 	// Add new settings
 	// -- Logo
 	$wp_customize->add_setting( 'ac_logo_image', array(
@@ -656,13 +629,6 @@ function ac_customize_init($wp_customize) {
 		'default'			=> false,
 		'capability'		=> 'edit_theme_options',
 	) );
-	if ( ! function_exists( 'has_site_icon' ) ) {
-	$wp_customize->add_setting( 'ac_favicon_image', array(
-    	'default'			=> '',
-		'sanitize_callback' => 'esc_url_raw',
-    	'capability'		=> 'edit_theme_options',
-		'transport'         => 'refresh',
-	) ); }
 	// -- Posts
 	$wp_customize->add_setting( 'ac_main_posts_layout', array(
 		'default'			=> 'lthumb',
@@ -755,10 +721,10 @@ function ac_customize_init($wp_customize) {
 		'sanitize_callback' => 'ac_sanitize_checkbox',
     	'capability'		=> 'edit_theme_options',
 	) );
-	
-	
-	
-	
+
+
+
+
 	// Add new controls
 	// -- Logo
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ac_logo_image', array(
@@ -998,7 +964,7 @@ function ac_customize_init($wp_customize) {
         'section'    		=> 'ac_customize_content',
         'settings'   		=> 'ac_font_select',
         'type'       		=> 'select',
-		'choices'			=> array( 
+		'choices'			=> array(
 									'style1' => 'Style #1',
 									'style2' => 'Style #2',
 									'style3' => 'Style #3',
@@ -1071,7 +1037,7 @@ function ac_customize_init($wp_customize) {
         'section'    		=> 'ac_customize_slider',
         'settings'   		=> 'ac_slides_nr_select',
         'type'       		=> 'select',
-		'choices'			=> array( 
+		'choices'			=> array(
 									3 	=> __('Three', 'justwrite'),
 									4 	=> __('Four', 'justwrite'),
 									5 	=> __('Five', 'justwrite'),
@@ -1080,7 +1046,7 @@ function ac_customize_init($wp_customize) {
 									8 	=> __('Eight', 'justwrite'),
 									9 	=> __('Nine', 'justwrite'),
 									10 	=> __('Ten', 'justwrite'),
-									
+
 	) ) );
 	$wp_customize->add_control( 'ac_slider_delay', array(
     	'label'				=> __( 'Transition Delay', 'justwrite' ),
@@ -1135,13 +1101,6 @@ function ac_customize_init($wp_customize) {
     	'settings'			=> 'ac_enable_160px_link',
 	) );
 	// -- Misc
-	if ( ! function_exists( 'has_site_icon' ) ) {
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'ac_favicon_image', array(
-    	'label'				=> __( 'Favicon image', 'justwrite' ),
-		'description'		=> __( 'The Favicon is used as a browser and app icon for your site. Icons must be square, and at least 512px wide and tall.', 'justwrite' ),
-    	'section'			=> 'ac_customize_misc',
-    	'settings'			=> 'ac_favicon_image',
-	) ) ); }
 	$wp_customize->add_control('ac_disable_comments', array(
 		'settings' 		=> 'ac_disable_comments',
 		'label'    		=> __( 'Disable comments.', 'justwrite' ),
@@ -1183,7 +1142,7 @@ function ac_customize_init($wp_customize) {
         'settings'   		=> 'ac_main_posts_layout',
         'type'       		=> 'select',
 		'width'				=> '100',
-		'choices'			=> array( 
+		'choices'			=> array(
 									'lthumb' => 'Left thumbnail',
 									'rthumb' => 'Right thumbnail',
 									'nthumb' => 'No thumbnail',
@@ -1221,7 +1180,7 @@ function ac_customize_init($wp_customize) {
         'settings'   		=> 'ac_single_post_layout_select',
         'type'       		=> 'select',
 		'width'				=> '100',
-		'choices'			=> array( 
+		'choices'			=> array(
 									'ac_post_layout_normal' => 'Normal',
 									'ac_post_layout_cover' => 'Billboard',
 									'ac_post_layout_cover_parallax' => 'Billboard Parallax (Pro)',
@@ -1233,7 +1192,7 @@ function ac_customize_init($wp_customize) {
         'settings'   		=> 'ac_single_post_opacity_select',
         'type'       		=> 'select',
 		'width'				=> '100',
-		'choices'			=> array( 
+		'choices'			=> array(
 									'transparent' 	=> 'Transparent',
 									'0.1'			=> '10%',
 									'0.2'			=> '20%',
@@ -1303,39 +1262,39 @@ function ac_customize_init($wp_customize) {
 		'section'  			=> 'ac_customize_colorfulcats',
 		'type'     			=> 'checkbox',
 	));
-	
+
 
 	/* Add more options filter */
 	if( has_filter( 'ac_customizer_add_options_filter') ) {
 		apply_filters( 'ac_customizer_add_options_filter', $filtered_options );
 	}
-	
-	
+
+
 	/* Enque Customiser Preview JS */
 	if ( $wp_customize->is_preview() && ! is_admin() ) {
     	add_action( 'customize_preview_init', 'ac_customize_preview_js' );
-		
+
 		if( has_filter('ac_customize_preview_filtered_js_filter') ) {
 			add_action( 'customize_preview_init', 'ac_customize_preview_filtered_js' );
 		}
 	}
-	
-	
-	// Preview JS 
+
+
+	// Preview JS
 	function ac_customize_preview_js() {
 		wp_enqueue_script(
-			'ac_js_theme_customizer_preview', 
+			'ac_js_theme_customizer_preview',
 			get_template_directory_uri() . '/assets/js/admin/theme-customizer.js',
 			array( 'jquery', 'customize-preview' ),
 			'1.0',
 			true
 		);
 	}
-	
-	// Customizer JS/CSS 
+
+	// Customizer JS/CSS
 	function ac_customize_customizer_js_css() {
 		wp_enqueue_script(
-			'ac_js_customizer', 
+			'ac_js_customizer',
 			get_template_directory_uri() . '/assets/js/admin/customizer.js',
 			array( 'jquery' ),
 			'1.0',
@@ -1344,13 +1303,13 @@ function ac_customize_init($wp_customize) {
 	}
 	add_action( 'customize_controls_enqueue_scripts', 'ac_customize_customizer_js_css' );
 
-	
-	// Enque Filtered JS 
+
+	// Enque Filtered JS
 	function ac_customize_preview_filtered_js() {
 		$js_output = '';
 		return apply_filters( 'ac_customize_preview_filtered_js_filter', $js_output );
 	}
-	
+
 } // - END Customizations
 add_action( 'customize_register', 'ac_customize_init' );
 
@@ -1359,29 +1318,29 @@ add_action( 'customize_register', 'ac_customize_init' );
 
 /* AC - Output Saved Settings */
 function ac_header_output() {
-	
+
 	  $main_color 		= '#e1e1e1';
 	  $output_new_css 	= '';
-	
+
       ?>
-      <!-- Customizer - Saved Styles--> 
+      <!-- Customizer - Saved Styles-->
       <style type="text/css">
-		<?php 
+		<?php
 		if(ac_checkdefault('ac_color_dd3333', '#dd3333')) { ac_generate_css( 'a, a:visited, .kk, .share-pagination .title i', 'color', 'ac_color_dd3333', '' ); }
 		if(ac_checkdefault('ac_color_hover', '#000000')) { ac_generate_css( 'a:hover', 'color', 'ac_color_hover', '' ); }
-		
+
 		if(ac_checkdefault('ac_color_logo', '#ffffff')) { ac_generate_css( '.logo a, .logo a:visited, .logo a:hover', 'color', 'ac_color_logo', '' ); }
 		if(ac_checkdefault('ac_background_color_header', '#111111')) { ac_generate_css( '.header-wrap', 'background-color', 'ac_background_color_header', '' ); }
 		if(ac_checkdefault('ac_background_image_header', '')) { ac_generate_css( '.header-wrap', 'background-image', 'ac_background_image_header', 'url(', ')' ); }
 		if(ac_checkdefault('ac_border_color_header', $main_color)) { ac_generate_css( '.header-wrap', 'border-color', 'ac_border_color_header', '' ); }
-		if(ac_checkdefault('ac_border_color_top_menu', $main_color)) { 
-			ac_generate_css( '.menu-wrap', 'border-top-color', 'ac_border_color_top_menu', '' ); 
+		if(ac_checkdefault('ac_border_color_top_menu', $main_color)) {
+			ac_generate_css( '.menu-wrap', 'border-top-color', 'ac_border_color_top_menu', '' );
 			ac_generate_css( '.menu-wrap', 'border-left-color', 'ac_border_color_top_menu', '' );
 			ac_generate_css( '.menu-wrap', 'border-right-color', 'ac_border_color_top_menu', '' );
 		}
 		if(ac_checkdefault('ac_border_color_top_menu_bot', $main_color)) { ac_generate_css( '.menu-wrap', 'border-bottom-color', 'ac_border_color_top_menu_bot', '' ); }
 		if(ac_checkdefault('ac_border_color_top_menu_inn', $main_color)) { ac_generate_css( '.menu-main, .menu-main > li, .menu-wrap .search-button, .menu-wrap a.browse-more, .mobile-menu-button, .mobile-menu > li, .mobile-menu .sf-sub-indicator, .menu-main .sub-menu, .menu-main .sub-menu a, .search-wrap.search-visible, .menu-wrap .search-submit', 'border-color', 'ac_border_color_top_menu_inn', '' ); }
-		if(ac_checkdefault('ac_border_color_content', $main_color)) { 
+		if(ac_checkdefault('ac_border_color_content', $main_color)) {
 			ac_generate_css( 'fieldset, .container, .sidebar, .main-page-title, .post-template-1 .details .p-share .contents .close-this-temp1, .posts-pagination, .page-links-wrap, .posts-pagination .paging-wrap, .page-links-wrap .page-links, .posts-pagination a, .page-links-wrap a, .page-links-wrap span, .comments-pagination, .comments-pagination .paging-wrap, .comments-pagination a, .posts-pagination span.current, .tabs-widget-navigation ul li a, .tabs-widget-navigation ul li.selected a:after, .mini-sidebar.browse-window-opened, .browse-by-wrap, .browse-window-opened:after, #wp-calendar, #wp-calendar tbody td, #wp-calendar thead th, .single-template-1 .details, .single-template-1 .single-content, .single-content blockquote, .comment-text blockquote, .single-content.featured-image:before, .sidebar .sidebar-heading:before, .sidebar .sidebar-heading:after, .ac-recent-posts li.full-width, .sidebar #recentcomments li, .tagcloud a, .slider-controls, .slide-btn, .slider-pagination a, .as-wrap, .share-pagination, .about-the-author, .about-share .title, .post-navigation, .post-navigation a, .ata-wrap .avatar-wrap, .clear-border, .post-navigation span, .content-wrap, .comments-title, .comment-avatar, .comment-main,  textarea, input, select, li .comment-reply-title small, .post-template-1 .details .post-small-button, .sidebar-heading, .tabs-widget-navigation, .sidebar .sidebar-heading, .sidebar .tabs-widget-navigation, .ac-popular-posts .position, .ac-twitter-widget-ul li.ac-twitter-tweet, select, table, th, td, pre, .posts-pagination span.dots, .comment-list li.pingback, .content-wrap #review-statistics .review-wrap-up .review-wu-right, .comments-area .user-comments-grades, .content-wrap #review-statistics .review-wrap-up, .content-wrap #review-statistics .review-wrap-up .cwpr-review-top, .content-wrap #review-statistics .review-wu-bars, .content-wrap #review-statistics .review-wrap-up .review-wu-left .review-wu-grade, .wrap .cwp-popular-review, .sh-large, .sh-large h2, .section-col-title, .section-col-nav, .section-col-nav li, .sc-large .sc-posts li, .sc-small .sc-posts li, .sc-medium .sc-entry, .sm-wrap .col, .sa-column, .section-title-2nd, .footer-widgets .ac-tabs-init, .container.builder.footer-widgets, .container.builder.b-bot, .container.builder.b-top, .b-top .col, .sc-small.b-top .col.threecol:nth-child(2), .footer-widgets .widget:first-child .sb-content .sidebar-heading', 'border-color', 'ac_border_color_content', '' );
 			ac_generate_css( '.mini-sidebar, .sidebar, .mini-sidebar-bg', 'box-shadow', 'ac_border_color_content', '1px 0 0 ', '' );
 			ac_generate_css( '.mini-sidebar, .sidebar, .mini-sidebar-bg', '-moz-box-shadow', 'ac_border_color_content', '1px 0 0 ', '' );
@@ -1395,7 +1354,7 @@ function ac_header_output() {
 			ac_generate_css( '.content-wrap #review-statistics .review-wu-bars', 'box-shadow', 'ac_border_color_content', '1px 1px 0 ', '' );
 			ac_generate_css( '.comments-area #cwp-slider-comment .comment-form-meta-option .comment_meta_slider', 'box-shadow', 'ac_border_color_content', 'inset 0px 0px 5px ', '' );
 			ac_generate_css( '.comment-list .children:before', 'background-color', 'ac_border_color_content', '' );
-		} 
+		}
 		if(ac_checkdefault('ac_border_color_dd3333', '#dd3333')) { ac_generate_css( 'abbr[title], .back-to-top, .close-browse-by, .tagcloud a:hover, .comment-main .comment-reply-link, .sc-popular-position', 'border-color', 'ac_border_color_dd3333', '' ); }
 		if(ac_checkdefault('ac_border_color_000000', '#000000')) { ac_generate_css( '.back-to-top:hover, .close-browse-by:hover, .comment-main a.comment-reply-link:hover, textarea:focus, input:focus, select:focus, li .comment-reply-title small:hover, textarea:hover:focus, input:hover:focus, select:hover:focus', 'border-color', 'ac_border_color_000000', '' ); }
 		if(ac_checkdefault('ac_border_color_666666', '#666666')) { ac_generate_css( 'textarea:hover, input:hover, select:hover', 'border-color', 'ac_border_color_666666', '' ); }
@@ -1403,13 +1362,13 @@ function ac_header_output() {
 		if(ac_checkdefault('ac_color_000', '#000000')) { ac_generate_css( '.sidebar-heading, .ac-popular-posts .position, .posts-pagination a.selected, .page-links-wrap a.selected, .comments-pagination a.selected, a.back-to-top, .footer-credits .blog-title, .post-template-1 .details .p-share .contents .close-this-temp1, .tabs-widget-navigation ul li.selected a, .browse-by-title, a.close-browse-by, .menu-main > li.current_page_item > a, .menu-main > li.current_page_ancestor > a, .menu-main > li.current-menu-item > a, .menu-main > li.current-menu-ancestor > a, .menu-main .sub-menu .sf-sub-indicator i, .comment-main .vcard .fn a, .comment-main .vcard .fn a:visited, .comment-main .vcard a.comment-edit-link, .comment-main a.comment-reply-link, .menu-wrap .search-submit:hover, .section-col-title, .section-title-2nd', 'color', 'ac_color_000', '' ); }
 		if(ac_checkdefault('ac_color_666', '#666666')) { ac_generate_css( '.normal-list .current_page_item a, .normal-list .current-menu-item a, .normal-list .current-post-parent a, .menu-wrap a.mobile-menu-button, .wp-caption, textarea, input, .main-page-title .page-title, blockquote cite, blockquote small, .sh-large h2', 'color', 'ac_color_666', '' ); }
 		if(ac_checkdefault('ac_color_description', '#666666')) { ac_generate_css( '.logo .description', 'color', 'ac_color_description', '' ); }
-		if(ac_checkdefault('ac_color_222', '#222222')) { ac_generate_css( '.slider-controls a.slide-btn, .slider .title a, .slider .title a:visited, .slider .com:hover, .post-template-1 .title a, .post-template-1 .title a:visited, .ac-recent-posts a.title, .ac-popular-posts a.title, .ac-featured-posts .thumbnail .details .title, legend, .single-template-1 .title, .single-content h1, .single-content h2, .single-content h3, .single-content h4, .single-content h5, .single-content h6, .comment-text h1, .comment-text h2, .comment-text h3, .comment-text h4, .comment-text h5, .comment-text h6, .widget[class*="ac_"] .category a:hover, .widget[class*="ac-"] .category a:hover, .sidebar #recentcomments li a, .sidebar #recentcomments a.url:hover, .tagcloud a, .tagcloud a:visited, .about-share .title, .post-navigation a.next-post, .post-navigation a.prev-post, label, .comment-reply-title, .page-404 h1, .main-page-title .page-title span, .section-title a, .section-title a:visited, .sc-popular-position, .sa-year a, .sa-year a:visited, .s-info a.com:hover', 'color', 'ac_color_222', '' ); } 
+		if(ac_checkdefault('ac_color_222', '#222222')) { ac_generate_css( '.slider-controls a.slide-btn, .slider .title a, .slider .title a:visited, .slider .com:hover, .post-template-1 .title a, .post-template-1 .title a:visited, .ac-recent-posts a.title, .ac-popular-posts a.title, .ac-featured-posts .thumbnail .details .title, legend, .single-template-1 .title, .single-content h1, .single-content h2, .single-content h3, .single-content h4, .single-content h5, .single-content h6, .comment-text h1, .comment-text h2, .comment-text h3, .comment-text h4, .comment-text h5, .comment-text h6, .widget[class*="ac_"] .category a:hover, .widget[class*="ac-"] .category a:hover, .sidebar #recentcomments li a, .sidebar #recentcomments a.url:hover, .tagcloud a, .tagcloud a:visited, .about-share .title, .post-navigation a.next-post, .post-navigation a.prev-post, label, .comment-reply-title, .page-404 h1, .main-page-title .page-title span, .section-title a, .section-title a:visited, .sc-popular-position, .sa-year a, .sa-year a:visited, .s-info a.com:hover', 'color', 'ac_color_222', '' ); }
 		if(ac_checkdefault('ac_color_333', '#333333')) { ac_generate_css( '.slider .title a:hover, .post-template-1 .title a:hover, .ac-recent-posts a.title:hover, .ac-popular-posts a.title:hover, .ac-featured-posts .thumbnail .details .title:hover, .footer-credits .theme-author a:hover, .sidebar #recentcomments li a, .comment-main .vcard .fn a:hover, .menu-wrap .search-submit, .section-title a:hover, .sa-year a:hover', 'color', 'ac_color_333', '' ); }
 		if(ac_checkdefault('ac_color_bbb', '#bbbbbb')) { ac_generate_css( '.post-template-1 .details .detail, .single-template-1 .details .detail, .widget[class*="ac_"] .category a, .widget[class*="ac-"] .category a, .ac-twitter-tweet-time, .ac-featured-posts .thumbnail .details .category, .footer-credits .theme-author, .footer-credits .theme-author a, .footer-credits .theme-author a:visited, .post-template-1 .details .p-share .contents em, .sidebar #recentcomments, .sidebar #recentcomments a.url, .slider .date, .slider a.com, a.slide-btn:hover, .bsmall-title, .bsmall-title a, .bsmall-title a:hover, .bsmall-title a:visited, .sa-months a:hover, .s-info .com, .s-info .com:visited', 'color', 'ac_color_bbb', '' ); }
 		if(ac_checkdefault('ac_color_aaa', '#aaaaaa')) { ac_generate_css( 'q, .single-content blockquote, .comment-text blockquote, .about-share .author, .post-navigation span, .comment-main .vcard a.comment-date, .not-found-header h2, .menu-wrap .search-submit:active, .sa-months a, .sa-months a:visited', 'color', 'ac_color_aaa', '' ); }
-		if(ac_checkdefault('ac_background_color_fff', '#ffffff')) { 
+		if(ac_checkdefault('ac_background_color_fff', '#ffffff')) {
 					$abcf = get_theme_mod('ac_background_color_fff', '#ffffff');
-		  			ac_generate_css( 'body, .post-content, .content-wrap, .slider-pagination a, .slide-btn, .slider .title, .slider .com, .container, .ac-ad-title-300px:before, .post-template-1 .details .post-small-button, #wp-calendar, textarea, input, select, .bsmall-title a, .comment-list .comment-avatar, .ac-featured-posts .thumbnail .details, .st-wrapped, .sh-large h2, .sc-title-hover .section-title, .sc-popular-position, .s-info .com', 'background-color', 'ac_background_color_fff', '' ); 
+		  			ac_generate_css( 'body, .post-content, .content-wrap, .slider-pagination a, .slide-btn, .slider .title, .slider .com, .container, .ac-ad-title-300px:before, .post-template-1 .details .post-small-button, #wp-calendar, textarea, input, select, .bsmall-title a, .comment-list .comment-avatar, .ac-featured-posts .thumbnail .details, .st-wrapped, .sh-large h2, .sc-title-hover .section-title, .sc-popular-position, .s-info .com', 'background-color', 'ac_background_color_fff', '' );
 					ac_generate_css( '.comments-title:after', 'border-top-color', 'ac_background_color_fff', '' );
 					ac_generate_css( '.comment-main:after', 'border-right-color', 'ac_background_color_fff', '' );
 					// ac_generate_css( '.ss-nav-btn span', 'border-color', 'ac_background_color_fff', '' );
@@ -1417,7 +1376,7 @@ function ac_header_output() {
 		if(ac_checkdefault('ac_background_color_e1e1e1', '#e1e1e1')) { ac_generate_css( '.mobile-menu .sub-menu li:before, .no-thumbnail, .featured-image-wrap, .add-some-widgets, a.slide-btn:active, .slider-pagination a span, .menu-wrap .search-submit:active', 'background-color', 'ac_background_color_e1e1e1', '' ); }
 		if(ac_checkdefault('ac_background_color_f7f7f7', '#f7f7f7')) { ac_generate_css( 'ins, .slider-controls, .posts-pagination span.current, .page-links-wrap span, .posts-pagination span.current:hover, .page-links-wrap span:hover, .tabs-widget-navigation ul li.selected a, .menu-wrap .browse-more.activated, .tagcloud a:hover, .slide-btn:hover, .about-share .title, .post-navigation a, .post-navigation span, .comment-reply-title small, .menu-wrap .search-submit, .ac-popular-posts .position, pre, .comments-area #cwp-slider-comment .comment-form-meta-option .comment_meta_slider, .comments-area .user-comments-grades .comment-meta-grade-bar, #review-statistics .review-wu-bars ul li, .sh-large, .section-col-nav li a:hover, .sa-mainad', 'background-color', 'ac_background_color_f7f7f7', '' ); }
 		if(ac_checkdefault('ac_background_color_f2f2f2', '#f2f2f2')) { ac_generate_css( 'mark, #wp-calendar tbody a, .tagcloud a, .post-navigation a:hover, .comment-reply-title small:hover, .menu-wrap .search-submit:hover, .bsmall-title:before, .banners-125-wrap ul:before', 'background-color', 'ac_background_color_f2f2f2', '' ); }
-		if(ac_checkdefault('ac_background_color_000', '#000000')) { 
+		if(ac_checkdefault('ac_background_color_000', '#000000')) {
 			ac_generate_css( '.slider .date, .s-info .date', 'background-color', 'ac_background_color_000', '' );
 			ac_generate_css( 'span.post-format-icon:after', 'border-color', 'ac_background_color_000', '', ' transparent transparent transparent' );
 			ac_generate_css( '.post-content .details a.post-format-icon:after', 'border-color', 'ac_background_color_000', ' transparent ', ' transparent transparent' );
@@ -1433,18 +1392,18 @@ function ac_header_output() {
 		if(ac_checkdefault('ac_color_top_menu_links_active', '#000000')) { ac_generate_css( '.menu-wrap .search-button.activated, .menu-wrap a.browse-more.activated, .menu-wrap a.mobile-menu-button.activated, .menu-main > li.current_page_item > a, .menu-main > li.current_page_ancestor > a, .menu-main > li.current-menu-item > a, .menu-main > li.current-menu-ancestor > a', 'color', 'ac_color_top_menu_links_active', '' ); } ?>
 		<?php if( get_theme_mod('ac_background_color_fff') != '#ffffff' && get_theme_mod('ac_background_color_fff') != '' ) { $abcf = get_theme_mod('ac_background_color_fff', '#ffffff'); ?>
 		.ac-featured-posts .thumbnail .details { background: -moz-linear-gradient(left, rgba(<?php ac_hex2rgb($abcf); ?>,1) 0%, rgba(<?php ac_hex2rgb($abcf); ?>,1) 1%, rgba(<?php ac_hex2rgb($abcf); ?>,0.6) 100%); background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(<?php ac_hex2rgb($abcf); ?>,1)), color-stop(1%,rgba(<?php ac_hex2rgb($abcf); ?>,1)), color-stop(100%,rgba(<?php ac_hex2rgb($abcf); ?>,0.6))); background: -webkit-linear-gradient(left, rgba(<?php ac_hex2rgb($abcf); ?>,1) 0%,rgba(<?php ac_hex2rgb($abcf); ?>,1) 1%,rgba(<?php ac_hex2rgb($abcf); ?>,0.6) 100%);background: -o-linear-gradient(left, rgba(<?php ac_hex2rgb($abcf); ?>,1) 0%,rgba(<?php ac_hex2rgb($abcf); ?>,1) 1%,rgba(<?php ac_hex2rgb($abcf); ?>,0.6) 100%); background: -ms-linear-gradient(left, rgba(<?php ac_hex2rgb($abcf); ?>,1) 0%,rgba(<?php ac_hex2rgb($abcf); ?>,1) 1%,rgba(<?php ac_hex2rgb($abcf); ?>,0.6) 100%); background: linear-gradient(to right, rgba(<?php ac_hex2rgb($abcf); ?>,1) 0%,rgba(<?php ac_hex2rgb($abcf); ?>,1) 1%,rgba(<?php ac_hex2rgb($abcf); ?>,0.6) 100%); } .st-wrapped.st-large { <?php echo 'box-shadow: 0 5px 0 '.$abcf .', 0 -5px 0 '.$abcf .', 15px 0 0 '.$abcf .', -15px 0 0 '.$abcf .', 15px 5px 0 '.$abcf .', -15px -5px 0 '.$abcf .', -15px 5px 0 '.$abcf .', 15px -5px 0 '.$abcf . ';'; ?> } .st-wrapped.st-small { <?php echo 'box-shadow: 0 3px 0 '.$abcf .', 0 -3px 0 '.$abcf .', 10px 0 0 '.$abcf .', -10px 0 0 '.$abcf .', 10px 3px 0 '.$abcf .', -10px -3px 0 '.$abcf .', -10px 3px 0 '.$abcf .', 10px -3px 0 '.$abcf .';'; ?> } .sc-popular-position:before, .sc-popular-position:after { border-color: <?php echo $abcf; ?> transparent transparent transparent; }<?php } ?>
-		<?php 
+		<?php
 			// Mobile Menu Breaking point
 			$bp_int = 1140;
 			$breking_point = get_theme_mod('ac_top_menu_mobile_break', $bp_int);
-			if( ac_checkdefault('ac_top_menu_mobile_break', $bp_int) && $breking_point > $bp_int ) { 
-				echo '@media screen and (max-width: ' . absint( $breking_point ) . 'px) { .menu-main{display:none!important;} .mobile-menu .sub-menu,.mobile-menu .sub-menu ul{display:none!important;position:relative;visibility:inherit!important;top:0;width:100%;border:none;-webkit-box-shadow:none!important;-moz-box-shadow:none!important;box-shadow:none;} .mobile-menu li:hover .sub-menu .sub-menu,.mobile-menu.visible .menu-main li:hover .sub-menu .sub-menu{width:100%;top:0;left:0;} .menu-wrap.visible .mobile-menu{top:70px;} .mobile-menu{display:block;position:absolute;top:69px;left:-1px;width:50%;min-width:300px;height:auto;z-index:98;border-width:1px;border-style:solid;border-top:none;padding:15px 30px;} .mobile-menu, .search-wrap{-webkit-box-shadow:0 0 15px rgba(0,0,0,0.1);-moz-box-shadow:0 0 15px rgba(0,0,0,0.1);box-shadow:0 0 15px rgba(0,0,0,0.1);} .mobile-menu a,.mobile-menu .sub-menu a{display:block;padding:0;line-height:24px;border:none;z-index:2;position:relative;} .mobile-menu .sub-menu li{padding:10px 0;position:relative;} .mobile-menu .sub-menu > li.menu-item-object-category.ac-cc { padding: 10px 0 10px 10px; }.mobile-menu .sub-menu ul li:before{content:"";position:absolute;top:22px;left:0;height:2px;width:100%;z-index:1;} .mobile-menu .sub-menu li:last-child,.mobile-menu .sub-menu:last-child{padding-bottom:0;} .menu-visible .sf-sub-indicator i.fa-angle-down:before {content:"\f107";} .menu-visible-2 .sf-sub-indicator i.fa-angle-down:before {content:"\f107";} .mobile-menu .sf-sub-indicator{display:inline-block;float:right;margin-right:10px;border-width:2px;border-style:solid;line-height:20px;width:24px;text-align:center;font-size:14px;-webkit-border-radius:40px;-moz-border-radius:40px;border-radius:40px;} .mobile-menu > li{width:100%;clear:both;float:none;padding:15px 0;border-bottom-width:1px;border-bottom-style:solid;} .mobile-menu > li:before{display:none;} .mobile-menu > li:last-child{border:none;} .mobile-menu-button{display:block;} .menu-visible, .mobile-drop-down > .sub-menu, .mobile-drop-down > .sub-menu > .mobile-drop-down > .sub-menu{display:block!important;} .mobile-menu li:hover .sub-menu,.menu-wrap.visible .menu-main li:hover .sub-menu .sub-menu, .menu-wrap.visible .menu-main li:hover .sub-menu{top:0;left:0;} .mobile-menu .sub-menu ul li a,.mobile-menu .sub-menu li li{padding-left:10px;} }'; } 
+			if( ac_checkdefault('ac_top_menu_mobile_break', $bp_int) && $breking_point > $bp_int ) {
+				echo '@media screen and (max-width: ' . absint( $breking_point ) . 'px) { .menu-main{display:none!important;} .mobile-menu .sub-menu,.mobile-menu .sub-menu ul{display:none!important;position:relative;visibility:inherit!important;top:0;width:100%;border:none;-webkit-box-shadow:none!important;-moz-box-shadow:none!important;box-shadow:none;} .mobile-menu li:hover .sub-menu .sub-menu,.mobile-menu.visible .menu-main li:hover .sub-menu .sub-menu{width:100%;top:0;left:0;} .menu-wrap.visible .mobile-menu{top:70px;} .mobile-menu{display:block;position:absolute;top:69px;left:-1px;width:50%;min-width:300px;height:auto;z-index:98;border-width:1px;border-style:solid;border-top:none;padding:15px 30px;} .mobile-menu, .search-wrap{-webkit-box-shadow:0 0 15px rgba(0,0,0,0.1);-moz-box-shadow:0 0 15px rgba(0,0,0,0.1);box-shadow:0 0 15px rgba(0,0,0,0.1);} .mobile-menu a,.mobile-menu .sub-menu a{display:block;padding:0;line-height:24px;border:none;z-index:2;position:relative;} .mobile-menu .sub-menu li{padding:10px 0;position:relative;} .mobile-menu .sub-menu > li.menu-item-object-category.ac-cc { padding: 10px 0 10px 10px; }.mobile-menu .sub-menu ul li:before{content:"";position:absolute;top:22px;left:0;height:2px;width:100%;z-index:1;} .mobile-menu .sub-menu li:last-child,.mobile-menu .sub-menu:last-child{padding-bottom:0;} .menu-visible .sf-sub-indicator i.fa-angle-down:before {content:"\f107";} .menu-visible-2 .sf-sub-indicator i.fa-angle-down:before {content:"\f107";} .mobile-menu .sf-sub-indicator{display:inline-block;float:right;margin-right:10px;border-width:2px;border-style:solid;line-height:20px;width:24px;text-align:center;font-size:14px;-webkit-border-radius:40px;-moz-border-radius:40px;border-radius:40px;} .mobile-menu > li{width:100%;clear:both;float:none;padding:15px 0;border-bottom-width:1px;border-bottom-style:solid;} .mobile-menu > li:before{display:none;} .mobile-menu > li:last-child{border:none;} .mobile-menu-button{display:block;} .menu-visible, .mobile-drop-down > .sub-menu, .mobile-drop-down > .sub-menu > .mobile-drop-down > .sub-menu{display:block!important;} .mobile-menu li:hover .sub-menu,.menu-wrap.visible .menu-main li:hover .sub-menu .sub-menu, .menu-wrap.visible .menu-main li:hover .sub-menu{top:0;left:0;} .mobile-menu .sub-menu ul li a,.mobile-menu .sub-menu li li{padding-left:10px;} }'; }
 		?>
-		
+
 		<?php
 			// Output new css via filter
 			if( has_filter( 'ac_customizer_new_css_output_filter' ) ) {
-				echo apply_filters( 'ac_customizer_new_css_output_filter', $output_new_css );	
+				echo apply_filters( 'ac_customizer_new_css_output_filter', $output_new_css );
 			}
 		?>
 	</style><!-- END Customizer - Saved Styles -->

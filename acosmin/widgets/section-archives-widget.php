@@ -12,26 +12,30 @@
 
 if( ! class_exists( 'AC_Section_Archives' ) ) {
 	class AC_Section_Archives extends AC_Section {
-		
+
 		protected $defaults;
-		
+
 		/*  Constructor
 		/* ------------------------------------ */
 		function __construct() {
-			
+
 			/* Variables */
-			$this->widget_title = __( 'AC SEC: Archives' , 'justwrite' );
+			$this->widget_title = esc_html__( 'AC SEC: Archives' , 'justwrite' );
 			$this->widget_id = 'extended-archives';
-			
+
 			/* Settings */
-			$widget_ops = array( 'classname' => 'sa-archives', 'description' => 'This is used to display monthly archives by year.' );
+			$widget_ops = array(
+				'classname' => 'sa-archives',
+				'description' => esc_html__('This is used to display monthly archives by year.', 'justwrite' ),
+				'customize_selective_refresh' => true
+			);
 
 			/* Control settings */
 			$control_ops = array( 'width' => NULL, 'height' => NULL, 'id_base' => 'ac-widget-' . $this->widget_id );
-			
+
 			/* Create the widget */
 			parent::__construct( 'ac-widget-' . $this->widget_id, $this->widget_title, $widget_ops, $control_ops );
-			
+
 			/* Set some widget defaults */
 			$this->defaults = array (
 				'title' 		=> '',
@@ -42,22 +46,22 @@ if( ! class_exists( 'AC_Section_Archives' ) ) {
 				'css_p_top'		=> false,
 				'css_p_bot'		=> false,
 			);
-			
+
 		}
-		
-		
+
+
 		/*  Front-end display
 		/* ------------------------------------ */
 		function widget( $args, $instance ) {
 			// Turn $args array into variables.
 			extract( $args );
-			
+
 			// $instance Defaults
 			$instance_defaults = $this->defaults;
-			
+
 			// Parse $instance
 			$instance = wp_parse_args( $instance, $instance_defaults );
-			
+
 			// Options output
 			$section_title = ! empty( $instance['title'] ) ? $instance['title'] : '';
 			$cnmt	= ! empty( $instance['css_no_mt'] ) ? 1 : 0;
@@ -66,10 +70,10 @@ if( ! class_exists( 'AC_Section_Archives' ) ) {
 			$cbob	= ! empty( $instance['css_b_bot'] ) ? 1 : 0;
 			$cpat	= ! empty( $instance['css_p_top'] ) ? 1 : 0;
 			$cpab	= ! empty( $instance['css_p_bot'] ) ? 1 : 0;
-			
+
 			// Parse $instance
 			$widget = wp_parse_args( $instance, $instance_defaults );
-			
+
 			// Widget styling based on options
 			$css_class = array();
 			if ( $cnmt ) { $css_class[] = 'n-mt'; }
@@ -94,7 +98,7 @@ if( ! class_exists( 'AC_Section_Archives' ) ) {
 				// Section template
 				?>
                 <div class="sa-wrap">
-                	<?php 
+                	<?php
 					// Check if a title is set
 					if ( ! empty( $section_title ) ) { ?>
 					<aside class="sa-column sa-title">
@@ -110,34 +114,34 @@ if( ! class_exists( 'AC_Section_Archives' ) ) {
 							foreach ( $months as $month ) :
 								$currentYear = $month->year;
 								if ( ( $currentYear != $prevYear ) && ( $prevYear != "" ) ) { echo "</ul></aside>"; }
-								if ( $currentYear != $prevYear ) : 
+								if ( $currentYear != $prevYear ) :
 					?>
                     <aside class="sa-column">
                     	<h3 class="sa-year st-small st-bold"><a href="<?php echo esc_url( get_year_link( $month->year ) ); ?>"><?php echo esc_html( $month->year ); ?></a></h3>
                         <ul class="sa-months">
                     <?php endif; ?>
                     		<li><a href="<?php echo esc_url( get_month_link( $month->year, $month->numMonth ) ); ?>"><?php echo esc_html( $month->month ); ?></a></li>
-					<?php 
-						$prevYear = $month->year; 
-						endforeach; 
+					<?php
+						$prevYear = $month->year;
+						endforeach;
 					?>
                     </ul></aside>
-                </div><!-- END .sa-wrap -->	
+                </div><!-- END .sa-wrap -->
                 <?php  endif;
 
 			echo $args['after_widget']; // After widget template
-			
+
 		}
-		
-		
+
+
 		/*  Update Widget
 		/* ------------------------------------ */
 		function update( $new_instance, $old_instance ) {
 			$instance = $old_instance;
-			
+
 			// Text fields
 			$instance['title'] 		= strip_tags( $new_instance['title'] ) ;
-			
+
 			// Checkboxes
 			$instance['css_no_mt']	= ! empty($new_instance['css_no_mt']) ? 1 : 0;
 			$instance['css_no_mb']	= ! empty($new_instance['css_no_mb']) ? 1 : 0;
@@ -145,12 +149,12 @@ if( ! class_exists( 'AC_Section_Archives' ) ) {
 			$instance['css_b_bot']	= ! empty($new_instance['css_b_bot']) ? 1 : 0;
 			$instance['css_p_top']	= ! empty($new_instance['css_p_top']) ? 1 : 0;
 			$instance['css_p_bot']	= ! empty($new_instance['css_p_bot']) ? 1 : 0;
-			
+
 			// Return
 			return $instance;
 		}
-		
-		
+
+
 		/*  Form
 		/* ------------------------------------ */
 		function form( $instance ){
@@ -158,7 +162,7 @@ if( ! class_exists( 'AC_Section_Archives' ) ) {
 			$instance_defaults = $this->defaults;
 			$instance = wp_parse_args( $instance, $instance_defaults );
 			extract( $instance, EXTR_SKIP );
-			
+
 			// $instance Defaults
 			$css_nmt = isset( $instance['css_no_mt'] ) ? (bool) $instance['css_no_mt'] : false;
 			$css_nmb = isset( $instance['css_no_mb'] ) ? (bool) $instance['css_no_mb'] : false;
@@ -166,7 +170,7 @@ if( ! class_exists( 'AC_Section_Archives' ) ) {
 			$css_bob = isset( $instance['css_b_bot'] ) ? (bool) $instance['css_b_bot'] : false;
 			$css_pat = isset( $instance['css_p_top'] ) ? (bool) $instance['css_p_top'] : false;
 			$css_pab = isset( $instance['css_p_bot'] ) ? (bool) $instance['css_p_bot'] : false;
-			
+
 			?>
                 <p>
                     <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php esc_html_e( 'Section title:', 'justwrite' ); ?></label>
@@ -179,24 +183,24 @@ if( ! class_exists( 'AC_Section_Archives' ) ) {
 
                     <input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('css_no_mb'); ?>" name="<?php echo $this->get_field_name('css_no_mb'); ?>"<?php checked( $css_nmb ); ?> />
                     <label for="<?php echo $this->get_field_id('css_no_mb'); ?>"><?php _e( 'Remove bottom margin', 'justwrite' ); ?></label><br />
-                    
+
                     <input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('css_b_top'); ?>" name="<?php echo $this->get_field_name('css_b_top'); ?>"<?php checked( $css_bot ); ?> />
                     <label for="<?php echo $this->get_field_id('css_b_top'); ?>"><?php _e( 'Add border top', 'justwrite' ); ?></label><br />
-                    
+
                     <input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('css_b_bot'); ?>" name="<?php echo $this->get_field_name('css_b_bot'); ?>"<?php checked( $css_bob ); ?> />
                     <label for="<?php echo $this->get_field_id('css_b_bot'); ?>"><?php _e( 'Add border bottom', 'justwrite' ); ?></label><br />
-                    
+
                     <input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('css_p_top'); ?>" name="<?php echo $this->get_field_name('css_p_top'); ?>"<?php checked( $css_pat ); ?> />
                     <label for="<?php echo $this->get_field_id('css_p_top'); ?>"><?php _e( 'Add padding top', 'justwrite' ); ?></label><br />
-                    
+
                     <input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('css_p_bot'); ?>" name="<?php echo $this->get_field_name('css_p_bot'); ?>"<?php checked( $css_pab ); ?> />
                     <label for="<?php echo $this->get_field_id('css_p_bot'); ?>"><?php _e( 'Add padding bottom', 'justwrite' ); ?></label>
 				</p>
             <?php
 		}
-		
+
 	} // AC_Section_Archives .END
-	
+
 	// Register this widget
 	register_widget( 'AC_Section_Archives' );
 }
