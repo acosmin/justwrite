@@ -160,9 +160,9 @@ function ac_customize_init( $wp_customize ) {
 	$wp_customize->add_section( new AC_Upsell_Section( $wp_customize, 'ac_upsell_section', array(
 		'title'    => '&nbsp;',
 		'pro_text' => esc_html__( 'JustWrite Pro', 'justwrite' ),
-		'pro_url'  => 'http://www.acosmin.com/theme/justwrite-pro/',
+		'pro_url'  => 'http://www.acosmin.com/theme/justwrite-pro/?utm_campaign=justwrite_upsell_btn',
 		'docs_text' => esc_html__( 'Documentation', 'justwrite' ),
-		'docs_url'  => 'http://www.acosmin.com/documentation/justwrite/',
+		'docs_url'  => 'http://www.acosmin.com/documentation/justwrite/?utm_campaign=justwrite_docs_btn',
 		'priority' => 0
 	) ) );
 	$wp_customize->add_section( 'ac_customize_logo', array(
