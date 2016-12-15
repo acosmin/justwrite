@@ -1312,18 +1312,6 @@ if ( ! function_exists( 'ac_register_required_plugins' ) ) {
 	            'required'  => false,
 	        ),
 
-			array(
-	            'name'      => 'Revive Old Post',
-	            'slug'      => 'tweet-old-post',
-	            'required'  => false,
-	        ),
-
-			array(
-	            'name'      => 'WP Product Review',
-	            'slug'      => 'wp-product-review',
-	            'required'  => false,
-	        ),
-
 	    );
 
 		$config = array(
@@ -1336,7 +1324,7 @@ if ( ! function_exists( 'ac_register_required_plugins' ) ) {
 			'is_automatic' => false,                   // Automatically activate plugins after installation or not.
 			'message'      => '',
 			'strings'      => array(
-				'notice_can_install_recommended'  => _n_noop( 'This theme recommends the following plugin: %1$s.', '<em><a class="ac-pro-theme-link" target="_blank" href="http://www.acosmin.com/theme/justwrite-pro/">JustWrite Pro with WooCommerce compatibility</a></em> in now available. Also, this theme recommends the following plugins: %1$s.', 'justwrite' ),
+				'notice_can_install_recommended'  => _n_noop( '<em><a class="ac-pro-theme-link" target="_blank" href="http://www.acosmin.com/theme/justwrite-pro/">JustWrite Pro with WooCommerce compatibility</a></em> in now available. Also, this theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.', 'justwrite' ),
 			)
 		);
 

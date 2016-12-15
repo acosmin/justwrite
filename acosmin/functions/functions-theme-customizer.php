@@ -110,7 +110,13 @@ function ac_sanitize_ads( $input ) {
 
 /*  Customisation Function
 /* ------------------------------------ */
-function ac_customize_init($wp_customize) {
+function ac_customize_init( $wp_customize ) {
+
+	// Extensions
+	require_once( trailingslashit( get_template_directory() ) . 'acosmin/functions/customizer/extensions/upsell/upsell.php' );
+
+	// Register custom section types.
+	$wp_customize->register_section_type( 'AC_Upsell_Section' );
 
 	// Variables
 	$main_color 		= '#e1e1e1';
@@ -151,6 +157,14 @@ function ac_customize_init($wp_customize) {
 
 
 	// Add new sections
+	$wp_customize->add_section( new AC_Upsell_Section( $wp_customize, 'ac_upsell_section', array(
+		'title'    => '&nbsp;',
+		'pro_text' => esc_html__( 'JustWrite Pro', 'justwrite' ),
+		'pro_url'  => 'http://www.acosmin.com/theme/justwrite-pro/?utm_campaign=justwrite_upsell_btn',
+		'docs_text' => esc_html__( 'Documentation', 'justwrite' ),
+		'docs_url'  => 'http://www.acosmin.com/documentation/justwrite/?utm_campaign=justwrite_docs_btn',
+		'priority' => 0
+	) ) );
 	$wp_customize->add_section( 'ac_customize_logo', array(
     	'title'				=> __( 'Logo and Description', 'justwrite' ),
 		'panel'				=> 'ac_panel_header_options',
