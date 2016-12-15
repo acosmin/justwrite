@@ -108,8 +108,8 @@ if ( ! function_exists( 'ac_css_files' ) ) {
 		wp_register_style( 'ac_webfonts_' . ac_get_selected_ff(), ac_font_url( ac_get_selected_ff() ), array(), null);
 
 		// Enqueue
-		wp_enqueue_style( 'ac_style', get_stylesheet_uri(), array(), '2.0.3.4', 'all' );
-		wp_enqueue_style( 'ac_icons', get_template_directory_uri() . '/assets/icons/css/font-awesome.min.css', array(), '4.6.3', 'all' );
+		wp_enqueue_style( 'ac_style', get_stylesheet_uri(), array(), '2.0.3.5', 'all' );
+		wp_enqueue_style( 'ac_icons', get_template_directory_uri() . '/assets/icons/css/font-awesome.min.css', array(), '4.7.0', 'all' );
 		wp_enqueue_style( 'ac_webfonts_' . ac_get_selected_ff() );
 
 	}
@@ -1315,7 +1315,7 @@ if ( ! function_exists( 'ac_register_required_plugins' ) ) {
 	    );
 
 		$config = array(
-			'id'           => 'justwrite',                 // Unique ID for hashing notices for multiple instances of TGMPA.
+			'id'           => 'justwrite',             // Unique ID for hashing notices for multiple instances of TGMPA.
 			'default_path' => '',                      // Default absolute path to bundled plugins.
 			'menu'         => 'tgmpa-install-plugins', // Menu slug.
 			'has_notices'  => true,                    // Show admin notices or not.
@@ -1324,7 +1324,7 @@ if ( ! function_exists( 'ac_register_required_plugins' ) ) {
 			'is_automatic' => false,                   // Automatically activate plugins after installation or not.
 			'message'      => '',
 			'strings'      => array(
-				'notice_can_install_recommended'  => _n_noop( '<em><a class="ac-pro-theme-link" target="_blank" href="http://www.acosmin.com/theme/justwrite-pro/">JustWrite Pro with WooCommerce compatibility</a></em> in now available. Also, this theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.', 'justwrite' ),
+				'notice_can_install_recommended' => _n_noop( '<em><a class="ac-pro-theme-link" target="_blank" href="http://www.acosmin.com/theme/justwrite-pro/?utm_campaign=justwrite_tgm_btn">JustWrite Pro with WooCommerce compatibility</a></em> in now available. Also, this theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.', 'justwrite' ),
 			)
 		);
 
