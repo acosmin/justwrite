@@ -1,6 +1,6 @@
 ﻿=====================
 
-Theme Name: JustWrite 
+Theme Name: JustWrite
 Theme URI: http://www.acosmin.com/theme/justwrite/
 Author: Alexandru Cosmin
 
@@ -37,7 +37,7 @@ License: Distributed under the terms of the MIT and GPL2 licenses
 Copyright: @afarkas @jdalton @jon_neal @rem
 ____________
 
-Font Awesome v4.6.3 icon set - http://fortawesome.github.io/Font-Awesome/
+Font Awesome v4.7.0 icon set - http://fortawesome.github.io/Font-Awesome/
 License: Font Awesome licensed under SIL OFL 1.1 / Code licensed under MIT License
 Copyright: Dave Gandy, twitter.com/davegandy
 ____________
