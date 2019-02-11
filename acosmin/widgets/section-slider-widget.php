@@ -45,11 +45,8 @@ if( ! class_exists( 'AC_Section_Slider' ) ) {
 			$this->defaults = array (
 				'title' 		=> '',
 				'typeselect' 	=> 'featured',
-				'category'		=> '',
 				'posts_nr'		=> 3,
-				'offset'		=> 0,
 				'autoplay'		=> false,
-				'delay'			=> '5000',
 				'show_date'		=> true,
 				'show_cat'		=> true,
 				'show_com'		=> true,
@@ -92,10 +89,7 @@ if( ! class_exists( 'AC_Section_Slider' ) ) {
 			// Options output
 			$section_title 		= ! empty( $instance['title'] ) ? $instance['title'] : ''; set_query_var( 'section_title', strip_tags( $section_title ) );
 			$section_type		= ! empty( $instance['typeselect'] ) ? $instance['typeselect'] : ''; set_query_var( 'section_type', esc_html( $section_type ) );
-			$section_category	= ! empty( $instance['category'] ) ? $instance['category'] : ''; set_query_var( 'section_category', absint( $section_category ) );
 			$section_postsnr	= ! empty( $instance['posts_nr'] ) ? $instance['posts_nr'] : 3; set_query_var( 'section_postsnr', absint( $section_postsnr ) );
-			$section_offset		= ! empty( $instance['offset'] ) ? $instance['offset'] : 0; set_query_var( 'section_offset', absint( $section_offset ) );
-			$section_delay		= ! empty( $instance['delay'] ) ? $instance['delay'] : 5000; set_query_var( 'section_delay', absint( $section_delay ) );
 			$ap		= ! empty( $instance['autoplay'] ) ? 'true' : 'false'; set_query_var( 'ap', esc_html( $ap ) );
 			$sco	= ! empty( $instance['show_com'] ) ? 1 : 0; set_query_var( 'sco', absint( $sco ) );
 			$sca	= ! empty( $instance['show_cat'] ) ? 1 : 0; set_query_var( 'sca', absint( $sca ) );
@@ -152,13 +146,10 @@ if( ! class_exists( 'AC_Section_Slider' ) ) {
 
 			// Text fields
 			$instance['title'] 		= strip_tags( $new_instance['title'] );
-			$instance['category'] 	= absint( $new_instance['category'] );
 			$instance['posts_nr'] 	= absint( $new_instance['posts_nr'] );
-			$instance['offset'] 	= absint( $new_instance['offset'] );
-			$instance['delay'] 		= absint( $new_instance['delay'] );
 
 			// Select type
-			if ( in_array( $new_instance['typeselect'], array( 'featured', 'category' ) ) ) {
+			if ( in_array( $new_instance['typeselect'], array( 'featured' ) ) ) {
 				$instance['typeselect'] = $new_instance['typeselect'];
 			} else {
 				$instance['typeselect'] = 'featured';
@@ -206,58 +197,20 @@ if( ! class_exists( 'AC_Section_Slider' ) ) {
                     <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php esc_html_e( 'Section title:', 'justwrite' ); ?></label>
                     <input class="widefat ac-builder-widget-title" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>"/>
                 </p>
-                <?php
-					$protitle = esc_html__( 'Pro Features', 'justwrite' );
-					$getpro = esc_html__( 'Upgrade Now', 'justwrite' );
-					$asdf = esc_html__( 'to enable them + many more', 'justwrite' );
-					$lines 		= array(
-						esc_html__( 'Some options are disabled:', 'justwrite' ),
-						esc_html__( '- Display posts from a category;', 'justwrite' ),
-						esc_html__( '- Autoplay delay timer;', 'justwrite' ),
-						esc_html__( '- Offset number;', 'justwrite' ),
-					);
-					parent::ac_promo_info( $lines, $protitle, $getpro, $asdf );
-				?>
                 <p>
                     <label for="<?php echo $this->get_field_id('typeselect'); ?>"><?php _e( 'Display:', 'justwrite' ); ?></label>
                     <select name="<?php echo $this->get_field_name('typeselect'); ?>" id="<?php echo $this->get_field_id('typeselect'); ?>" class="widefat ac-select-type">
                         <option value="featured"<?php selected( $instance['typeselect'], 'featured' ); ?>><?php _e( 'Featured posts', 'justwrite' ); ?></option>
-                        <option	disabled value="category"<?php selected( $instance['typeselect'], 'category' ); ?>><?php _e( 'Category posts', 'justwrite' ); ?></option>
                     </select>
-                </p>
-                <p class="ac-display-category-field" style="display: none;">
-                    <label for="<?php echo $this->get_field_id( 'category' ); ?>"><?php esc_html_e( 'Select a category:', 'justwrite' ); ?></label>
-                    <?php
-
-					wp_dropdown_categories( array(
-
-						'orderby'    => 'title',
-						'hide_empty' => false,
-						'name'       => $this->get_field_name( 'category' ),
-						'id'         => $this->get_field_id( 'category' ),
-						'class'      => 'widefat',
-						'selected'   => intval($instance['category']),
-
-					) );
-
-					?>
                 </p>
                 <p>
                     <label for="<?php echo $this->get_field_id( 'posts_nr' ); ?>"><?php esc_html_e( 'Number of posts (more than 3):', 'justwrite' ); ?></label>
                     <input class="widefat" id="<?php echo $this->get_field_id( 'posts_nr' ); ?>" name="<?php echo $this->get_field_name( 'posts_nr' ); ?>" type="text" value="<?php echo intval( $instance['posts_nr'] ); ?>"/>
                 </p>
                 <p>
-                    <label for="<?php echo $this->get_field_id( 'offset' ); ?>"><?php esc_html_e( 'Offset (number of posts to "displace" or pass over):', 'justwrite' ); ?></label>
-                    <input class="widefat" disabled id="<?php echo $this->get_field_id( 'offset' ); ?>" name="<?php echo $this->get_field_name( 'offset' ); ?>" type="text" value="<?php echo intval( $instance['offset'] ); ?>"/>
-                </p>
-                <p>
                     <input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('autoplay'); ?>" name="<?php echo $this->get_field_name('autoplay'); ?>"<?php checked( $autoplay ); ?> />
                     <label for="<?php echo $this->get_field_id('autoplay'); ?>"><?php _e( 'Enable autoplay', 'justwrite' ); ?></label>
 				</p>
-                <p>
-                    <label for="<?php echo $this->get_field_id( 'delay' ); ?>"><?php esc_html_e( 'Autoplay delay (milliseconds):', 'justwrite' ); ?></label>
-                    <input disabled class="widefat" id="<?php echo $this->get_field_id( 'delay' ); ?>" name="<?php echo $this->get_field_name( 'delay' ); ?>" type="text" value="5000"/>
-                </p>
                 <p>
                 	<b><?php _e( 'Display options:', 'justwrite' ); ?></b><br />
                     <input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('show_date'); ?>" name="<?php echo $this->get_field_name('show_date'); ?>"<?php checked( $show_date ); ?> />

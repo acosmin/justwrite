@@ -47,12 +47,10 @@ if( ! class_exists( 'AC_Section_Masonry_1' ) ) {
 				'typeselect' 	=> 'featured',
 				'category'		=> '',
 				'posts_nr'		=> 3,
-				'offset'		=> 0,
 				'show_date'		=> true,
 				'show_auth'		=> true,
 				'show_cat'		=> true,
 				'show_com'		=> true,
-				'show_excerpt'	=> false,
 				'css_no_mt'		=> true,
 				'css_no_mb'		=> true,
 				'css_b_top'		=> false,
@@ -87,12 +85,10 @@ if( ! class_exists( 'AC_Section_Masonry_1' ) ) {
 			$section_type		= ! empty( $instance['typeselect'] ) ? $instance['typeselect'] : ''; set_query_var( 'section_type', esc_html( $section_type ) );
 			$section_category	= ! empty( $instance['category'] ) ? $instance['category'] : ''; set_query_var( 'section_category', absint( $section_category ) );
 			$section_postsnr	= ! empty( $instance['posts_nr'] ) ? $instance['posts_nr'] : 3; set_query_var( 'section_postsnr', absint( $section_postsnr ) );
-			$section_offset		= ! empty( $instance['offset'] ) ? $instance['offset'] : 0; set_query_var( 'section_offset', absint( $section_offset ) );
 			$sco	= ! empty( $instance['show_com'] ) ? 1 : 0; set_query_var( 'sco', absint( $sco ) );
 			$sca	= ! empty( $instance['show_cat'] ) ? 1 : 0; set_query_var( 'sca', absint( $sca ) );
 			$sda	= ! empty( $instance['show_date'] ) ? 1 : 0; set_query_var( 'sda', absint( $sda ) );
 			$sau	= ! empty( $instance['show_auth'] ) ? 1 : 0; set_query_var( 'sau', absint( $sau ) );
-			$sep	= ! empty( $instance['show_excerpt'] ) ? 1 : 0; set_query_var( 'sep', absint( $sep ) );
 			$cnmt	= ! empty( $instance['css_no_mt'] ) ? 1 : 0;
 			$cnmb	= ! empty( $instance['css_no_mb'] ) ? 1 : 0;
 			$cbot	= ! empty( $instance['css_b_top'] ) ? 1 : 0;
@@ -143,7 +139,6 @@ if( ! class_exists( 'AC_Section_Masonry_1' ) ) {
 			$instance['title'] 		= strip_tags( $new_instance['title'] );
 			$instance['category'] 	= absint( $new_instance['category'] );
 			$instance['posts_nr'] 	= absint( $new_instance['posts_nr'] );
-			$instance['offset'] 	= absint( $new_instance['offset'] );
 
 			// Select type
 			if ( in_array( $new_instance['typeselect'], array( 'featured', 'posts', 'category' ) ) ) {
@@ -157,7 +152,6 @@ if( ! class_exists( 'AC_Section_Masonry_1' ) ) {
 			$instance['show_cat'] 		= ! empty($new_instance['show_cat']) ? 1 : 0;
 			$instance['show_com'] 		= ! empty($new_instance['show_com']) ? 1 : 0;
 			$instance['show_auth'] 		= ! empty($new_instance['show_auth']) ? 1 : 0;
-			$instance['show_excerpt'] 	= ! empty($new_instance['show_excerpt']) ? 1 : 0;
 			$instance['css_no_mt']		= ! empty($new_instance['css_no_mt']) ? 1 : 0;
 			$instance['css_no_mb']		= ! empty($new_instance['css_no_mb']) ? 1 : 0;
 			$instance['css_b_top']		= ! empty($new_instance['css_b_top']) ? 1 : 0;
@@ -182,7 +176,6 @@ if( ! class_exists( 'AC_Section_Masonry_1' ) ) {
 			$show_cat = isset( $instance['show_cat'] ) ? (bool) $instance['show_cat'] : false;
 			$show_com = isset( $instance['show_com'] ) ? (bool) $instance['show_com'] : false;
 			$show_auth = isset( $instance['show_auth'] ) ? (bool) $instance['show_auth'] : false;
-			$show_excerpt = isset( $instance['show_excerpt'] ) ? (bool) $instance['show_excerpt'] : false;
 			$css_nmt = isset( $instance['css_no_mt'] ) ? (bool) $instance['css_no_mt'] : false;
 			$css_nmb = isset( $instance['css_no_mb'] ) ? (bool) $instance['css_no_mb'] : false;
 			$css_bot = isset( $instance['css_b_top'] ) ? (bool) $instance['css_b_top'] : false;
@@ -194,17 +187,6 @@ if( ! class_exists( 'AC_Section_Masonry_1' ) ) {
                     <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php esc_html_e( 'Section title:', 'justwrite' ); ?></label>
                     <input class="widefat ac-builder-widget-title" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>"/>
                 </p>
-                <?php
-					$protitle = esc_html__( 'Pro Features', 'justwrite' );
-					$getpro = esc_html__( 'Upgrade Now', 'justwrite' );
-					$asdf = esc_html__( 'to enable them + many more', 'justwrite' );
-					$lines 		= array(
-						esc_html__( 'Some options are disabled:', 'justwrite' ),
-						esc_html__( '- Show excerpt;', 'justwrite' ),
-						esc_html__( '- Offset number;', 'justwrite' ),
-					);
-					parent::ac_promo_info( $lines, $protitle, $getpro, $asdf );
-				?>
                 <p>
                     <label for="<?php echo $this->get_field_id('typeselect'); ?>"><?php _e( 'Display:', 'justwrite' ); ?></label>
                     <select name="<?php echo $this->get_field_name('typeselect'); ?>" id="<?php echo $this->get_field_id('typeselect'); ?>" class="widefat ac-select-type">
@@ -235,10 +217,6 @@ if( ! class_exists( 'AC_Section_Masonry_1' ) ) {
                     <input class="widefat" id="<?php echo $this->get_field_id( 'posts_nr' ); ?>" name="<?php echo $this->get_field_name( 'posts_nr' ); ?>" type="text" value="<?php echo intval( $instance['posts_nr'] ); ?>"/>
                 </p>
                 <p>
-                    <label for="<?php echo $this->get_field_id( 'offset' ); ?>"><?php esc_html_e( 'Offset (number of posts to "displace" or pass over):', 'justwrite' ); ?></label>
-                    <input disabled class="widefat" id="<?php echo $this->get_field_id( 'offset' ); ?>" name="<?php echo $this->get_field_name( 'offset' ); ?>" type="text" value="<?php echo intval( $instance['offset'] ); ?>"/>
-                </p>
-                <p>
                 	<b><?php _e( 'Display options:', 'justwrite' ); ?></b><br />
                     <input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('show_date'); ?>" name="<?php echo $this->get_field_name('show_date'); ?>"<?php checked( $show_date ); ?> />
                     <label for="<?php echo $this->get_field_id('show_date'); ?>"><?php _e( 'Show date', 'justwrite' ); ?></label><br />
@@ -248,9 +226,6 @@ if( ! class_exists( 'AC_Section_Masonry_1' ) ) {
 
                     <input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('show_auth'); ?>" name="<?php echo $this->get_field_name('show_auth'); ?>"<?php checked( $show_auth ); ?> />
                     <label for="<?php echo $this->get_field_id('show_auth'); ?>"><?php _e( 'Show author', 'justwrite' ); ?></label><br />
-
-                    <input disabled type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('show_excerpt'); ?>" name="<?php echo $this->get_field_name('show_excerpt'); ?>"<?php checked( $show_excerpt ); ?> />
-                    <label for="<?php echo $this->get_field_id('show_excerpt'); ?>"><?php _e( 'Show excerpt', 'justwrite' ); ?></label><br />
 
                     <input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('show_com'); ?>" name="<?php echo $this->get_field_name('show_com'); ?>"<?php checked( $show_com ); ?> />
                     <label for="<?php echo $this->get_field_id('show_com'); ?>"><?php _e( 'Show # comments', 'justwrite' ); ?></label>

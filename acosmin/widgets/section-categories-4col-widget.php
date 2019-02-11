@@ -43,7 +43,6 @@ if( ! class_exists( 'AC_Section_Cat_4_Columns' ) ) {
 				'category_2'	=> '',
 				'category_3'	=> '',
 				'category_4'	=> '',
-				'offset'		=> 0,
 				'show_more'		=> true,
 				'show_rss'		=> true,
 				'show_date'		=> true,
@@ -79,7 +78,6 @@ if( ! class_exists( 'AC_Section_Cat_4_Columns' ) ) {
 			$section_category2	= ! empty( $instance['category_2'] ) ? $instance['category_2'] : ''; set_query_var( 'section_category2', absint( $section_category2 ) );
 			$section_category3	= ! empty( $instance['category_3'] ) ? $instance['category_3'] : ''; set_query_var( 'section_category3', absint( $section_category3 ) );
 			$section_category4	= ! empty( $instance['category_4'] ) ? $instance['category_4'] : ''; set_query_var( 'section_category4', absint( $section_category4 ) );
-			$section_offset		= ! empty( $instance['offset'] ) ? $instance['offset'] : 0; set_query_var( 'section_offset', absint( $section_offset ) );
 			$scm	= ! empty( $instance['show_coms'] ) ? 1 : 0; set_query_var( 'scm', absint( $scm ) );
 			$smo	= ! empty( $instance['show_more'] ) ? 1 : 0; set_query_var( 'smo', absint( $smo ) );
 			$sdt	= ! empty( $instance['show_date'] ) ? 1 : 0; set_query_var( 'sdt', absint( $sdt ) );
@@ -131,7 +129,6 @@ if( ! class_exists( 'AC_Section_Cat_4_Columns' ) ) {
 			$instance['category_3'] = absint( $new_instance['category_3'] );
 			$instance['category_4'] = absint( $new_instance['category_4'] );
 			$instance['posts_nr'] 	= absint( $new_instance['posts_nr'] );
-			$instance['offset'] 	= absint( $new_instance['offset'] );
 
 			// Checkboxes
 			$instance['show_more'] 	= ! empty($new_instance['show_more']) ? 1 : 0;
@@ -175,16 +172,6 @@ if( ! class_exists( 'AC_Section_Cat_4_Columns' ) ) {
                     <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php esc_html_e( 'Section title:', 'justwrite' ); ?></label>
                     <input class="widefat ac-builder-widget-title" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>"/>
                 </p>
-                <?php
-					$protitle = esc_html__( 'Pro Features', 'justwrite' );
-					$getpro = esc_html__( 'Upgrade Now', 'justwrite' );
-					$asdf = esc_html__( 'to enable them + many more', 'justwrite' );
-					$lines 		= array(
-						esc_html__( 'Some options are disabled:', 'justwrite' ),
-						esc_html__( '- Offset number;', 'justwrite' ),
-					);
-					parent::ac_promo_info( $lines, $protitle, $getpro, $asdf );
-				?>
                 <p>
                     <label for="<?php echo $this->get_field_id( 'category_1' ); ?>"><?php esc_html_e( '1st column category', 'justwrite' ); ?></label>
                     <?php
@@ -256,10 +243,6 @@ if( ! class_exists( 'AC_Section_Cat_4_Columns' ) ) {
                 <p>
                     <label for="<?php echo $this->get_field_id( 'posts_nr' ); ?>"><?php esc_html_e( 'Number of posts (3 or more):', 'justwrite' ); ?></label>
                     <input class="widefat" id="<?php echo $this->get_field_id( 'posts_nr' ); ?>" name="<?php echo $this->get_field_name( 'posts_nr' ); ?>" type="text" value="<?php echo intval( $instance['posts_nr'] ); ?>"/>
-                </p>
-                <p>
-                    <label for="<?php echo $this->get_field_id( 'offset' ); ?>"><?php esc_html_e( 'Offset (number of posts to "displace" or pass over):', 'justwrite' ); ?></label>
-                    <input disabled class="widefat" id="<?php echo $this->get_field_id( 'offset' ); ?>" name="<?php echo $this->get_field_name( 'offset' ); ?>" type="text" value="<?php echo intval( $instance['offset'] ); ?>"/>
                 </p>
                 <p>
                 	<b><?php _e( 'Display options:', 'justwrite' ); ?></b><br />
