@@ -19,7 +19,10 @@ function ac_options_box() {
 		'ac_post_side_meta',
 		esc_html__('Post Options:', 'justwrite'),
 		'ac_post_options',
-		'post', 'side', 'high'
+		'post', 'side', 'high',
+		array(
+			'__block_editor_compatible_meta_box' => false,
+		)
 	);
 }
 
@@ -33,20 +36,7 @@ function ac_post_options() {
 	$ac_featured_article 		= get_post_meta( $post->ID, 'ac_featured_article', true );
 	$ac_show_post_thumbnail 	= get_post_meta( $post->ID, 'ac_show_post_thumbnail', true );
 	$ac_post_layout_options 	= get_post_meta( $post->ID, 'ac_post_layout_options', true );
-	$ac_color_field_select 		= get_post_meta( $post->ID, 'ac_color_field_select', true );
 	$ac_cover_overlay_opacity 	= get_post_meta( $post->ID, 'ac_cover_overlay_opacity', true );
-
-	if( $ac_color_field_select == '' ) {
-		$ac_color_field_select = apply_filters( 'ac_color_field_select_filter', $acfs = '#000000' );
-	}
-
-	if( $ac_post_layout_options == 'ac_post_layout_cover' || $ac_post_layout_options == 'ac_post_layout_cover_parallax' ||
-		( $ac_post_layout_customizer != 'ac_post_layout_normal' && $ac_post_layout_options != 'ac_post_layout_normal' ) ) {
-		$ac_overlay_options_display = 'style="display: block;"';
-	} else {
-		$ac_overlay_options_display = 'style="display: none;"';
-	}
-
 	?>
     <form>
 		<p>
@@ -59,13 +49,12 @@ function ac_post_options() {
             <select name="ac_post_layout_options" id="ac_post_layout_options" class="widefat">
                 <option value="ac_post_layout_normal"<?php selected( $ac_post_layout_options, 'ac_post_layout_normal' ); ac_spl_selected( 'ac_post_layout_normal' ); ?>><?php _e( 'Normal', 'justwrite' ); ac_sp_layout_default( 'ac_post_layout_normal' ); ?></option>
                 <option value="ac_post_layout_cover"<?php selected( $ac_post_layout_options, 'ac_post_layout_cover' ); ac_spl_selected( 'ac_post_layout_cover' ); ?>><?php _e( 'Billboard', 'justwrite' ); ac_sp_layout_default( 'ac_post_layout_cover' ); ?></option>
-                <option disabled value="ac_post_layout_cover_parallax_disabled"><?php _e( 'Billboard Parallax (PRO)', 'justwrite' ); ?></option>
             </select>
         </p>
-        <div id="ac_overlay_options"<?php echo $ac_overlay_options_display; ?>>
+        <div id="ac_overlay_options">
         	<p>
             	<label><b><?php _e( 'Notice:', 'justwrite' ); ?></b></label><br />
-                <?php _e( 'Your featured image must be at least 1800x900px to display correctly.', 'justwrite' ); ?>
+                <?php _e( 'Bilboard option: Your featured image must be at least 1800x900px to display correctly.', 'justwrite' ); ?>
             </p>
             <p>
             	<label for="ac_cover_overlay_opacity"><b><?php _e( 'Billboard Overlay Opacity:', 'justwrite' ); ?></b></label><br />
@@ -82,13 +71,6 @@ function ac_post_options() {
                     <option value="0.9"<?php selected( $ac_cover_overlay_opacity, '0.9' ); ac_spt_selected( '0.9' ); ?>><?php _e( '90%', 'justwrite' ); ac_sp_opacity_default( '0.9' ); ?></option>
                     <option value="1"<?php selected( $ac_cover_overlay_opacity, '1' ); ac_spt_selected( '1' ); ?>><?php _e( '100%', 'justwrite' ); ac_sp_opacity_default( '1' ); ?></option>
                 </select>
-            </p>
-            <p class="ac_overlay_bg_color">
-            	<span class="ac_overlay_bg_upsell">
-                	<a href="http://www.acosmin.com/theme/justwrite-pro/" target="_blank" class="ac_overlay_bg_upsell_link" title="<?php _e( 'Available only with JustWrite Pro', 'justwrite' ); ?>"><?php _e( 'Go Pro', 'justwrite' ); ?></a>
-				</span>
-                <label for="ac_color_field_select"><b><?php _e( 'Billboard Overlay Color:', 'justwrite' ); ?></b></label><br />
-                <input type="text" name="ac_color_field_select" id="ac_color_field_select" class="ac-color-field" value="<?php echo esc_attr( $ac_color_field_select ); ?>" />
             </p>
 		</div>
     </form>
@@ -132,21 +114,6 @@ function ac_update_this_custom_meta( $postID, $newvalue, $field_name ) {
 	} else {
 		update_post_meta( $postID, $field_name, $newvalue );
 	}
-}
-
-
-
-/*  Add colorpiker
-/* ------------------------------------ */
-add_action( 'admin_enqueue_scripts', 'ac_post_editor_add_color_picker' );
-function ac_post_editor_add_color_picker( $hook ) {
-	if ( ( 'post.php' || 'post-new.php' ) != $hook ) {
-        return;
-    }
-    if( is_admin() ) {
-        wp_enqueue_style( 'wp-color-picker' );
-        wp_enqueue_script( 'ac-post-editor', get_template_directory_uri() . '/assets/js/admin/post-editor.js', array( 'wp-color-picker' ), false, true );
-    }
 }
 
 

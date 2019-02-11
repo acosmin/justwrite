@@ -9,2300 +9,1998 @@ msgstr ""
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 
-#: 404.php:14
-msgid "404"
-msgstr ""
-
-#: 404.php:15
-msgid "It looks like nothing was found at this location."
-msgstr ""
-
-#: 404.php:15
-msgid "Maybe try a search?"
-msgstr ""
-
-#: archive.php:25
-#, php-format
-msgid "Daily Archives: <span>%s</span>"
-msgstr ""
-
-#: archive.php:28
-#, php-format
-msgid "Monthly Archives: <span>%s</span>"
-msgstr ""
-
-#: archive.php:28
-msgctxt "monthly archives date format"
-msgid "F Y"
-msgstr ""
-
-#: archive.php:31
-#, php-format
-msgid "Yearly Archives: <span>%s</span>"
-msgstr ""
-
-#: archive.php:31
-msgctxt "yearly archives date format"
-msgid "Y"
-msgstr ""
-
-#: archive.php:34 sidebar-browse.php:53
-msgid "Archives"
-msgstr ""
-
-#: author.php:27
-#, php-format
-msgid "All posts by %s"
-msgstr ""
-
-#: author.php:40 post-templates/about-the-author.php:13
-msgid "About the author"
-msgstr ""
-
-#: author.php:46 post-templates/about-the-author.php:19
-msgid "Author's Link"
-msgstr ""
-
-#: category.php:22
-msgid "Category Archives:"
-msgstr ""
-
-#: comments.php:27
-#, php-format
 msgid ""
-"<span class=\"comments-number\">One thought on</span> <span class=\"title"
-"\">&ldquo;%2$s&rdquo;</span>"
-msgid_plural ""
-"<span class=\"comments-number\">%1$s thoughts on</span> <span class=\"title"
-"\">&ldquo;%2$s&rdquo;</span>"
-msgstr[0] ""
-msgstr[1] ""
-
-#: comments.php:51
-msgid "&larr; Older Comments"
-msgstr ""
-
-#: comments.php:52
-msgid "Newer Comments &rarr;"
-msgstr ""
-
-#: comments.php:58
-msgid "Comments are closed."
-msgstr ""
-
-#: featured-content.php:29 functions.php:877
-#: acosmin/widgets/custom-featured-posts-widget.php:66
-#: acosmin/widgets/custom-recent-posts-widget.php:67
-#: acosmin/widgets/custom-tabs-widget.php:140
-#: acosmin/widgets/custom-tabs-widget.php:180
-#: post-templates/content-aside.php:33 post-templates/content-link.php:33
-#: post-templates/content-quote.php:33 post-templates/content.php:31
-#: section-templates/section-categories-2col.php:75
-#: section-templates/section-categories-3col.php:77
-#: section-templates/section-categories-3col.php:101
-#: section-templates/section-categories-4col.php:75
-#: section-templates/section-masonry-1.php:72
-#: section-templates/section-masonry-2.php:74
-#: section-templates/section-masonry-2.php:103
-#: section-templates/section-popular-posts.php:51
-#: section-templates/section-popular-posts.php:85
-#: section-templates/section-popular-posts.php:119
-#: section-templates/section-slider.php:58
-msgid "No Thumbnail"
-msgstr ""
-
-#: functions.php:51 acosmin/functions/functions-theme-customizer.php:179
-msgid "Main Menu"
-msgstr ""
-
-#: functions.php:52
-msgid "Second Menu"
-msgstr ""
-
-#: functions.php:53
-msgid "Right Sidebar - First Menu"
-msgstr ""
-
-#: functions.php:54
-msgid "Right Sidebar - Second Menu"
-msgstr ""
-
-#: functions.php:285
-msgid "Main Sidebar"
-msgstr ""
-
-#: functions.php:287
-msgid "Main sidebar that appears on the right."
-msgstr ""
-
-#: functions.php:296
-msgid "Posts Sidebar"
-msgstr ""
-
-#: functions.php:298
-msgid "Same as \"Main Sidebar\", designed for the posts."
-msgstr ""
-
-#: functions.php:307
-msgid "Sections - Before posts"
-msgstr ""
-
-#: functions.php:309 functions.php:320
-msgid ""
-"Use this area with the special designed widgets.(\"AC SEC:\" prefix and "
-"bright blue background color)."
-msgstr ""
-
-#: functions.php:318
-msgid "Sections - After posts"
-msgstr ""
-
-#: functions.php:329
-msgid "Sections - After header"
-msgstr ""
-
-#: functions.php:331
-msgid ""
-"Widgets will appear on all pages (except main page), after the header "
-"location. Use this area with the special designed widgets (\"AC SEC:\" "
-"prefix and bright blue background color)."
-msgstr ""
-
-#: functions.php:340
-msgid "Sections - Before footer"
-msgstr ""
-
-#: functions.php:342
-msgid ""
-"Widgets will appear on all pages (except main page), before the widgetized "
-"footer area. Use this area with the special designed widgets (\"AC SEC:\" "
-"prefix and bright blue background color)."
-msgstr ""
-
-#: functions.php:351
-msgid "Footer - Area #1"
-msgstr ""
-
-#: functions.php:353
-msgid "Displays widgets in area #1 (footer)."
-msgstr ""
-
-#: functions.php:362
-msgid "Footer - Area #2"
-msgstr ""
-
-#: functions.php:364
-msgid "Displays widgets in area #2 (footer)."
-msgstr ""
-
-#: functions.php:373
-msgid "Footer - Area #3"
-msgstr ""
-
-#: functions.php:375
-msgid "Displays widgets in area #3 (footer)."
-msgstr ""
-
-#: functions.php:384
-msgid "Footer - Area #4"
-msgstr ""
-
-#: functions.php:386
-msgid "Displays widgets in area #4 (footer)."
-msgstr ""
-
-#: functions.php:551
-#, php-format
-msgid "<cite class=\"fn\">%s says:</cite>"
-msgstr ""
-
-#: functions.php:555 functions.php:578 functions.php:584
-msgid "Edit"
-msgstr ""
-
-#: functions.php:562
-msgid "Your comment is awaiting moderation."
-msgstr ""
-
-#: functions.php:578
-msgid "Pingback:"
-msgstr ""
-
-#: functions.php:584
-msgid "Trackback:"
-msgstr ""
-
-#: functions.php:672
-msgid "&larr; Previous"
-msgstr ""
-
-#: functions.php:673
-msgid "Next &rarr;"
-msgstr ""
-
-#: functions.php:775
-msgid "Previous Post"
-msgstr ""
-
-#: functions.php:781
-msgid "Next Post"
-msgstr ""
-
-#: functions.php:848 post-templates/content-aside.php:21
-#: post-templates/content-audio.php:18 post-templates/content-gallery.php:18
-#: post-templates/content-image.php:18 post-templates/content-link.php:21
-#: post-templates/content-quote.php:21 post-templates/content-video.php:18
-#: post-templates/content.php:56
-msgid "by"
-msgstr ""
-
-#: functions.php:849 post-templates/content-aside.php:22
-#: post-templates/content-audio.php:19 post-templates/content-gallery.php:19
-#: post-templates/content-image.php:19 post-templates/content-link.php:22
-#: post-templates/content-quote.php:22 post-templates/content-video.php:19
-#: post-templates/content.php:57
-msgid "in"
-msgstr ""
-
-#: functions.php:1133
-msgid "No category selected"
-msgstr ""
-
-#: functions.php:1147
-msgid ""
-"Disable these demo widgets by adding your own widgets or from `Customizer > "
-"Layout Options > Miscellaneous > Disable demo widgets`."
-msgstr ""
-
-#: functions.php:1148
-msgid ""
-"Disable these demo sections by adding your own in \"Sections - Before posts"
-"\". You can also disable them from `Customizer > Layout Options > "
-"Miscellaneous > Disable demo widgets`."
-msgstr ""
-
-#: functions.php:1149
-msgid ""
-"Disable these demo widgets by adding your own widgets or from `Customizer > "
-"Layout Options > Miscellaneous > Disable demo widgets`. You can also disable "
-"the entire widgetized footer from `Customizer > Footer Options > Hide footer "
-"widgets area`."
-msgstr ""
-
-#: functions.php:1190 functions.php:1222
-msgid "Follow"
-msgstr ""
-
-#: functions.php:1190 functions.php:1222
-#: acosmin/functions/functions-theme-customizer.php:1230
-msgid "Facebook"
-msgstr ""
-
-#: functions.php:1190 functions.php:1222
-msgid "G+"
-msgstr ""
-
-#: functions.php:1190 functions.php:1222
-msgid "Subscribe"
-msgstr ""
-
-#: functions.php:1190
-msgid "Youtube"
-msgstr ""
-
-#: functions.php:1190
-msgid "Instagram"
-msgstr ""
-
-#: functions.php:1196
-msgid "Recent Posts Demo"
-msgstr ""
-
-#: functions.php:1202
-msgid "Popular Posts Demo"
-msgstr ""
-
-#: functions.php:1214
-msgid "Footer Area #1"
-msgstr ""
-
-#: functions.php:1222
-msgid "Footer Area #2"
-msgstr ""
-
-#: functions.php:1228
-msgid "Some Text"
-msgstr ""
-
-#: functions.php:1236
-msgid "Footer Area #3"
-msgstr ""
-
-#: functions.php:1244
-msgid "Footer Area #4"
-msgstr ""
-
-#: functions.php:1327
-#, php-format
-msgid ""
-"<em><a class=\"ac-pro-theme-link\" target=\"_blank\" href=\"http://www."
-"acosmin.com/theme/justwrite-pro/?utm_campaign=justwrite_tgm_btn\">JustWrite "
-"Pro with WooCommerce compatibility</a></em> in now available. Also, this "
-"theme recommends the following plugin: %1$s."
-msgid_plural "This theme recommends the following plugins: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: header.php:60
-msgid "Add a menu"
-msgstr ""
-
-#: header.php:60
-msgid "Main Menu Location"
-msgstr ""
-
-#: header.php:77
-msgid "Search"
-msgstr ""
-
-#: header.php:79
-msgid "type your keywords ..."
-msgstr ""
-
-#: header.php:79
-msgid "Search for:"
-msgstr ""
-
-#: search.php:18
-#, php-format
-msgid "Search Results for: %s"
-msgstr ""
-
-#: sidebar-browse.php:23
-msgid "Browse By"
-msgstr ""
-
-#: sidebar-browse.php:34
-msgid "Go Home"
-msgstr ""
-
-#: sidebar-browse.php:34
-msgid "Main Page"
-msgstr ""
-
-#: sidebar-browse.php:62
-msgid "Calendar"
-msgstr ""
-
-#: tag.php:18
-#, php-format
-msgid "Tag Archives: %s"
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:327
-msgid "Install Required Plugins"
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:328
-msgid "Install Plugins"
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:330
-#, php-format
-msgid "Installing Plugin: %s"
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:332
-#, php-format
-msgid "Updating Plugin: %s"
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:333
-msgid "Something went wrong with the plugin API."
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:336
-#, php-format
-msgid "This theme requires the following plugin: %1$s."
-msgid_plural "This theme requires the following plugins: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:342
-#, php-format
-msgid "This theme recommends the following plugin: %1$s."
-msgid_plural "This theme recommends the following plugins: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:348
-#, php-format
-msgid ""
-"The following plugin needs to be updated to its latest version to ensure "
-"maximum compatibility with this theme: %1$s."
-msgid_plural ""
-"The following plugins need to be updated to their latest version to ensure "
-"maximum compatibility with this theme: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:354
-#, php-format
-msgid "There is an update available for: %1$s."
-msgid_plural "There are updates available for the following plugins: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:360
-#, php-format
-msgid "The following required plugin is currently inactive: %1$s."
-msgid_plural "The following required plugins are currently inactive: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:366
-#, php-format
-msgid "The following recommended plugin is currently inactive: %1$s."
-msgid_plural "The following recommended plugins are currently inactive: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:371
-msgid "Begin installing plugin"
-msgid_plural "Begin installing plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:376
-msgid "Begin updating plugin"
-msgid_plural "Begin updating plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:381
-msgid "Begin activating plugin"
-msgid_plural "Begin activating plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:385
-msgid "Return to Required Plugins Installer"
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:386
-#: acosmin/functions/class-tgm-plugin-activation.php:827
-#: acosmin/functions/class-tgm-plugin-activation.php:2533
-#: acosmin/functions/class-tgm-plugin-activation.php:3580
-msgid "Return to the Dashboard"
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:387
-#: acosmin/functions/class-tgm-plugin-activation.php:3159
-msgid "Plugin activated successfully."
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:388
-#: acosmin/functions/class-tgm-plugin-activation.php:2952
-msgid "The following plugin was activated successfully:"
-msgid_plural "The following plugins were activated successfully:"
-msgstr[0] ""
-msgstr[1] ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:390
-#, php-format
-msgid "No action taken. Plugin %1$s was already active."
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:392
-#, php-format
-msgid ""
-"Plugin not activated. A higher version of %s is needed for this theme. "
-"Please update the plugin."
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:394
-#, php-format
-msgid "All plugins installed and activated successfully. %1$s"
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:395
-msgid "Dismiss this notice"
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:396
-msgid ""
-"There are one or more required or recommended plugins to install, update or "
-"activate."
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:397
-msgid "Please contact the administrator of this site for help."
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:522
-msgid "This plugin needs to be updated to be compatible with your theme."
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:523
-msgid "Update Required"
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:934
-msgid ""
-"The remote plugin package does not contain a folder with the desired slug "
-"and renaming did not work."
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:934
-#: acosmin/functions/class-tgm-plugin-activation.php:937
-msgid ""
-"Please contact the plugin provider and ask them to package their plugin "
-"according to the WordPress guidelines."
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:937
-msgid ""
-"The remote plugin package consists of more than one file, but the files are "
-"not packaged in a folder."
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:1121
-#: acosmin/functions/class-tgm-plugin-activation.php:2948
-msgctxt "plugin A *and* plugin B"
-msgid "and"
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:1982
-#, php-format
-msgid "TGMPA v%s"
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:2273
-msgid "Required"
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:2276
-msgid "Recommended"
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:2292
-msgid "WordPress Repository"
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:2295
-msgid "External Source"
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:2298
-msgid "Pre-Packaged"
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:2315
-msgid "Not Installed"
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:2319
-msgid "Installed But Not Activated"
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:2321
-msgid "Active"
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:2327
-msgid "Required Update not Available"
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:2330
-msgid "Requires Update"
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:2333
-msgid "Update recommended"
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:2342
-#, php-format
-msgctxt "Install/Update Status"
-msgid "%1$s, %2$s"
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:2388
-#, php-format
-msgctxt "plugins"
-msgid "All <span class=\"count\">(%s)</span>"
-msgid_plural "All <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:2392
-#, php-format
-msgid "To Install <span class=\"count\">(%s)</span>"
-msgid_plural "To Install <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:2396
-#, php-format
-msgid "Update Available <span class=\"count\">(%s)</span>"
-msgid_plural "Update Available <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:2400
-#, php-format
-msgid "To Activate <span class=\"count\">(%s)</span>"
-msgid_plural "To Activate <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:2482
-msgctxt "as in: \"version nr unknown\""
-msgid "unknown"
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:2490
-msgid "Installed version:"
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:2498
-msgid "Minimum required version:"
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:2510
-msgid "Available version:"
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:2533
-msgid "No plugins to install, update or activate."
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:2547
-msgid "Plugin"
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:2548
-msgid "Source"
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:2549
-msgid "Type"
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:2553
-msgid "Version"
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:2554
-msgid "Status"
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:2603
-#, php-format
-msgid "Install %2$s"
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:2608
-#, php-format
-msgid "Update %2$s"
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:2614
-#, php-format
-msgid "Activate %2$s"
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:2684
-msgid "Upgrade message from the plugin author:"
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:2717
-msgid "Install"
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:2723
-msgid "Update"
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:2726
-msgid "Activate"
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:2757
-msgid "No plugins were selected to be installed. No action taken."
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:2759
-msgid "No plugins were selected to be updated. No action taken."
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:2800
-msgid "No plugins are available to be installed at this time."
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:2802
-msgid "No plugins are available to be updated at this time."
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:2908
-msgid "No plugins were selected to be activated. No action taken."
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:2934
-msgid "No plugins are available to be activated at this time."
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:3158
-msgid "Plugin activation failed."
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:3498
-#, php-format
-msgid "Updating Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:3501
-#, php-format
-msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:3503
-#, php-format
-msgid "The installation of %1$s failed."
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:3507
-msgid ""
-"The installation and activation process is starting. This process may take a "
-"while on some hosts, so please be patient."
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:3509
-#, php-format
-msgid "%1$s installed and activated successfully."
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:3509
-#: acosmin/functions/class-tgm-plugin-activation.php:3517
-msgid "Show Details"
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:3509
-#: acosmin/functions/class-tgm-plugin-activation.php:3517
-msgid "Hide Details"
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:3510
-msgid "All installations and activations have been completed."
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:3512
-#, php-format
-msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:3515
-msgid ""
-"The installation process is starting. This process may take a while on some "
-"hosts, so please be patient."
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:3517
-#, php-format
-msgid "%1$s installed successfully."
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:3518
-msgid "All installations have been completed."
-msgstr ""
-
-#: acosmin/functions/class-tgm-plugin-activation.php:3520
-#, php-format
-msgid "Installing Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
-#: acosmin/functions/functions-default.php:32
-#, php-format
-msgid "View all posts in %s"
-msgstr ""
-
-#: acosmin/functions/functions-default.php:55
-msgid "0 Comments"
 msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 
-#: acosmin/functions/functions-default.php:57
+#. Text in function
+#: justwrite/acosmin/functions/functions-default.php:1
 msgid " Comments"
 msgstr ""
 
-#: acosmin/functions/functions-default.php:59
-msgid "1 Comment"
-msgstr ""
-
-#: acosmin/functions/functions-post-options.php:20
-msgid "Post Options:"
-msgstr ""
-
-#: acosmin/functions/functions-post-options.php:53
-msgid "Mark this post as featured"
-msgstr ""
-
-#: acosmin/functions/functions-post-options.php:55
-msgid "Post thumbnail in single view"
-msgstr ""
-
-#: acosmin/functions/functions-post-options.php:58
-msgid "Post Layout:"
-msgstr ""
-
-#: acosmin/functions/functions-post-options.php:60
-msgid "Normal"
-msgstr ""
-
-#: acosmin/functions/functions-post-options.php:61
-msgid "Billboard"
-msgstr ""
-
-#: acosmin/functions/functions-post-options.php:62
-msgid "Billboard Parallax (PRO)"
-msgstr ""
-
-#: acosmin/functions/functions-post-options.php:67
-msgid "Notice:"
-msgstr ""
-
-#: acosmin/functions/functions-post-options.php:68
-msgid "Your featured image must be at least 1800x900px to display correctly."
-msgstr ""
-
-#: acosmin/functions/functions-post-options.php:71
-msgid "Billboard Overlay Opacity:"
-msgstr ""
-
-#: acosmin/functions/functions-post-options.php:73
-msgid "Transparent"
-msgstr ""
-
-#: acosmin/functions/functions-post-options.php:74
-msgid "10%"
-msgstr ""
-
-#: acosmin/functions/functions-post-options.php:75
-msgid "20%"
-msgstr ""
-
-#: acosmin/functions/functions-post-options.php:76
-msgid "30%"
-msgstr ""
-
-#: acosmin/functions/functions-post-options.php:77
-msgid "40%"
-msgstr ""
-
-#: acosmin/functions/functions-post-options.php:78
-msgid "50%"
-msgstr ""
-
-#: acosmin/functions/functions-post-options.php:79
-msgid "60%"
-msgstr ""
-
-#: acosmin/functions/functions-post-options.php:80
-msgid "70%"
-msgstr ""
-
-#: acosmin/functions/functions-post-options.php:81
-msgid "80%"
-msgstr ""
-
-#: acosmin/functions/functions-post-options.php:82
-msgid "90%"
-msgstr ""
-
-#: acosmin/functions/functions-post-options.php:83
-msgid "100%"
-msgstr ""
-
-#: acosmin/functions/functions-post-options.php:88
-msgid "Available only with JustWrite Pro"
-msgstr ""
-
-#: acosmin/functions/functions-post-options.php:88
-msgid "Go Pro"
-msgstr ""
-
-#: acosmin/functions/functions-post-options.php:90
-msgid "Billboard Overlay Color:"
-msgstr ""
-
-#: acosmin/functions/functions-post-options.php:170
-#: acosmin/functions/functions-post-options.php:181
-msgid "Default"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:130
-msgid "&mdash; Select &mdash;"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:145
-msgid "Header Options"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:149
-msgid "Layout Options"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:153
-msgid "Global Options"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:162
-msgid "JustWrite Pro"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:164
-msgid "Documentation"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:169
-msgid "Logo and Description"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:174
-msgid "Header"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:184
-msgid "Basic Options"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:189
-msgid "Global Links Colors"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:190
-msgid ""
-"<small>* Applies to some sub-menus, mini-sidebar, sidebar, post content and "
-"basic link color.</small>"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:195
-msgid "Global Background Colors"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:200
-msgid "Global Border Colors"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:205
-msgid "Global Fonts Colors"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:210
-msgid "Slider"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:212
-msgid ""
-"<small>* Some of the options are disabled:</small><br><small><b class="
-"\"ac_pro-option\">Pro Option</b>: Select an offset.</small><br /><small><b "
-"class=\"ac_pro-option\">Pro Option</b>: Show slider in category archives.</"
-"small><br><br><a href=\"http://www.acosmin.com/theme/justwrite-pro/\" class="
-"\"button button-primary ac_btn-inner-section\" target=\"_blank\">JustWrite "
-"Pro</a><br><span class=\"ac_divider\"></span><br><small>* You need at least "
-"3 posts marked as featured for the slider to show up.</small><br><small>* "
-"When you post an article click on \"Mark this post as featured\".</small>"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:216
-msgid "Advertising"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:221
-msgid "Mini-Sidebar"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:223
-msgid "<small>* If you add or change a menu title save your changes.</small>"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:227
-msgid "Miscellaneous"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:232
-msgid "Posts"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:234
-msgid ""
-"<small>Some of the options are disabled:</small><br><small><b class=\"ac_pro-"
-"option\">Pro Option</b>: Select \"Right Thumbnail\" option.</"
-"small><br><small><b class=\"ac_pro-option\">Pro Option</b>: Show posts in a "
-"Masonry grid (2 columns)</small><br><small><b class=\"ac_pro-option\">Pro "
-"Option</b>: Billboard Parallax layout for single posts</small><br><br><a "
-"href=\"http://www.acosmin.com/theme/justwrite-pro/\" class=\"button button-"
-"primary ac_btn-inner-section\" target=\"_blank\">JustWrite Pro</a>"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:238
-msgid "Social Options"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:242
-msgid "Footer Options"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:247
-msgid "WooCommerce"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:248
-msgid ""
-"<small><b class=\"ac_pro-option\">Pro Option</b></small>: <b>WooCommerce</b> "
-"compatibility and support is available only with <b>JustWrite Pro</b>.<br /"
-"><br /><a href=\"http://www.acosmin.com/theme/justwrite-pro/\" class="
-"\"button button-primary ac_btn-inner-section\" target=\"_blank\">JustWrite "
-"Pro</a>"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:252
-msgid "Colorful Categories"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:253
-msgid ""
-"<small><b class=\"ac_pro-option\">Pro Option</b></small>: <b>Colorful "
-"Categories</b> is available only with <b>JustWrite Pro</b>.<br /><br /><a "
-"href=\"http://www.acosmin.com/theme/justwrite-pro/\" class=\"button button-"
-"primary ac_btn-inner-section\" target=\"_blank\">JustWrite Pro</a>"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:523
-msgid "ex: Categories"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:535
-msgid "ex: Blogroll"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:745
-msgid "Logo - Image"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:750
-msgid "Center align the logo"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:751
-msgid "You will not be able to disaply an Ad banner"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:757
-msgid "Logo - Font Color"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:762
-msgid "Description - Font Color"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:767
-msgid "Show description"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:768
-msgid "It will only show up if you do not have an Ad banner enabled"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:775
-msgid "Header - Background Color"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:780
-msgid "Header - Background Image"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:785
-msgid "Header - Bottom Border Color"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:792
-msgid "Disable Fixed Style"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:798
-msgid "Show social profiles"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:804
-msgid "Show social profiles only when the menu is in fixed state"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:809
-msgid "Select a menu"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:816
-msgid "Border color"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:821
-msgid "Bottom border color"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:826
-msgid "Inner borders color"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:831
-msgid "Background color"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:836
-msgid "Main links color"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:841
-msgid "Main links color / Hover"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:846
-msgid "Sub-menu links color"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:851
-msgid "Main links color / Active"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:856
-msgid "Bubble background color"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:861
-msgid "Bubble font color"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:866
-msgid "Mobile Menu"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:867
-msgid ""
-"Set the width (in pixels) at which point you want the mobile menu to appear. "
-"It helps if you have a lot of menu items and you do not want them to "
-"overlap. Minimum width is 1140, you can try 1300."
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:873
-msgid "Links - Link/Visited states"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:878
-msgid "Links - Hover state"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:885
-msgid "Widgets titles + more"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:886
-msgid "Applies to columns, sidebars headings and some buttons colors"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:891
-msgid "Sections titles"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:892
-msgid "Also applies to links activ state in mini-sidebar"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:897
-msgid "Posts links"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:903
-msgid "Posts links hover state"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:909
-msgid "Other links"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:910
-msgid "Applies to bright colored links (categories, some icons, copyright)"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:915
-msgid ""
-"Applies to bright colored links (archives, author info box, blockquote text, "
-"comment date)"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:921
-msgid "Body background color"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:922
-msgid "Or anything with a white bg"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:927
-msgid "Main background color"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:928
-msgid "Applies to categories, dates info and a few more"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:933
-msgid "Section title"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:934
-msgid "Active states for some buttons"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:939
-msgid "Date background color"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:944
-msgid "Popular posts section"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:949
-msgid "Misc areas"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:958
-msgid "Main border color"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:963
-msgid "Other border colors"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:977
-msgid "Select a font family"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:993
-msgid "Body font color"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:995
-msgid ""
-"Also applies to some dark colored links (post info links, main menu links if "
-"not selected)"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1000
-msgid "First Menu - Title"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1005
-msgid "First Menu - Select"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1012
-msgid "Second Menu - Title"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1017
-msgid "Second Menu - Select"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1025
-msgid "Disable Mini-Sidebar"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1032
-msgid "Show Featured Posts Slider"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1038
-msgid "Show Featured Posts in category archives"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1039
-msgid "It will show featured posts from that category"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1045
-msgid "Enable autostart (autoscrolling)"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1050
-msgid "Select how many posts you would like to display."
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1055
-msgid "Three"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1056
-msgid "Four"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1057
-msgid "Five"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1058
-msgid "Six"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1059
-msgid "Seven"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1060
-msgid "Eight"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1061
-msgid "Nine"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1062
-msgid "Ten"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1066
-msgid "Transition Delay"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1071
-msgid "Offset"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1072
-msgid "Number of posts to \"displace\" or pass over"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1079
-msgid "728x90px Ad"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1080
-#: acosmin/functions/functions-theme-customizer.php:1094
-msgid "Show this banner. Add the code in the following box"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1086
-msgid "728x90px Ad HTML Code"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1087
-msgid "Example: Google Adsense or a simple HTML banner"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1093
-msgid "160x600px Ad"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1100
-msgid "160x600px Ad HTML Code"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1101
-msgid ""
-"Example: Google Adsense or a simple HTML banner; this banner will show up in "
-"the left sidebar on screen resolutions higher than 1600px"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1106
-msgid "160x600px Title:"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1107
-msgid "Example: Advertising. Leave this blank if you do not want a title."
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1112
-msgid "160x600px Title Link:"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1113
-msgid "Example: http://yoursite.com/advertising"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1120
-msgid "Disable comments."
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1126
-msgid "Disable \"About The Author\" box"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1132
-msgid "Disable footer credit links"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1133
-msgid "You can show some love by leaving them enabled :)"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1139
-msgid "Overwrite font style"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1140
-msgid ""
-"In case you are using a child theme and you have a font style selected, "
-"check this if you want to make some changes."
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1146
-msgid "Disable demo widgets"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1147
-msgid ""
-"A few widgets appear when you install the theme for the first time "
-"(placeholders)."
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1153
-msgid "Posts layout:"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1154
-msgid "This is the layout for index view, not sigle view."
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1166
-msgid "Enable Posts + Masonry grid"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1167
-msgid ""
-"This allows you to display posts in a more unique way, adding some of them "
-"in a masonry grid."
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1172
-msgid "Show Masonry after X number of posts"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1173
-msgid ""
-"This works only if you enable \"Posts + Masonry grid\". Set it to 0 to "
-"display only a Masonry grid."
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1179
-msgid "Show excerpt for Masonry posts"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1185
-msgid "Hide main posts query"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1186
-msgid "In case you want to use only sections."
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1191
-msgid "Single post layout:"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1192
-msgid ""
-"Select how all your posts should be structured. This is a global option. You "
-"can overwrite this option and change how a post looks when you edit said "
-"post (\"Post Options\" metabox)!"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1203
-msgid "Single billboard opacity:"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1204
-msgid ""
-"Sets the background color opacity in case you select \"Billboard\" above. "
-"This is a global option."
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1224
-msgid "Google Plus"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1225
-msgid "Example: <b>https://plus.google.com/+acosmin</b>"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1231
-msgid "Example: <b>https://www.facebook.com/acosmincom</b>"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1236
-msgid "Twitter"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1237
-msgid "Example: <b>acosmin</b>"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1242
-msgid "Custom RSS feed"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1243
-msgid ""
-"If you do not want to use the default WP RSS feed, add another one (ex: "
-"<b>http://feeds.feedburner.com/acosmin</b>)"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1249
-msgid "Logo text"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1254
-msgid "Copyright text"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1260
-msgid "Hide footer widgets area"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1266
-msgid "Enable WooCommerce"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1267
-msgid "Use WooCommerce to create a shop and start selling products."
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1273
-msgid "Enable Colorful Categories"
-msgstr ""
-
-#: acosmin/functions/functions-theme-customizer.php:1274
-msgid "This option allows you to attach a color to a category."
-msgstr ""
-
-#: acosmin/widgets/custom-featured-posts-widget.php:13
-msgid "Displays posts you set as featured in the editor area."
-msgstr ""
-
-#: acosmin/widgets/custom-featured-posts-widget.php:18
-msgid "AC: Featured Posts"
-msgstr ""
-
-#: acosmin/widgets/custom-featured-posts-widget.php:22
-#: acosmin/widgets/custom-featured-posts-widget.php:108
-#: acosmin/widgets/custom-tabs-widget.php:67
-#: acosmin/widgets/custom-tabs-widget.php:320
-msgid "Featured Posts"
-msgstr ""
-
-#: acosmin/widgets/custom-featured-posts-widget.php:72
-#: acosmin/widgets/custom-tabs-widget.php:146
-msgid "Read More"
-msgstr ""
-
-#: acosmin/widgets/custom-featured-posts-widget.php:101
-#: acosmin/widgets/custom-popular-posts-widget.php:104
-#: acosmin/widgets/custom-recent-posts-widget.php:107
-msgid "Title"
-msgstr ""
-
-#: acosmin/widgets/custom-featured-posts-widget.php:105
-#: acosmin/widgets/custom-popular-posts-widget.php:108
-#: acosmin/widgets/custom-recent-posts-widget.php:113
-#: acosmin/widgets/custom-tabs-widget.php:312
-msgid "How many"
-msgstr ""
-
-#: acosmin/widgets/custom-popular-posts-widget.php:13
-msgid "Displays your most popular articles."
-msgstr ""
-
-#: acosmin/widgets/custom-popular-posts-widget.php:18
-msgid "AC: Popular Posts"
-msgstr ""
-
-#: acosmin/widgets/custom-popular-posts-widget.php:22
-#: acosmin/widgets/custom-popular-posts-widget.php:111
-#: acosmin/widgets/custom-tabs-widget.php:66
-#: acosmin/widgets/custom-tabs-widget.php:315
-msgid "Popular Posts"
-msgstr ""
-
-#: acosmin/widgets/custom-popular-posts-widget.php:78
-#: acosmin/widgets/custom-recent-posts-widget.php:79
-#: acosmin/widgets/custom-tabs-widget.php:110
-#: acosmin/widgets/custom-tabs-widget.php:192
-msgid "No popular posts available!"
-msgstr ""
-
-#: acosmin/widgets/custom-recent-posts-widget.php:13
-msgid "Displays your most recent articles. With or without thumbnails"
-msgstr ""
-
-#: acosmin/widgets/custom-recent-posts-widget.php:18
-msgid "AC: Recent Posts"
-msgstr ""
-
-#: acosmin/widgets/custom-recent-posts-widget.php:22
-#: acosmin/widgets/custom-recent-posts-widget.php:116
-#: acosmin/widgets/custom-tabs-widget.php:325
-msgid "Recent Posts"
-msgstr ""
-
-#: acosmin/widgets/custom-recent-posts-widget.php:124
-msgid "Hide post thumbnails."
-msgstr ""
-
-#: acosmin/widgets/custom-tabs-widget.php:11
-msgid "Custom designed tabs for your main sidebar"
-msgstr ""
-
-#: acosmin/widgets/custom-tabs-widget.php:14
-msgid "AC: Tabs"
-msgstr ""
-
-#: acosmin/widgets/custom-tabs-widget.php:68
-msgid "Latest Posts"
-msgstr ""
-
-#: acosmin/widgets/custom-tabs-widget.php:69
-#: acosmin/widgets/custom-tabs-widget.php:330
-msgid "Recent Comments"
-msgstr ""
-
-#: acosmin/widgets/custom-tabs-widget.php:70
-msgid "Tag Cloud"
-msgstr ""
-
-#: acosmin/widgets/custom-tabs-widget.php:242
-msgid "Please select some settings for this widget - Tabs"
-msgstr ""
-
-#: acosmin/widgets/custom-tabs-widget.php:287
-msgid "Show \"Popular Posts\" tab."
-msgstr ""
-
-#: acosmin/widgets/custom-tabs-widget.php:292
-msgid "Show \"Featured Posts\" tab."
-msgstr ""
-
-#: acosmin/widgets/custom-tabs-widget.php:297
-msgid "Show \"Recent Posts\" tab."
-msgstr ""
-
-#: acosmin/widgets/custom-tabs-widget.php:302
-msgid "Show \"Recent Comments\" tab."
-msgstr ""
-
-#: acosmin/widgets/custom-tabs-widget.php:307
-msgid "Show \"Tag Cloud\" tab."
-msgstr ""
-
-#: acosmin/widgets/custom-tabs-widget.php:336
-msgid "Hide post thumbnails in"
-msgstr ""
-
-#: acosmin/widgets/custom-tabs-widget.php:340
+#. Text in echo
+#: justwrite/acosmin/widgets/custom-tabs-widget.php:340
 msgid "\"Recent Posts\" tab."
 msgstr ""
 
-#: acosmin/widgets/default-social-buttons-widget.php:14
-msgid "Displays buttons for your social profiles."
+#. Text in function
+#: justwrite/comments.php:51
+msgid "&larr; Older Comments"
 msgstr ""
 
-#: acosmin/widgets/default-social-buttons-widget.php:19
-msgid "AC: Social Buttons"
+#. Text in function
+#: justwrite/functions.php:684
+msgid "&larr; Previous"
 msgstr ""
 
-#: acosmin/widgets/default-social-buttons-widget.php:55
-#: acosmin/widgets/section-social-profiles-widget.php:79
-msgid "Twitter URI"
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "&mdash; Select &mdash;"
 msgstr ""
 
-#: acosmin/widgets/default-social-buttons-widget.php:59
-#: acosmin/widgets/section-social-profiles-widget.php:83
-msgid "Facebook URI"
+#. Text in function
+#: justwrite/acosmin/functions/functions-default.php:1
+msgid "0 Comments"
 msgstr ""
 
-#: acosmin/widgets/default-social-buttons-widget.php:63
-#: acosmin/widgets/section-social-profiles-widget.php:87
-msgid "Google Plus URI"
-msgstr ""
-
-#: acosmin/widgets/default-social-buttons-widget.php:67
-#: acosmin/widgets/section-social-profiles-widget.php:91
-msgid "RSS URI"
-msgstr ""
-
-#: acosmin/widgets/default-social-buttons-widget.php:71
-#: acosmin/widgets/section-social-profiles-widget.php:95
-msgid "Youtube URI"
-msgstr ""
-
-#: acosmin/widgets/default-social-buttons-widget.php:75
-#: acosmin/widgets/section-social-profiles-widget.php:99
-msgid "Instagram URI"
-msgstr ""
-
-#: acosmin/widgets/default-social-buttons-widget.php:79
-#: acosmin/widgets/section-social-profiles-widget.php:103
-msgid "Flickr URI"
-msgstr ""
-
-#: acosmin/widgets/default-social-buttons-widget.php:83
-#: acosmin/widgets/section-social-profiles-widget.php:107
-msgid "Tumblr URI"
-msgstr ""
-
-#: acosmin/widgets/default-social-buttons-widget.php:87
-#: acosmin/widgets/section-social-profiles-widget.php:111
-msgid "VK URI"
-msgstr ""
-
-#: acosmin/widgets/default-social-buttons-widget.php:91
-#: acosmin/widgets/section-social-profiles-widget.php:115
-msgid "Pinterest URI"
-msgstr ""
-
-#: acosmin/widgets/default-social-buttons-widget.php:95
-#: acosmin/widgets/section-social-profiles-widget.php:119
-msgid "LinkedIn URI"
-msgstr ""
-
-#: acosmin/widgets/default-social-buttons-widget.php:99
-#: acosmin/widgets/section-social-profiles-widget.php:123
-msgid "Dribbble URI"
-msgstr ""
-
-#: acosmin/widgets/default-social-buttons-widget.php:103
-#: acosmin/widgets/section-social-profiles-widget.php:127
-msgid "GitHub URI"
-msgstr ""
-
-#: acosmin/widgets/default-social-buttons-widget.php:176
-#: acosmin/widgets/section-archives-widget.php:176
-#: acosmin/widgets/section-categories-2col-widget.php:165
-#: acosmin/widgets/section-categories-3col-widget.php:168
-#: acosmin/widgets/section-categories-4col-widget.php:175
-#: acosmin/widgets/section-masonry-1-widget.php:194
-#: acosmin/widgets/section-masonry-2-widget.php:195
-#: acosmin/widgets/section-popular-posts-widget.php:153
-#: acosmin/widgets/section-slider-widget.php:206
-#: acosmin/widgets/section-social-profiles-widget.php:245
-msgid "Section title:"
-msgstr ""
-
-#: acosmin/widgets/default-social-buttons-widget.php:187
-#: acosmin/widgets/section-social-profiles-widget.php:256
-msgid "Anchor text"
-msgstr ""
-
-#: acosmin/widgets/section-ad-widget.php:23
-msgid "AC SEC: Responsive Ad Banner"
-msgstr ""
-
-#: acosmin/widgets/section-ad-widget.php:29
-msgid ""
-"This is used to display an ad, any size, centered and responsive. Great for "
-"Google Adsense."
-msgstr ""
-
-#: acosmin/widgets/section-ad-widget.php:164
-msgid "Ad code:"
-msgstr ""
-
-#: acosmin/widgets/section-ad-widget.php:170
-msgid "Ad max width:"
-msgstr ""
-
-#: acosmin/widgets/section-ad-widget.php:171
-msgid "728px"
-msgstr ""
-
-#: acosmin/widgets/section-ad-widget.php:172
-msgid ""
-"In this field you can enter the maximum width (in pixels or percentage) for "
-"this ad. 728px is the default value. 100% willd make the add strech as much "
-"as it can."
-msgstr ""
-
-#: acosmin/widgets/section-ad-widget.php:175
-#: acosmin/widgets/section-archives-widget.php:180
-#: acosmin/widgets/section-categories-2col-widget.php:235
-#: acosmin/widgets/section-categories-3col-widget.php:255
-#: acosmin/widgets/section-categories-4col-widget.php:282
-#: acosmin/widgets/section-masonry-1-widget.php:259
-#: acosmin/widgets/section-masonry-2-widget.php:257
-#: acosmin/widgets/section-popular-posts-widget.php:171
-#: acosmin/widgets/section-slider-widget.php:273
-#: acosmin/widgets/section-social-profiles-widget.php:264
-msgid "Styling options:"
-msgstr ""
-
-#: acosmin/widgets/section-ad-widget.php:177
-#: acosmin/widgets/section-archives-widget.php:182
-#: acosmin/widgets/section-categories-2col-widget.php:237
-#: acosmin/widgets/section-categories-3col-widget.php:257
-#: acosmin/widgets/section-categories-4col-widget.php:284
-#: acosmin/widgets/section-masonry-1-widget.php:261
-#: acosmin/widgets/section-masonry-2-widget.php:259
-#: acosmin/widgets/section-popular-posts-widget.php:173
-#: acosmin/widgets/section-slider-widget.php:275
-#: acosmin/widgets/section-social-profiles-widget.php:266
-msgid "Remove top margin"
-msgstr ""
-
-#: acosmin/widgets/section-ad-widget.php:180
-#: acosmin/widgets/section-archives-widget.php:185
-#: acosmin/widgets/section-categories-2col-widget.php:240
-#: acosmin/widgets/section-categories-3col-widget.php:260
-#: acosmin/widgets/section-categories-4col-widget.php:287
-#: acosmin/widgets/section-masonry-1-widget.php:264
-#: acosmin/widgets/section-masonry-2-widget.php:262
-#: acosmin/widgets/section-popular-posts-widget.php:176
-#: acosmin/widgets/section-slider-widget.php:278
-#: acosmin/widgets/section-social-profiles-widget.php:269
-msgid "Remove bottom margin"
-msgstr ""
-
-#: acosmin/widgets/section-ad-widget.php:183
-msgid "Remove background-color"
-msgstr ""
-
-#: acosmin/widgets/section-ad-widget.php:186
-#: acosmin/widgets/section-archives-widget.php:188
-#: acosmin/widgets/section-categories-2col-widget.php:243
-#: acosmin/widgets/section-categories-3col-widget.php:263
-#: acosmin/widgets/section-categories-4col-widget.php:290
-#: acosmin/widgets/section-masonry-1-widget.php:267
-#: acosmin/widgets/section-masonry-2-widget.php:265
-#: acosmin/widgets/section-popular-posts-widget.php:179
-#: acosmin/widgets/section-slider-widget.php:281
-#: acosmin/widgets/section-social-profiles-widget.php:272
-msgid "Add border top"
-msgstr ""
-
-#: acosmin/widgets/section-ad-widget.php:189
-#: acosmin/widgets/section-archives-widget.php:191
-#: acosmin/widgets/section-categories-2col-widget.php:246
-#: acosmin/widgets/section-categories-3col-widget.php:266
-#: acosmin/widgets/section-categories-4col-widget.php:293
-#: acosmin/widgets/section-masonry-1-widget.php:270
-#: acosmin/widgets/section-masonry-2-widget.php:268
-#: acosmin/widgets/section-popular-posts-widget.php:182
-#: acosmin/widgets/section-slider-widget.php:284
-#: acosmin/widgets/section-social-profiles-widget.php:275
-msgid "Add border bottom"
-msgstr ""
-
-#: acosmin/widgets/section-ad-widget.php:192
-#: acosmin/widgets/section-archives-widget.php:194
-#: acosmin/widgets/section-categories-2col-widget.php:249
-#: acosmin/widgets/section-categories-3col-widget.php:269
-#: acosmin/widgets/section-categories-4col-widget.php:296
-#: acosmin/widgets/section-masonry-1-widget.php:273
-#: acosmin/widgets/section-masonry-2-widget.php:271
-#: acosmin/widgets/section-popular-posts-widget.php:185
-#: acosmin/widgets/section-slider-widget.php:287
-#: acosmin/widgets/section-social-profiles-widget.php:278
-msgid "Add padding top"
-msgstr ""
-
-#: acosmin/widgets/section-ad-widget.php:195
-#: acosmin/widgets/section-archives-widget.php:197
-#: acosmin/widgets/section-masonry-2-widget.php:274
-#: acosmin/widgets/section-slider-widget.php:290
-#: acosmin/widgets/section-social-profiles-widget.php:281
-msgid "Add padding bottom"
-msgstr ""
-
-#: acosmin/widgets/section-archives-widget.php:23
-msgid "AC SEC: Archives"
-msgstr ""
-
-#: acosmin/widgets/section-archives-widget.php:29
-msgid "This is used to display monthly archives by year."
-msgstr ""
-
-#: acosmin/widgets/section-basic-widget.php:15
-msgid "Pro Version"
-msgstr ""
-
-#: acosmin/widgets/section-basic-widget.php:16
-msgid "Get Pro Version"
-msgstr ""
-
-#: acosmin/widgets/section-basic-widget.php:17
-#: acosmin/widgets/section-categories-2col-widget.php:171
-#: acosmin/widgets/section-categories-3col-widget.php:174
-#: acosmin/widgets/section-categories-4col-widget.php:181
-#: acosmin/widgets/section-masonry-1-widget.php:200
-#: acosmin/widgets/section-masonry-2-widget.php:201
-#: acosmin/widgets/section-slider-widget.php:212
-msgid "to enable them + many more"
-msgstr ""
-
-#: acosmin/widgets/section-categories-2col-widget.php:23
-msgid "AC SEC: Categories 2 Columns"
-msgstr ""
-
-#: acosmin/widgets/section-categories-2col-widget.php:29
-msgid "Adds a row displaying posts from categories (two columns)"
-msgstr ""
-
-#: acosmin/widgets/section-categories-2col-widget.php:169
-#: acosmin/widgets/section-categories-3col-widget.php:172
-#: acosmin/widgets/section-categories-4col-widget.php:179
-#: acosmin/widgets/section-masonry-1-widget.php:198
-#: acosmin/widgets/section-masonry-2-widget.php:199
-#: acosmin/widgets/section-slider-widget.php:210
-msgid "Pro Features"
-msgstr ""
-
-#: acosmin/widgets/section-categories-2col-widget.php:170
-#: acosmin/widgets/section-categories-3col-widget.php:173
-#: acosmin/widgets/section-categories-4col-widget.php:180
-#: acosmin/widgets/section-masonry-1-widget.php:199
-#: acosmin/widgets/section-masonry-2-widget.php:200
-#: acosmin/widgets/section-slider-widget.php:211
-msgid "Upgrade Now"
-msgstr ""
-
-#: acosmin/widgets/section-categories-2col-widget.php:173
-#: acosmin/widgets/section-categories-3col-widget.php:176
-#: acosmin/widgets/section-categories-4col-widget.php:183
-#: acosmin/widgets/section-masonry-1-widget.php:202
-#: acosmin/widgets/section-masonry-2-widget.php:203
-#: acosmin/widgets/section-slider-widget.php:214
-msgid "Some options are disabled:"
-msgstr ""
-
-#: acosmin/widgets/section-categories-2col-widget.php:174
-#: acosmin/widgets/section-categories-3col-widget.php:177
-#: acosmin/widgets/section-categories-4col-widget.php:184
-#: acosmin/widgets/section-masonry-1-widget.php:204
-#: acosmin/widgets/section-masonry-2-widget.php:205
-#: acosmin/widgets/section-slider-widget.php:217
-msgid "- Offset number;"
-msgstr ""
-
-#: acosmin/widgets/section-categories-2col-widget.php:179
-#: acosmin/widgets/section-categories-3col-widget.php:182
-#: acosmin/widgets/section-categories-4col-widget.php:189
-msgid "1st column category"
-msgstr ""
-
-#: acosmin/widgets/section-categories-2col-widget.php:196
-#: acosmin/widgets/section-categories-3col-widget.php:199
-#: acosmin/widgets/section-categories-4col-widget.php:206
-msgid "2nd column category"
-msgstr ""
-
-#: acosmin/widgets/section-categories-2col-widget.php:213
-#: acosmin/widgets/section-categories-3col-widget.php:233
-#: acosmin/widgets/section-categories-4col-widget.php:257
-msgid "Number of posts (3 or more):"
-msgstr ""
-
-#: acosmin/widgets/section-categories-2col-widget.php:217
-#: acosmin/widgets/section-categories-3col-widget.php:237
-#: acosmin/widgets/section-categories-4col-widget.php:261
-#: acosmin/widgets/section-masonry-1-widget.php:238
-#: acosmin/widgets/section-masonry-2-widget.php:239
-#: acosmin/widgets/section-slider-widget.php:250
-msgid "Offset (number of posts to \"displace\" or pass over):"
-msgstr ""
-
-#: acosmin/widgets/section-categories-2col-widget.php:221
-#: acosmin/widgets/section-categories-3col-widget.php:241
-#: acosmin/widgets/section-categories-4col-widget.php:265
-#: acosmin/widgets/section-masonry-1-widget.php:242
-#: acosmin/widgets/section-masonry-2-widget.php:243
-#: acosmin/widgets/section-popular-posts-widget.php:157
-#: acosmin/widgets/section-slider-widget.php:262
-msgid "Display options:"
-msgstr ""
-
-#: acosmin/widgets/section-categories-2col-widget.php:223
-#: acosmin/widgets/section-categories-3col-widget.php:243
-#: acosmin/widgets/section-categories-4col-widget.php:267
-msgid "Show \"More Articles\" button"
-msgstr ""
-
-#: acosmin/widgets/section-categories-2col-widget.php:226
-#: acosmin/widgets/section-categories-3col-widget.php:246
-#: acosmin/widgets/section-categories-4col-widget.php:270
-msgid "Show \"RSS\" button"
-msgstr ""
-
-#: acosmin/widgets/section-categories-2col-widget.php:229
-#: acosmin/widgets/section-categories-3col-widget.php:249
-#: acosmin/widgets/section-categories-4col-widget.php:273
-#: acosmin/widgets/section-masonry-1-widget.php:244
-#: acosmin/widgets/section-masonry-2-widget.php:245
-#: acosmin/widgets/section-popular-posts-widget.php:162
-#: acosmin/widgets/section-slider-widget.php:264
-msgid "Show date"
-msgstr ""
-
-#: acosmin/widgets/section-categories-2col-widget.php:232
-#: acosmin/widgets/section-categories-3col-widget.php:252
-#: acosmin/widgets/section-categories-4col-widget.php:279
-msgid "Show comments number"
-msgstr ""
-
-#: acosmin/widgets/section-categories-3col-widget.php:23
-msgid "AC SEC: Categories 3 Columns"
-msgstr ""
-
-#: acosmin/widgets/section-categories-3col-widget.php:29
-msgid "Adds a row displaying posts from categories (three columns)"
-msgstr ""
-
-#: acosmin/widgets/section-categories-3col-widget.php:216
-#: acosmin/widgets/section-categories-4col-widget.php:223
-msgid "3rd column category"
-msgstr ""
-
-#: acosmin/widgets/section-categories-4col-widget.php:23
-msgid "AC SEC: Categories 4 Columns"
-msgstr ""
-
-#: acosmin/widgets/section-categories-4col-widget.php:29
-msgid "Adds a row displaying posts from categories (four columns)"
-msgstr ""
-
-#: acosmin/widgets/section-categories-4col-widget.php:240
-msgid "4th column category"
-msgstr ""
-
-#: acosmin/widgets/section-categories-4col-widget.php:276
-#: acosmin/widgets/section-masonry-1-widget.php:250
-#: acosmin/widgets/section-masonry-2-widget.php:251
-msgid "Show author"
-msgstr ""
-
-#: acosmin/widgets/section-masonry-1-widget.php:23
-msgid "AC SEC: Masonry #1"
-msgstr ""
-
-#: acosmin/widgets/section-masonry-1-widget.php:29
-#: acosmin/widgets/section-masonry-2-widget.php:29
-msgid "This is used to display your posts using Masonry"
-msgstr ""
-
-#: acosmin/widgets/section-masonry-1-widget.php:203
-msgid "- Show excerpt;"
-msgstr ""
-
-#: acosmin/widgets/section-masonry-1-widget.php:209
-#: acosmin/widgets/section-masonry-2-widget.php:210
-#: acosmin/widgets/section-slider-widget.php:222
-msgid "Display:"
-msgstr ""
-
-#: acosmin/widgets/section-masonry-1-widget.php:211
-#: acosmin/widgets/section-masonry-2-widget.php:212
-#: acosmin/widgets/section-slider-widget.php:224
-msgid "Featured posts"
-msgstr ""
-
-#: acosmin/widgets/section-masonry-1-widget.php:212
-#: acosmin/widgets/section-masonry-2-widget.php:213
-msgid "Latest posts"
-msgstr ""
-
-#: acosmin/widgets/section-masonry-1-widget.php:213
-#: acosmin/widgets/section-masonry-2-widget.php:214
-#: acosmin/widgets/section-slider-widget.php:225
-msgid "Category posts"
-msgstr ""
-
-#: acosmin/widgets/section-masonry-1-widget.php:217
-#: acosmin/widgets/section-masonry-2-widget.php:218
-#: acosmin/widgets/section-slider-widget.php:229
-msgid "Select a category:"
-msgstr ""
-
-#: acosmin/widgets/section-masonry-1-widget.php:234
-#: acosmin/widgets/section-masonry-2-widget.php:235
-#: acosmin/widgets/section-slider-widget.php:246
-msgid "Number of posts (more than 3):"
-msgstr ""
-
-#: acosmin/widgets/section-masonry-1-widget.php:247
-#: acosmin/widgets/section-masonry-2-widget.php:248
-#: acosmin/widgets/section-popular-posts-widget.php:165
-#: acosmin/widgets/section-slider-widget.php:267
-msgid "Show category"
-msgstr ""
-
-#: acosmin/widgets/section-masonry-1-widget.php:253
-msgid "Show excerpt"
-msgstr ""
-
-#: acosmin/widgets/section-masonry-1-widget.php:256
-#: acosmin/widgets/section-masonry-2-widget.php:254
-#: acosmin/widgets/section-popular-posts-widget.php:168
-#: acosmin/widgets/section-slider-widget.php:270
-msgid "Show # comments"
-msgstr ""
-
-#: acosmin/widgets/section-masonry-2-widget.php:23
-msgid "AC SEC: Masonry #2"
-msgstr ""
-
-#: acosmin/widgets/section-masonry-2-widget.php:204
-msgid "- How many posts to display;"
-msgstr ""
-
-#: acosmin/widgets/section-popular-posts-widget.php:23
-msgid "AC SEC: Popular Posts"
-msgstr ""
-
-#: acosmin/widgets/section-popular-posts-widget.php:29
-msgid "This widget is used to display popular posts in a podium style ranking."
-msgstr ""
-
-#: acosmin/widgets/section-popular-posts-widget.php:159
-msgid "Show # position"
-msgstr ""
-
-#: acosmin/widgets/section-slider-widget.php:23
-msgid "AC SEC: Slider #1"
-msgstr ""
-
-#: acosmin/widgets/section-slider-widget.php:29
-msgid "This widget is used to display your featured posts in a jQuery slider."
-msgstr ""
-
-#: acosmin/widgets/section-slider-widget.php:215
-msgid "- Display posts from a category;"
-msgstr ""
-
-#: acosmin/widgets/section-slider-widget.php:216
-msgid "- Autoplay delay timer;"
-msgstr ""
-
-#: acosmin/widgets/section-slider-widget.php:255
-msgid "Enable autoplay"
-msgstr ""
-
-#: acosmin/widgets/section-slider-widget.php:258
-msgid "Autoplay delay (milliseconds):"
-msgstr ""
-
-#: acosmin/widgets/section-social-profiles-widget.php:23
-msgid "AC SEC: Social Profiles"
-msgstr ""
-
-#: acosmin/widgets/section-social-profiles-widget.php:29
-msgid "This is used to display links to your social profiles."
-msgstr ""
-
-#: post-templates/content-aside.php:24
-msgid "Aside Archive"
-msgstr ""
-
-#: post-templates/content-aside.php:42 post-templates/content-audio.php:26
-#: post-templates/content-gallery.php:26 post-templates/content-image.php:26
-#: post-templates/content-link.php:42 post-templates/content-quote.php:42
-#: post-templates/content-single.php:25 post-templates/content-video.php:26
-msgid "Tagged with:"
-msgstr ""
-
-#: post-templates/content-aside.php:45 post-templates/content-audio.php:29
-#: post-templates/content-gallery.php:29 post-templates/content-image.php:29
-#: post-templates/content-link.php:45 post-templates/content-quote.php:45
-#: post-templates/content-single.php:28 post-templates/content-video.php:29
-msgid "Pages:"
-msgstr ""
-
-#: post-templates/content-audio.php:20
-msgid "Audio Archive"
-msgstr ""
-
-#: post-templates/content-gallery.php:20
-msgid "Galleries Archive"
-msgstr ""
-
-#: post-templates/content-image.php:20
-msgid "Images Archive"
-msgstr ""
-
-#: post-templates/content-link.php:24
-msgid "Links Archive"
-msgstr ""
-
-#: post-templates/content-no-articles.php:10
-msgid "It looks like nothing was found."
-msgstr ""
-
-#: post-templates/content-no-articles.php:10
-msgid "Maybe try another search?"
-msgstr ""
-
-#: post-templates/content-no-articles.php:12
-msgid "No posts found. Maybe add some! :)"
-msgstr ""
-
-#: post-templates/content-quote.php:24
-msgid "Quote Archive"
-msgstr ""
-
-#: post-templates/content-video.php:20
-msgid "Video Archive"
-msgstr ""
-
-#: post-templates/content.php:25
-msgid "Sticky Post"
-msgstr ""
-
-#: post-templates/content.php:52
-msgid "Read More..."
-msgstr ""
-
-#: section-templates/section-categories-2col.php:42
-#: section-templates/section-categories-3col.php:43
-#: section-templates/section-categories-4col.php:44
-msgid "More articles in this category"
-msgstr ""
-
-#: section-templates/section-categories-2col.php:43
-#: section-templates/section-categories-3col.php:44
-#: section-templates/section-categories-4col.php:45
-msgid "RSS Feed"
-msgstr ""
-
-#: section-templates/section-categories-2col.php:95
-#: section-templates/section-categories-3col.php:115
-#: section-templates/section-categories-4col.php:101
-msgid "This category has no posts!"
-msgstr ""
-
-#: section-templates/section-masonry-1.php:93
-#: section-templates/section-masonry-2.php:125
-msgid "No posts available"
-msgstr ""
-
-#: section-templates/section-popular-posts.php:45
+#. Text in echo
+#: justwrite/section-templates/section-popular-posts.php:45
 msgid "1"
 msgstr ""
 
-#: section-templates/section-popular-posts.php:79
+#. Text in function
+#: justwrite/acosmin/functions/functions-default.php:1
+msgid "1 Comment"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/functions/functions-post-options.php:63
+msgid "10%"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/functions/functions-post-options.php:72
+msgid "100%"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "160x600px Ad"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "160x600px Ad HTML Code"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "160x600px Title Link:"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "160x600px Title:"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/widgets/section-categories-2col-widget.php:166
+#: justwrite/acosmin/widgets/section-categories-3col-widget.php:169
+#: justwrite/acosmin/widgets/section-categories-4col-widget.php:176
+msgid "1st column category"
+msgstr ""
+
+#. Text in echo
+#: justwrite/section-templates/section-popular-posts.php:79
 msgid "2"
 msgstr ""
 
-#: section-templates/section-popular-posts.php:113
+#. Text in echo
+#: justwrite/acosmin/functions/functions-post-options.php:64
+msgid "20%"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/widgets/section-categories-2col-widget.php:183
+#: justwrite/acosmin/widgets/section-categories-3col-widget.php:186
+#: justwrite/acosmin/widgets/section-categories-4col-widget.php:193
+msgid "2nd column category"
+msgstr ""
+
+#. Text in echo
+#: justwrite/section-templates/section-popular-posts.php:113
 msgid "3"
 msgstr ""
 
-#: section-templates/section-slider.php:80
+#. Text in echo
+#: justwrite/acosmin/functions/functions-post-options.php:65
+msgid "30%"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/widgets/section-categories-3col-widget.php:203
+#: justwrite/acosmin/widgets/section-categories-4col-widget.php:210
+msgid "3rd column category"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/functions/functions-post-options.php:66
+msgid "40%"
+msgstr ""
+
+#. Text in echo
+#: justwrite/404.php:14
+msgid "404"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/widgets/section-categories-4col-widget.php:227
+msgid "4th column category"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/functions/functions-post-options.php:67
+msgid "50%"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/functions/functions-post-options.php:68
+msgid "60%"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/functions/functions-post-options.php:69
+msgid "70%"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/widgets/section-ad-widget.php:171
+msgid "728px"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "728x90px Ad"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "728x90px Ad HTML Code"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/functions/functions-post-options.php:70
+msgid "80%"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/functions/functions-post-options.php:71
+msgid "90%"
+msgstr ""
+
+#. Text in function
+#: justwrite/functions.php:551
+msgid "<cite class=\"fn\">%s says:</cite>"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "<small>* Applies to some sub-menus, mini-sidebar, sidebar, post content and basic link color.</small>"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "<small>* If you add or change a menu title save your changes.</small>"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "<small>* You need at least 3 posts marked as featured for the slider to show up.</small><br><small>* When you post an article click on \"Mark this post as featured\".</small>"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "<ul>
+			<li><a target=\"_blank\" href=\"//www.acosmin.com/documentation/justwrite/?utm_campaign=justwrite_docs_btn\"><strong>Documentation</strong></a></li>
+			<li><a target=\"_blank\" href=\"//www.acosmin.com/theme/justwrite/#freebies\"><strong>Freebies</strong></a></li>
+		</ul>"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "A few widgets appear when you install the theme for the first time (placeholders)."
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/section-archives-widget.php:1
+msgid "AC SEC: Archives"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/section-categories-2col-widget.php:1
+msgid "AC SEC: Categories 2 Columns"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/section-categories-3col-widget.php:1
+msgid "AC SEC: Categories 3 Columns"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/section-categories-4col-widget.php:1
+msgid "AC SEC: Categories 4 Columns"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/section-masonry-1-widget.php:1
+msgid "AC SEC: Masonry #1"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/section-masonry-2-widget.php:1
+msgid "AC SEC: Masonry #2"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/section-popular-posts-widget.php:1
+msgid "AC SEC: Popular Posts"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/section-ad-widget.php:1
+msgid "AC SEC: Responsive Ad Banner"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/section-slider-widget.php:1
+msgid "AC SEC: Slider #1"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/section-social-profiles-widget.php:1
+msgid "AC SEC: Social Profiles"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/custom-featured-posts-widget.php:1
+msgid "AC: Featured Posts"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/custom-popular-posts-widget.php:1
+msgid "AC: Popular Posts"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/custom-recent-posts-widget.php:1
+msgid "AC: Recent Posts"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/default-social-buttons-widget.php:1
+msgid "AC: Social Buttons"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/custom-tabs-widget.php:1
+msgid "AC: Tabs"
+msgstr ""
+
+#. Text in echo
+#: justwrite/author.php:40
+#: justwrite/post-templates/about-the-author.php:13
+msgid "About the author"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Active states for some buttons"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/widgets/section-ad-widget.php:164
+msgid "Ad code:"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/widgets/section-ad-widget.php:170
+msgid "Ad max width:"
+msgstr ""
+
+#. Text in function
+#: justwrite/header.php:53
+msgid "Add a menu"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/widgets/section-ad-widget.php:189
+#: justwrite/acosmin/widgets/section-archives-widget.php:191
+#: justwrite/acosmin/widgets/section-categories-2col-widget.php:229
+#: justwrite/acosmin/widgets/section-categories-3col-widget.php:249
+#: justwrite/acosmin/widgets/section-categories-4col-widget.php:276
+#: justwrite/acosmin/widgets/section-masonry-1-widget.php:245
+#: justwrite/acosmin/widgets/section-masonry-2-widget.php:240
+#: justwrite/acosmin/widgets/section-popular-posts-widget.php:182
+#: justwrite/acosmin/widgets/section-slider-widget.php:237
+#: justwrite/acosmin/widgets/section-social-profiles-widget.php:275
+msgid "Add border bottom"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/widgets/section-ad-widget.php:186
+#: justwrite/acosmin/widgets/section-archives-widget.php:188
+#: justwrite/acosmin/widgets/section-categories-2col-widget.php:226
+#: justwrite/acosmin/widgets/section-categories-3col-widget.php:246
+#: justwrite/acosmin/widgets/section-categories-4col-widget.php:273
+#: justwrite/acosmin/widgets/section-masonry-1-widget.php:242
+#: justwrite/acosmin/widgets/section-masonry-2-widget.php:237
+#: justwrite/acosmin/widgets/section-popular-posts-widget.php:179
+#: justwrite/acosmin/widgets/section-slider-widget.php:234
+#: justwrite/acosmin/widgets/section-social-profiles-widget.php:272
+msgid "Add border top"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/widgets/section-ad-widget.php:195
+#: justwrite/acosmin/widgets/section-archives-widget.php:197
+#: justwrite/acosmin/widgets/section-masonry-2-widget.php:246
+#: justwrite/acosmin/widgets/section-slider-widget.php:243
+#: justwrite/acosmin/widgets/section-social-profiles-widget.php:281
+msgid "Add padding bottom"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/widgets/section-ad-widget.php:192
+#: justwrite/acosmin/widgets/section-archives-widget.php:194
+#: justwrite/acosmin/widgets/section-categories-2col-widget.php:232
+#: justwrite/acosmin/widgets/section-categories-3col-widget.php:252
+#: justwrite/acosmin/widgets/section-categories-4col-widget.php:279
+#: justwrite/acosmin/widgets/section-masonry-1-widget.php:248
+#: justwrite/acosmin/widgets/section-masonry-2-widget.php:243
+#: justwrite/acosmin/widgets/section-popular-posts-widget.php:185
+#: justwrite/acosmin/widgets/section-slider-widget.php:240
+#: justwrite/acosmin/widgets/section-social-profiles-widget.php:278
+msgid "Add padding top"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/section-categories-4col-widget.php:1
+msgid "Adds a row displaying posts from categories (four columns)"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/section-categories-3col-widget.php:1
+msgid "Adds a row displaying posts from categories (three columns)"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/section-categories-2col-widget.php:1
+msgid "Adds a row displaying posts from categories (two columns)"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Advertising"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/class-tgm-plugin-activation.php:1
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#. Text in function
+#: justwrite/author.php:27
+msgid "All posts by %s"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Also applies to links activ state in mini-sidebar"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Also applies to some dark colored links (post info links, main menu links if not selected)"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/default-social-buttons-widget.php:181
+#: justwrite/acosmin/widgets/section-social-profiles-widget.php:250
+msgid "Anchor text"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Applies to bright colored links (archives, author info box, blockquote text, comment date)"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Applies to bright colored links (categories, some icons, copyright)"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Applies to categories, dates info and a few more"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Applies to columns, sidebars headings and some buttons colors"
+msgstr ""
+
+#. Text in echo
+#: justwrite/archive.php:23
+#: justwrite/sidebar-browse.php:53
+msgid "Archives"
+msgstr ""
+
+#. Text in echo
+#: justwrite/post-templates/content-aside.php:24
+msgid "Aside Archive"
+msgstr ""
+
+#. Text in echo
+#: justwrite/post-templates/content-audio.php:20
+msgid "Audio Archive"
+msgstr ""
+
+#. Text in echo
+#: justwrite/author.php:46
+#: justwrite/post-templates/about-the-author.php:19
+msgid "Author's Link"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Background color"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Basic Options"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/functions/functions-post-options.php:57
+msgid "Bilboard option: Your featured image must be at least 1800x900px to display correctly."
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/functions/functions-post-options.php:51
+msgid "Billboard"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/functions/functions-post-options.php:60
+msgid "Billboard Overlay Opacity:"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Body background color"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Body font color"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Border color"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Bottom border color"
+msgstr ""
+
+#. Text in function
+#: justwrite/header.php:67
+msgid "Browse"
+msgstr ""
+
+#. Text in echo
+#: justwrite/sidebar-browse.php:23
+msgid "Browse By"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Bubble background color"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Bubble font color"
+msgstr ""
+
+#. Text in echo
+#: justwrite/sidebar-browse.php:62
+msgid "Calendar"
+msgstr ""
+
+#. Text in echo
+#: justwrite/category.php:22
+msgid "Category Archives:"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/widgets/section-masonry-1-widget.php:195
+#: justwrite/acosmin/widgets/section-masonry-2-widget.php:194
+msgid "Category posts"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Center align the logo"
+msgstr ""
+
+#. Text in echo
+#: justwrite/comments.php:58
+msgid "Comments are closed."
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Copyright text"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Custom RSS feed"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/custom-tabs-widget.php:1
+msgid "Custom designed tabs for your main sidebar"
+msgstr ""
+
+#. Text in function
+#: justwrite/archive.php:23
+msgid "Daily Archives: <span>%s</span>"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Date background color"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-post-options.php:78
+msgid "Default"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Description - Font Color"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Disable \"About The Author\" box"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Disable Fixed Style"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Disable Mini-Sidebar"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Disable comments."
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Disable demo widgets"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Disable footer credit links"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/class-tgm-plugin-activation.php:1
+msgid "Dismiss this notice"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/widgets/section-categories-2col-widget.php:204
+#: justwrite/acosmin/widgets/section-categories-3col-widget.php:224
+#: justwrite/acosmin/widgets/section-categories-4col-widget.php:248
+#: justwrite/acosmin/widgets/section-masonry-1-widget.php:220
+#: justwrite/acosmin/widgets/section-masonry-2-widget.php:215
+#: justwrite/acosmin/widgets/section-popular-posts-widget.php:157
+#: justwrite/acosmin/widgets/section-slider-widget.php:215
+msgid "Display options:"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/widgets/section-masonry-1-widget.php:191
+#: justwrite/acosmin/widgets/section-masonry-2-widget.php:190
+#: justwrite/acosmin/widgets/section-slider-widget.php:201
+msgid "Display:"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/default-social-buttons-widget.php:1
+msgid "Displays buttons for your social profiles."
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/custom-featured-posts-widget.php:1
+msgid "Displays posts you set as featured in the editor area."
+msgstr ""
+
+#. Text in function
+#: justwrite/functions.php:1
+msgid "Displays widgets in area #1 (footer)."
+msgstr ""
+
+#. Text in function
+#: justwrite/functions.php:1
+msgid "Displays widgets in area #2 (footer)."
+msgstr ""
+
+#. Text in function
+#: justwrite/functions.php:1
+msgid "Displays widgets in area #3 (footer)."
+msgstr ""
+
+#. Text in function
+#: justwrite/functions.php:1
+msgid "Displays widgets in area #4 (footer)."
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/custom-popular-posts-widget.php:1
+msgid "Displays your most popular articles."
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/custom-recent-posts-widget.php:1
+msgid "Displays your most recent articles. With or without thumbnails"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/default-social-buttons-widget.php:1
+#: justwrite/acosmin/widgets/section-social-profiles-widget.php:1
+msgid "Dribbble URI"
+msgstr ""
+
+#. Text in function
+#: justwrite/functions.php:555
+#: justwrite/functions.php:578
+#: justwrite/functions.php:584
+msgid "Edit"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Eight"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Enable Colorful Categories"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Enable WooCommerce"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/widgets/section-slider-widget.php:212
+msgid "Enable autoplay"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Enable autostart (autoscrolling)"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Example: <b>acosmin</b>"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Example: <b>https://plus.google.com/+acosmin</b>"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Example: <b>https://www.facebook.com/acosmincom</b>"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Example: Advertising. Leave this blank if you do not want a title."
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Example: Google Adsense or a simple HTML banner"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Example: Google Adsense or a simple HTML banner; this banner will show up in the left sidebar on screen resolutions higher than 1600px"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Example: http://yoursite.com/advertising"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Facebook"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/default-social-buttons-widget.php:1
+#: justwrite/acosmin/widgets/section-social-profiles-widget.php:1
+msgid "Facebook URI"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/custom-featured-posts-widget.php:1
+#: justwrite/acosmin/widgets/custom-featured-posts-widget.php:108
+#: justwrite/acosmin/widgets/custom-tabs-widget.php:1
+#: justwrite/acosmin/widgets/custom-tabs-widget.php:320
+msgid "Featured Posts"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/widgets/section-masonry-1-widget.php:193
+#: justwrite/acosmin/widgets/section-masonry-2-widget.php:192
+#: justwrite/acosmin/widgets/section-slider-widget.php:203
+msgid "Featured posts"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "First Menu - Select"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "First Menu - Title"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Five"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/default-social-buttons-widget.php:1
+#: justwrite/acosmin/widgets/section-social-profiles-widget.php:1
+msgid "Flickr URI"
+msgstr ""
+
+#. Text in function
+#: justwrite/functions.php:1
+msgid "Footer - Area #1"
+msgstr ""
+
+#. Text in function
+#: justwrite/functions.php:1
+msgid "Footer - Area #2"
+msgstr ""
+
+#. Text in function
+#: justwrite/functions.php:1
+msgid "Footer - Area #3"
+msgstr ""
+
+#. Text in function
+#: justwrite/functions.php:1
+msgid "Footer - Area #4"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Footer Options"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Four"
+msgstr ""
+
+#. Text in echo
+#: justwrite/post-templates/content-gallery.php:20
+msgid "Galleries Archive"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/section-basic-widget.php:1
+msgid "Get Pro Version"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/default-social-buttons-widget.php:1
+#: justwrite/acosmin/widgets/section-social-profiles-widget.php:1
+msgid "GitHub URI"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Global Background Colors"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Global Border Colors"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Global Fonts Colors"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Global Links Colors"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Global Options"
+msgstr ""
+
+#. Text in function
+#: justwrite/sidebar-browse.php:31
+msgid "Go Home"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Google Plus"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/default-social-buttons-widget.php:1
+#: justwrite/acosmin/widgets/section-social-profiles-widget.php:1
+msgid "Google Plus URI"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Header"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Header - Background Color"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Header - Background Image"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Header - Bottom Border Color"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Header Options"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Hide footer widgets area"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Hide main posts query"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/widgets/custom-tabs-widget.php:336
+msgid "Hide post thumbnails in"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/widgets/custom-recent-posts-widget.php:124
+msgid "Hide post thumbnails."
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/widgets/custom-featured-posts-widget.php:105
+#: justwrite/acosmin/widgets/custom-popular-posts-widget.php:108
+#: justwrite/acosmin/widgets/custom-recent-posts-widget.php:113
+#: justwrite/acosmin/widgets/custom-tabs-widget.php:312
+msgid "How many"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "If you do not want to use the default WP RSS feed, add another one (ex: <b>http://feeds.feedburner.com/acosmin</b>)"
+msgstr ""
+
+#. Text in echo
+#: justwrite/post-templates/content-image.php:20
+msgid "Images Archive"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "In case you are using a child theme and you have a font style selected, check this if you want to make some changes."
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "In case you want to use only sections."
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/widgets/section-ad-widget.php:172
+msgid "In this field you can enter the maximum width (in pixels or percentage) for this ad. 728px is the default value. 100% willd make the add strech as much as it can."
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Inner borders color"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/default-social-buttons-widget.php:1
+#: justwrite/acosmin/widgets/section-social-profiles-widget.php:1
+msgid "Instagram URI"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/class-tgm-plugin-activation.php:1
+msgid "Install Plugins"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/class-tgm-plugin-activation.php:1
+msgid "Install Required Plugins"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/class-tgm-plugin-activation.php:1
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#. Text in echo
+#: justwrite/404.php:15
+msgid "It looks like nothing was found at this location."
+msgstr ""
+
+#. Text in echo
+#: justwrite/post-templates/content-no-articles.php:10
+msgid "It looks like nothing was found."
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "It will only show up if you do not have an Ad banner enabled"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "JustWrite Information"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/custom-tabs-widget.php:1
+msgid "Latest Posts"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/widgets/section-masonry-1-widget.php:194
+#: justwrite/acosmin/widgets/section-masonry-2-widget.php:193
+msgid "Latest posts"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Layout Options"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/default-social-buttons-widget.php:1
+#: justwrite/acosmin/widgets/section-social-profiles-widget.php:1
+msgid "LinkedIn URI"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Links - Hover state"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Links - Link/Visited states"
+msgstr ""
+
+#. Text in echo
+#: justwrite/post-templates/content-link.php:24
+msgid "Links Archive"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Logo - Font Color"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Logo - Image"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Logo and Description"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Logo text"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+#: justwrite/functions.php:1
+msgid "Main Menu"
+msgstr ""
+
+#. Text in function
+#: justwrite/header.php:53
+msgid "Main Menu Location"
+msgstr ""
+
+#. Text in function
+#: justwrite/sidebar-browse.php:31
+msgid "Main Page"
+msgstr ""
+
+#. Text in function
+#: justwrite/functions.php:1
+msgid "Main Sidebar"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Main background color"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Main border color"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Main links color"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Main links color / Active"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Main links color / Hover"
+msgstr ""
+
+#. Text in function
+#: justwrite/functions.php:1
+msgid "Main sidebar that appears on the right."
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/functions/functions-post-options.php:43
+msgid "Mark this post as featured"
+msgstr ""
+
+#. Text in echo
+#: justwrite/404.php:15
+msgid "Maybe try a search?"
+msgstr ""
+
+#. Text in echo
+#: justwrite/post-templates/content-no-articles.php:10
+msgid "Maybe try another search?"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Mini-Sidebar"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Misc areas"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Miscellaneous"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Mobile Menu"
+msgstr ""
+
+#. Text in echo
+#: justwrite/section-templates/section-categories-2col.php:42
+#: justwrite/section-templates/section-categories-3col.php:43
+#: justwrite/section-templates/section-categories-4col.php:44
+msgid "More articles in this category"
+msgstr ""
+
+#. Text in function
+#: justwrite/comments.php:52
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#. Text in function
+#: justwrite/functions.php:684
+msgid "Next &rarr;"
+msgstr ""
+
+#. Text in function
+#: justwrite/functions.php:882
+msgid "Next Post"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Nine"
+msgstr ""
+
+#. Text in echo
+#: justwrite/section-templates/section-slider.php:80
 msgid "No Posts Found!"
 msgstr ""
 
-#: section-templates/section-slider.php:84
+#. Text in function
+#: justwrite/acosmin/widgets/custom-featured-posts-widget.php:62
+#: justwrite/acosmin/widgets/custom-recent-posts-widget.php:63
+#: justwrite/acosmin/widgets/custom-tabs-widget.php:176
+#: justwrite/featured-content.php:25
+#: justwrite/functions.php:872
+#: justwrite/post-templates/content-aside.php:29
+#: justwrite/post-templates/content-link.php:29
+#: justwrite/post-templates/content-quote.php:29
+#: justwrite/post-templates/content.php:23
+#: justwrite/section-templates/section-categories-2col.php:71
+#: justwrite/section-templates/section-categories-3col.php:97
+#: justwrite/section-templates/section-categories-4col.php:71
+#: justwrite/section-templates/section-masonry-1.php:68
+#: justwrite/section-templates/section-masonry-2.php:99
+#: justwrite/section-templates/section-popular-posts.php:115
+#: justwrite/section-templates/section-slider.php:54
+msgid "No Thumbnail"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/class-tgm-plugin-activation.php:1
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/widgets/custom-popular-posts-widget.php:78
+#: justwrite/acosmin/widgets/custom-recent-posts-widget.php:79
+#: justwrite/acosmin/widgets/custom-tabs-widget.php:192
+msgid "No popular posts available!"
+msgstr ""
+
+#. Text in echo
+#: justwrite/section-templates/section-masonry-1.php:93
+#: justwrite/section-templates/section-masonry-2.php:125
+msgid "No posts available"
+msgstr ""
+
+#. Text in echo
+#: justwrite/post-templates/content-no-articles.php:12
+msgid "No posts found. Maybe add some! :)"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/functions/functions-post-options.php:50
+msgid "Normal"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/functions/functions-post-options.php:56
+msgid "Notice:"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/widgets/section-categories-2col-widget.php:200
+#: justwrite/acosmin/widgets/section-categories-3col-widget.php:220
+#: justwrite/acosmin/widgets/section-categories-4col-widget.php:244
+msgid "Number of posts (3 or more):"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/widgets/section-masonry-1-widget.php:216
+#: justwrite/acosmin/widgets/section-slider-widget.php:207
+msgid "Number of posts (more than 3):"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Or anything with a white bg"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Other border colors"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Other links"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Overwrite font style"
+msgstr ""
+
+#. Text in function
+#: justwrite/post-templates/content-aside.php:39
+#: justwrite/post-templates/content-audio.php:23
+#: justwrite/post-templates/content-gallery.php:23
+#: justwrite/post-templates/content-image.php:23
+#: justwrite/post-templates/content-link.php:39
+#: justwrite/post-templates/content-quote.php:39
+#: justwrite/post-templates/content-single.php:22
+#: justwrite/post-templates/content-video.php:23
+msgid "Pages:"
+msgstr ""
+
+#. Text in echo
+#: justwrite/functions.php:578
+msgid "Pingback:"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/default-social-buttons-widget.php:1
+#: justwrite/acosmin/widgets/section-social-profiles-widget.php:1
+msgid "Pinterest URI"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/class-tgm-plugin-activation.php:1
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/custom-tabs-widget.php:238
+msgid "Please select some settings for this widget - Tabs"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/class-tgm-plugin-activation.php:1
+msgid "Plugin activated successfully."
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/class-tgm-plugin-activation.php:1
+msgid "Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin."
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/custom-popular-posts-widget.php:1
+#: justwrite/acosmin/widgets/custom-popular-posts-widget.php:111
+#: justwrite/acosmin/widgets/custom-tabs-widget.php:1
+#: justwrite/acosmin/widgets/custom-tabs-widget.php:315
+msgid "Popular Posts"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Popular posts section"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/functions/functions-post-options.php:48
+msgid "Post Layout:"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-post-options.php:1
+msgid "Post Options:"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/functions/functions-post-options.php:45
+msgid "Post thumbnail in single view"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Posts"
+msgstr ""
+
+#. Text in function
+#: justwrite/functions.php:1
+msgid "Posts Sidebar"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Posts layout:"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Posts links"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Posts links hover state"
+msgstr ""
+
+#. Text in function
+#: justwrite/functions.php:882
+msgid "Previous Post"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/section-basic-widget.php:1
+msgid "Pro Version"
+msgstr ""
+
+#. Text in echo
+#: justwrite/post-templates/content-quote.php:24
+msgid "Quote Archive"
+msgstr ""
+
+#. Text in echo
+#: justwrite/section-templates/section-categories-2col.php:43
+#: justwrite/section-templates/section-categories-3col.php:44
+#: justwrite/section-templates/section-categories-4col.php:45
+msgid "RSS Feed"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/default-social-buttons-widget.php:1
+#: justwrite/acosmin/widgets/section-social-profiles-widget.php:1
+msgid "RSS URI"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/widgets/custom-featured-posts-widget.php:72
+#: justwrite/acosmin/widgets/custom-tabs-widget.php:146
+msgid "Read More"
+msgstr ""
+
+#. Text in echo
+#: justwrite/post-templates/content.php:52
+msgid "Read More..."
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/custom-tabs-widget.php:1
+#: justwrite/acosmin/widgets/custom-tabs-widget.php:330
+msgid "Recent Comments"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/custom-recent-posts-widget.php:1
+#: justwrite/acosmin/widgets/custom-recent-posts-widget.php:116
+#: justwrite/acosmin/widgets/custom-tabs-widget.php:325
+msgid "Recent Posts"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/widgets/section-ad-widget.php:183
+msgid "Remove background-color"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/widgets/section-ad-widget.php:180
+#: justwrite/acosmin/widgets/section-archives-widget.php:185
+#: justwrite/acosmin/widgets/section-categories-2col-widget.php:223
+#: justwrite/acosmin/widgets/section-categories-3col-widget.php:243
+#: justwrite/acosmin/widgets/section-categories-4col-widget.php:270
+#: justwrite/acosmin/widgets/section-masonry-1-widget.php:239
+#: justwrite/acosmin/widgets/section-masonry-2-widget.php:234
+#: justwrite/acosmin/widgets/section-popular-posts-widget.php:176
+#: justwrite/acosmin/widgets/section-slider-widget.php:231
+#: justwrite/acosmin/widgets/section-social-profiles-widget.php:269
+msgid "Remove bottom margin"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/widgets/section-ad-widget.php:177
+#: justwrite/acosmin/widgets/section-archives-widget.php:182
+#: justwrite/acosmin/widgets/section-categories-2col-widget.php:220
+#: justwrite/acosmin/widgets/section-categories-3col-widget.php:240
+#: justwrite/acosmin/widgets/section-categories-4col-widget.php:267
+#: justwrite/acosmin/widgets/section-masonry-1-widget.php:236
+#: justwrite/acosmin/widgets/section-masonry-2-widget.php:231
+#: justwrite/acosmin/widgets/section-popular-posts-widget.php:173
+#: justwrite/acosmin/widgets/section-slider-widget.php:228
+#: justwrite/acosmin/widgets/section-social-profiles-widget.php:266
+msgid "Remove top margin"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/class-tgm-plugin-activation.php:1
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/class-tgm-plugin-activation.php:1
+msgid "Return to the Dashboard"
+msgstr ""
+
+#. Text in function
+#: justwrite/functions.php:1
+msgid "Right Sidebar - First Menu"
+msgstr ""
+
+#. Text in function
+#: justwrite/functions.php:1
+msgid "Right Sidebar - Second Menu"
+msgstr ""
+
+#. Text in function
+#: justwrite/functions.php:1
+msgid "Same as \"Main Sidebar\", designed for the posts."
+msgstr ""
+
+#. Text in echo
+#: justwrite/header.php:77
+msgid "Search"
+msgstr ""
+
+#. Text in function
+#: justwrite/search.php:18
+msgid "Search Results for: %s"
+msgstr ""
+
+#. Text in echo
+#: justwrite/header.php:79
+msgid "Search for:"
+msgstr ""
+
+#. Text in function
+#: justwrite/functions.php:1
+msgid "Second Menu"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Second Menu - Select"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Second Menu - Title"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Section title"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/widgets/default-social-buttons-widget.php:176
+#: justwrite/acosmin/widgets/section-archives-widget.php:176
+#: justwrite/acosmin/widgets/section-categories-2col-widget.php:162
+#: justwrite/acosmin/widgets/section-categories-3col-widget.php:165
+#: justwrite/acosmin/widgets/section-categories-4col-widget.php:172
+#: justwrite/acosmin/widgets/section-masonry-1-widget.php:187
+#: justwrite/acosmin/widgets/section-masonry-2-widget.php:186
+#: justwrite/acosmin/widgets/section-popular-posts-widget.php:153
+#: justwrite/acosmin/widgets/section-slider-widget.php:197
+#: justwrite/acosmin/widgets/section-social-profiles-widget.php:245
+msgid "Section title:"
+msgstr ""
+
+#. Text in function
+#: justwrite/functions.php:1
+msgid "Sections - After header"
+msgstr ""
+
+#. Text in function
+#: justwrite/functions.php:1
+msgid "Sections - After posts"
+msgstr ""
+
+#. Text in function
+#: justwrite/functions.php:1
+msgid "Sections - Before footer"
+msgstr ""
+
+#. Text in function
+#: justwrite/functions.php:1
+msgid "Sections - Before posts"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Sections titles"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/widgets/section-masonry-1-widget.php:199
+#: justwrite/acosmin/widgets/section-masonry-2-widget.php:198
+msgid "Select a category:"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Select a font family"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Select a menu"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Select how all your posts should be structured. This is a global option. You can overwrite this option and change how a post looks when you edit said post (\"Post Options\" metabox)!"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Select how many posts you would like to display."
+msgstr ""
+
+#. Text in echo
+#: justwrite/section-templates/section-slider.php:84
 msgid "Select some featured posts first!"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Set the width (in pixels) at which point you want the mobile menu to appear. It helps if you have a lot of menu items and you do not want them to overlap. Minimum width is 1140, you can try 1300."
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Sets the background color opacity in case you select \"Billboard\" above. This is a global option."
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Seven"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/widgets/custom-tabs-widget.php:292
+msgid "Show \"Featured Posts\" tab."
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/widgets/section-categories-2col-widget.php:206
+#: justwrite/acosmin/widgets/section-categories-3col-widget.php:226
+#: justwrite/acosmin/widgets/section-categories-4col-widget.php:250
+msgid "Show \"More Articles\" button"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/widgets/custom-tabs-widget.php:287
+msgid "Show \"Popular Posts\" tab."
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/widgets/section-categories-2col-widget.php:209
+#: justwrite/acosmin/widgets/section-categories-3col-widget.php:229
+#: justwrite/acosmin/widgets/section-categories-4col-widget.php:253
+msgid "Show \"RSS\" button"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/widgets/custom-tabs-widget.php:302
+msgid "Show \"Recent Comments\" tab."
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/widgets/custom-tabs-widget.php:297
+msgid "Show \"Recent Posts\" tab."
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/widgets/custom-tabs-widget.php:307
+msgid "Show \"Tag Cloud\" tab."
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/widgets/section-masonry-1-widget.php:231
+#: justwrite/acosmin/widgets/section-masonry-2-widget.php:226
+#: justwrite/acosmin/widgets/section-popular-posts-widget.php:168
+#: justwrite/acosmin/widgets/section-slider-widget.php:223
+msgid "Show # comments"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/widgets/section-popular-posts-widget.php:159
+msgid "Show # position"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Show Featured Posts Slider"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/widgets/section-categories-4col-widget.php:259
+#: justwrite/acosmin/widgets/section-masonry-1-widget.php:228
+#: justwrite/acosmin/widgets/section-masonry-2-widget.php:223
+msgid "Show author"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/widgets/section-masonry-1-widget.php:225
+#: justwrite/acosmin/widgets/section-masonry-2-widget.php:220
+#: justwrite/acosmin/widgets/section-popular-posts-widget.php:165
+#: justwrite/acosmin/widgets/section-slider-widget.php:220
+msgid "Show category"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/widgets/section-categories-2col-widget.php:215
+#: justwrite/acosmin/widgets/section-categories-3col-widget.php:235
+#: justwrite/acosmin/widgets/section-categories-4col-widget.php:262
+msgid "Show comments number"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/widgets/section-categories-2col-widget.php:212
+#: justwrite/acosmin/widgets/section-categories-3col-widget.php:232
+#: justwrite/acosmin/widgets/section-categories-4col-widget.php:256
+#: justwrite/acosmin/widgets/section-masonry-1-widget.php:222
+#: justwrite/acosmin/widgets/section-masonry-2-widget.php:217
+#: justwrite/acosmin/widgets/section-popular-posts-widget.php:162
+#: justwrite/acosmin/widgets/section-slider-widget.php:217
+msgid "Show date"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Show description"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Show social profiles"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Show social profiles only when the menu is in fixed state"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Show this banner. Add the code in the following box"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Single billboard opacity:"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Single post layout:"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Six"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Slider"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Social Options"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/class-tgm-plugin-activation.php:1
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#. Text in function
+#: justwrite/post-templates/content.php:23
+msgid "Sticky Post"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/widgets/section-ad-widget.php:175
+#: justwrite/acosmin/widgets/section-archives-widget.php:180
+#: justwrite/acosmin/widgets/section-categories-2col-widget.php:218
+#: justwrite/acosmin/widgets/section-categories-3col-widget.php:238
+#: justwrite/acosmin/widgets/section-categories-4col-widget.php:265
+#: justwrite/acosmin/widgets/section-masonry-1-widget.php:234
+#: justwrite/acosmin/widgets/section-masonry-2-widget.php:229
+#: justwrite/acosmin/widgets/section-popular-posts-widget.php:171
+#: justwrite/acosmin/widgets/section-slider-widget.php:226
+#: justwrite/acosmin/widgets/section-social-profiles-widget.php:264
+msgid "Styling options:"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Sub-menu links color"
+msgstr ""
+
+#. Text in function
+#: justwrite/tag.php:18
+msgid "Tag Archives: %s"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/custom-tabs-widget.php:1
+msgid "Tag Cloud"
+msgstr ""
+
+#. Text in function
+#: justwrite/post-templates/content-aside.php:39
+#: justwrite/post-templates/content-audio.php:23
+#: justwrite/post-templates/content-gallery.php:23
+#: justwrite/post-templates/content-image.php:23
+#: justwrite/post-templates/content-link.php:39
+#: justwrite/post-templates/content-quote.php:39
+#: justwrite/post-templates/content-single.php:22
+#: justwrite/post-templates/content-video.php:23
+msgid "Tagged with:"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Ten"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/class-tgm-plugin-activation.php:1
+msgid "The following plugin was activated successfully:"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/class-tgm-plugin-activation.php:1
+msgid "There are one or more required or recommended plugins to install, update or activate."
+msgstr ""
+
+#. Text in echo
+#: justwrite/section-templates/section-categories-2col.php:95
+#: justwrite/section-templates/section-categories-3col.php:115
+#: justwrite/section-templates/section-categories-4col.php:101
+msgid "This category has no posts!"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "This is the layout for index view, not sigle view."
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/section-ad-widget.php:1
+msgid "This is used to display an ad, any size, centered and responsive. Great for Google Adsense."
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/section-social-profiles-widget.php:1
+msgid "This is used to display links to your social profiles."
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/section-archives-widget.php:1
+msgid "This is used to display monthly archives by year."
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/section-masonry-1-widget.php:1
+#: justwrite/acosmin/widgets/section-masonry-2-widget.php:1
+msgid "This is used to display your posts using Masonry"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "This option allows you to attach a color to a category."
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/class-tgm-plugin-activation.php:1
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/section-popular-posts-widget.php:1
+msgid "This widget is used to display popular posts in a podium style ranking."
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/section-slider-widget.php:1
+msgid "This widget is used to display your featured posts in a jQuery slider."
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Three"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/widgets/custom-featured-posts-widget.php:101
+#: justwrite/acosmin/widgets/custom-popular-posts-widget.php:104
+#: justwrite/acosmin/widgets/custom-recent-posts-widget.php:107
+msgid "Title"
+msgstr ""
+
+#. Text in echo
+#: justwrite/functions.php:584
+msgid "Trackback:"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Transition Delay"
+msgstr ""
+
+#. Text in echo
+#: justwrite/acosmin/functions/functions-post-options.php:62
+msgid "Transparent"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/default-social-buttons-widget.php:1
+#: justwrite/acosmin/widgets/section-social-profiles-widget.php:1
+msgid "Tumblr URI"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Twitter"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/default-social-buttons-widget.php:1
+#: justwrite/acosmin/widgets/section-social-profiles-widget.php:1
+msgid "Twitter URI"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/class-tgm-plugin-activation.php:1
+msgid "Update Required"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/class-tgm-plugin-activation.php:1
+msgid "Updating Plugin: %s"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Use WooCommerce to create a shop and start selling products."
+msgstr ""
+
+#. Text in function
+#: justwrite/functions.php:1
+msgid "Use this area with the special designed widgets.(\"AC SEC:\" prefix and bright blue background color)."
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/default-social-buttons-widget.php:1
+#: justwrite/acosmin/widgets/section-social-profiles-widget.php:1
+msgid "VK URI"
+msgstr ""
+
+#. Text in echo
+#: justwrite/post-templates/content-video.php:20
+msgid "Video Archive"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-default.php:1
+msgid "View all posts in %s"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "Widgets titles + more"
+msgstr ""
+
+#. Text in function
+#: justwrite/functions.php:1
+msgid "Widgets will appear on all pages (except main page), after the header location. Use this area with the special designed widgets (\"AC SEC:\" prefix and bright blue background color)."
+msgstr ""
+
+#. Text in function
+#: justwrite/functions.php:1
+msgid "Widgets will appear on all pages (except main page), before the widgetized footer area. Use this area with the special designed widgets (\"AC SEC:\" prefix and bright blue background color)."
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "You can show some love by leaving them enabled :)"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "You will not be able to disaply an Ad banner"
+msgstr ""
+
+#. Text in echo
+#: justwrite/functions.php:562
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/default-social-buttons-widget.php:1
+#: justwrite/acosmin/widgets/section-social-profiles-widget.php:1
+msgid "Youtube URI"
+msgstr ""
+
+#. Text in echo
+#: justwrite/functions.php:848
+#: justwrite/post-templates/content-aside.php:21
+#: justwrite/post-templates/content-audio.php:18
+#: justwrite/post-templates/content-gallery.php:18
+#: justwrite/post-templates/content-image.php:18
+#: justwrite/post-templates/content-link.php:21
+#: justwrite/post-templates/content-quote.php:21
+#: justwrite/post-templates/content-video.php:18
+#: justwrite/post-templates/content.php:56
+msgid "by"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "ex: Blogroll"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/functions/functions-theme-customizer.php:1
+msgid "ex: Categories"
+msgstr ""
+
+#. Text in echo
+#: justwrite/functions.php:849
+#: justwrite/post-templates/content-aside.php:22
+#: justwrite/post-templates/content-audio.php:19
+#: justwrite/post-templates/content-gallery.php:19
+#: justwrite/post-templates/content-image.php:19
+#: justwrite/post-templates/content-link.php:22
+#: justwrite/post-templates/content-quote.php:22
+#: justwrite/post-templates/content-video.php:19
+#: justwrite/post-templates/content.php:57
+msgid "in"
+msgstr ""
+
+#. Text in function
+#: justwrite/acosmin/widgets/section-basic-widget.php:1
+msgid "to enable them + many more"
+msgstr ""
+
+#. Text in echo
+#: justwrite/header.php:79
+msgid "type your keywords ..."
 msgstr ""

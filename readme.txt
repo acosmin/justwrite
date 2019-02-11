@@ -4,7 +4,7 @@ Theme Name: JustWrite
 Theme URI: http://www.acosmin.com/theme/justwrite/
 Author: Alexandru Cosmin
 
-JustWrite WordPress Theme, Copyright 2015 Acosmin.com
+JustWrite WordPress Theme, Copyright 2019 Acosmin.com
 JustWrite is distributed under the terms of the GNU GPL
 
 =====================

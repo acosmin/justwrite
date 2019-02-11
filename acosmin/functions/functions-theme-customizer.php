@@ -112,12 +112,6 @@ function ac_sanitize_ads( $input ) {
 /* ------------------------------------ */
 function ac_customize_init( $wp_customize ) {
 
-	// Extensions
-	require_once( trailingslashit( get_template_directory() ) . 'acosmin/functions/customizer/extensions/upsell/upsell.php' );
-
-	// Register custom section types.
-	$wp_customize->register_section_type( 'AC_Upsell_Section' );
-
 	// Variables
 	$main_color 		= '#e1e1e1';
 	$locations      	= get_registered_nav_menus();
@@ -125,6 +119,9 @@ function ac_customize_init( $wp_customize ) {
 	$menu_locations 	= get_nav_menu_locations();
 	$num_locations  	= count( array_keys( $locations ) );
 	$filtered_options	= '';
+
+	// Controls
+	require_once( trailingslashit( get_template_directory() ) . 'acosmin/functions/p-control.php' );
 
 	// Select Options
 	$choices = array( 0 => __( '&mdash; Select &mdash;', 'justwrite' ) );
@@ -139,6 +136,29 @@ function ac_customize_init( $wp_customize ) {
 	// Get some settings
 	$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
+
+	// Help
+	$wp_customize->add_section( 'ac_section_help', array(
+		'title'       => __( 'JustWrite Information', 'justwrite' ),
+		'priority'    => 1
+	) );
+
+	$wp_customize->add_setting( 'info_help', [
+		'default'           => '',
+		'sanitize_callback' => 'sanitize_text_field',
+		'capability'        => 'edit_theme_options',
+	] );
+
+	$wp_customize->add_control( new JustWrite_Customizer_Control_P( $wp_customize, 'info_help', [
+		'settings'    => 'info_help',
+		'section'     => 'ac_section_help',
+		'type'        => 'p-control',
+		'html'        => __( '<ul>
+			<li><a target="_blank" href="//www.acosmin.com/documentation/justwrite/?utm_campaign=justwrite_docs_btn"><strong>Documentation</strong></a></li>
+			<li><a target="_blank" href="//www.acosmin.com/theme/justwrite/#freebies"><strong>Freebies</strong></a></li>
+		</ul>', 'justwrite' ),
+		'priority'    => 1
+	] ) );
 
 	// Add new panels
 	$wp_customize->add_panel( 'ac_panel_header_options', array(
@@ -156,15 +176,6 @@ function ac_customize_init( $wp_customize ) {
 
 
 
-	// Add new sections
-	$wp_customize->add_section( new AC_Upsell_Section( $wp_customize, 'ac_upsell_section', array(
-		'title'    => '&nbsp;',
-		'pro_text' => esc_html__( 'JustWrite Pro', 'justwrite' ),
-		'pro_url'  => 'http://www.acosmin.com/theme/justwrite-pro/?utm_campaign=justwrite_upsell_btn',
-		'docs_text' => esc_html__( 'Documentation', 'justwrite' ),
-		'docs_url'  => 'http://www.acosmin.com/documentation/justwrite/?utm_campaign=justwrite_docs_btn',
-		'priority' => 0
-	) ) );
 	$wp_customize->add_section( 'ac_customize_logo', array(
     	'title'				=> __( 'Logo and Description', 'justwrite' ),
 		'panel'				=> 'ac_panel_header_options',
@@ -209,7 +220,7 @@ function ac_customize_init( $wp_customize ) {
 	$wp_customize->add_section( 'ac_customize_slider', array(
     	'title'				=> __( 'Slider', 'justwrite' ),
 		'panel'				=> 'ac_panel_layout_options',
-		'description'		=> __( '<small>* Some of the options are disabled:</small><br><small><b class="ac_pro-option">Pro Option</b>: Select an offset.</small><br /><small><b class="ac_pro-option">Pro Option</b>: Show slider in category archives.</small><br><br><a href="http://www.acosmin.com/theme/justwrite-pro/" class="button button-primary ac_btn-inner-section" target="_blank">JustWrite Pro</a><br><span class="ac_divider"></span><br><small>* You need at least 3 posts marked as featured for the slider to show up.</small><br><small>* When you post an article click on "Mark this post as featured".</small>', 'justwrite' ),
+		'description'		=> __( '<small>* You need at least 3 posts marked as featured for the slider to show up.</small><br><small>* When you post an article click on "Mark this post as featured".</small>', 'justwrite' ),
     	'priority'			=> 1,
 	) );
 	$wp_customize->add_section( 'ac_customize_advertising', array(
@@ -231,7 +242,7 @@ function ac_customize_init( $wp_customize ) {
 	$wp_customize->add_section( 'ac_customize_posts', array(
     	'title'				=> __( 'Posts', 'justwrite' ),
 		'panel'				=> 'ac_panel_layout_options',
-		'description'		=> __( '<small>Some of the options are disabled:</small><br><small><b class="ac_pro-option">Pro Option</b>: Select "Right Thumbnail" option.</small><br><small><b class="ac_pro-option">Pro Option</b>: Show posts in a Masonry grid (2 columns)</small><br><small><b class="ac_pro-option">Pro Option</b>: Billboard Parallax layout for single posts</small><br><br><a href="http://www.acosmin.com/theme/justwrite-pro/" class="button button-primary ac_btn-inner-section" target="_blank">JustWrite Pro</a>', 'justwrite' ),
+		'description'		=> '',
 		'priority'			=> 5,
 	) );
 	$wp_customize->add_section( 'ac_customize_social', array(
@@ -242,18 +253,6 @@ function ac_customize_init( $wp_customize ) {
     	'title'				=> __( 'Footer Options', 'justwrite' ),
     	'priority'			=> 44,
 	) );
-	/* Upsell Sections */
-	$wp_customize->add_section( 'ac_customize_woocommerce', array(
-    	'title'				=> __( 'WooCommerce', 'justwrite' ),
-		'description'		=> __( '<small><b class="ac_pro-option">Pro Option</b></small>: <b>WooCommerce</b> compatibility and support is available only with <b>JustWrite Pro</b>.<br /><br /><a href="http://www.acosmin.com/theme/justwrite-pro/" class="button button-primary ac_btn-inner-section" target="_blank">JustWrite Pro</a>', 'justwrite' ),
-    	'priority'			=> 46,
-	) );
-	$wp_customize->add_section( 'ac_customize_colorfulcats', array(
-    	'title'				=> __( 'Colorful Categories', 'justwrite' ),
-		'description'		=> __( '<small><b class="ac_pro-option">Pro Option</b></small>: <b>Colorful Categories</b> is available only with <b>JustWrite Pro</b>.<br /><br /><a href="http://www.acosmin.com/theme/justwrite-pro/" class="button button-primary ac_btn-inner-section" target="_blank">JustWrite Pro</a>', 'justwrite' ),
-    	'priority'			=> 47,
-	) );
-
 
 
 
@@ -1033,13 +1032,6 @@ function ac_customize_init( $wp_customize ) {
 		'section'  => 'ac_customize_slider',
 		'type'     => 'checkbox',
 	));
-	$wp_customize->add_control('ac_enable_slider_cat', array(
-		'settings' 		=> 'ac_enable_slider_cat',
-		'label'    		=> __( 'Show Featured Posts in category archives', 'justwrite' ),
-		'description'	=> __( 'It will show featured posts from that category', 'justwrite' ),
-		'section'  		=> 'ac_customize_slider',
-		'type'     		=> 'checkbox',
-	));
 	$wp_customize->add_control('ac_autostart_slider', array(
 		'settings' => 'ac_autostart_slider',
 		'label'    => __( 'Enable autostart (autoscrolling)', 'justwrite' ),
@@ -1066,12 +1058,6 @@ function ac_customize_init( $wp_customize ) {
     	'label'				=> __( 'Transition Delay', 'justwrite' ),
     	'section'			=> 'ac_customize_slider',
     	'settings'			=> 'ac_slider_delay',
-	) );
-	$wp_customize->add_control( 'ac_slider_offset', array(
-    	'label'				=> __( 'Offset', 'justwrite' ),
-		'description'		=> __( 'Number of posts to "displace" or pass over', 'justwrite' ),
-    	'section'			=> 'ac_customize_slider',
-    	'settings'			=> 'ac_slider_offset',
 	) );
 	// -- Advertising
 	$wp_customize->add_control('ac_enable_728px_ad', array(
@@ -1161,25 +1147,6 @@ function ac_customize_init( $wp_customize ) {
 									'rthumb' => 'Right thumbnail',
 									'nthumb' => 'No thumbnail',
 	) ) );
-	$wp_customize->add_control('ac_enable_posts_masonry', array(
-		'settings' 		=> 'ac_enable_posts_masonry',
-		'label'    		=> __( 'Enable Posts + Masonry grid', 'justwrite' ),
-		'description'	=> __( 'This allows you to display posts in a more unique way, adding some of them in a masonry grid.', 'justwrite' ),
-		'section'  		=> 'ac_customize_posts',
-		'type'     		=> 'checkbox',
-	));
-	$wp_customize->add_control( 'ac_split_posts_masonry', array(
-    	'label'				=> __( 'Show Masonry after X number of posts', 'justwrite' ),
-		'description'		=> __( 'This works only if you enable "Posts + Masonry grid". Set it to 0 to display only a Masonry grid.', 'justwrite' ),
-    	'section'			=> 'ac_customize_posts',
-    	'settings'			=> 'ac_split_posts_masonry',
-	) );
-	$wp_customize->add_control('ac_enable_posts_masonry_excerpt', array(
-		'settings' 		=> 'ac_enable_posts_masonry_excerpt',
-		'label'    		=> __( 'Show excerpt for Masonry posts', 'justwrite' ),
-		'section'  		=> 'ac_customize_posts',
-		'type'     		=> 'checkbox',
-	));
 	$wp_customize->add_control('ac_disable_index_posts', array(
 		'settings' 		=> 'ac_disable_index_posts',
 		'label'    		=> __( 'Hide main posts query', 'justwrite' ),

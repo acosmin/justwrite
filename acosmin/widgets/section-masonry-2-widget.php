@@ -46,8 +46,6 @@ if( ! class_exists( 'AC_Section_Masonry_2' ) ) {
 				'title' 		=> '',
 				'typeselect' 	=> 'featured',
 				'category'		=> '',
-				'posts_nr'		=> 5,
-				'offset'		=> 0,
 				'show_date'		=> true,
 				'show_auth'		=> true,
 				'show_cat'		=> true,
@@ -86,8 +84,6 @@ if( ! class_exists( 'AC_Section_Masonry_2' ) ) {
 			$section_title 		= ! empty( $instance['title'] ) ? $instance['title'] : ''; set_query_var( 'section_title', strip_tags( $section_title ) );
 			$section_type		= ! empty( $instance['typeselect'] ) ? $instance['typeselect'] : ''; set_query_var( 'section_type', esc_html( $section_type ) );
 			$section_category	= ! empty( $instance['category'] ) ? $instance['category'] : ''; set_query_var( 'section_category', absint( $section_category ) );
-			$section_postsnr	= ! empty( $instance['posts_nr'] ) ? $instance['posts_nr'] : 5; set_query_var( 'section_postsnr', absint( $section_postsnr ) );
-			$section_offset		= ! empty( $instance['offset'] ) ? $instance['offset'] : 0; set_query_var( 'section_offset', absint( $section_offset ) );
 			$sco	= ! empty( $instance['show_com'] ) ? 1 : 0; set_query_var( 'sco', absint( $sco ) );
 			$sca	= ! empty( $instance['show_cat'] ) ? 1 : 0; set_query_var( 'sca', absint( $sca ) );
 			$sda	= ! empty( $instance['show_date'] ) ? 1 : 0; set_query_var( 'sda', absint( $sda ) );
@@ -121,9 +117,6 @@ if( ! class_exists( 'AC_Section_Masonry_2' ) ) {
 			$wnum = $this->number;
 			set_query_var('wnum', absint( $wnum ) );
 
-			// Check if we have 3 or more posts selected
-			//if( $instance['posts_nr'] >= 5 ) :
-
 			echo $args['before_widget']; // Before widget template
 
 				// Section template
@@ -131,7 +124,7 @@ if( ! class_exists( 'AC_Section_Masonry_2' ) ) {
 
 			echo $args['after_widget']; // After widget template
 
-			//endif; // End posts_nr >= 5;
+			//endif;
 		}
 
 
@@ -143,8 +136,6 @@ if( ! class_exists( 'AC_Section_Masonry_2' ) ) {
 			// Text fields
 			$instance['title'] 		= strip_tags( $new_instance['title'] );
 			$instance['category'] 	= absint( $new_instance['category'] );
-			$instance['posts_nr'] 	= absint( $new_instance['posts_nr'] );
-			$instance['offset'] 	= absint( $new_instance['offset'] );
 
 			// Select type
 			if ( in_array( $new_instance['typeselect'], array( 'featured', 'posts', 'category' ) ) ) {
@@ -195,17 +186,6 @@ if( ! class_exists( 'AC_Section_Masonry_2' ) ) {
                     <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php esc_html_e( 'Section title:', 'justwrite' ); ?></label>
                     <input class="widefat ac-builder-widget-title" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>"/>
                 </p>
-                <?php
-					$protitle = esc_html__( 'Pro Features', 'justwrite' );
-					$getpro = esc_html__( 'Upgrade Now', 'justwrite' );
-					$asdf = esc_html__( 'to enable them + many more', 'justwrite' );
-					$lines 		= array(
-						esc_html__( 'Some options are disabled:', 'justwrite' ),
-						esc_html__( '- How many posts to display;', 'justwrite' ),
-						esc_html__( '- Offset number;', 'justwrite' ),
-					);
-					parent::ac_promo_info( $lines, $protitle, $getpro, $asdf );
-				?>
                 <p>
                     <label for="<?php echo $this->get_field_id('typeselect'); ?>"><?php _e( 'Display:', 'justwrite' ); ?></label>
                     <select name="<?php echo $this->get_field_name('typeselect'); ?>" id="<?php echo $this->get_field_id('typeselect'); ?>" class="widefat ac-select-type">
@@ -230,14 +210,6 @@ if( ! class_exists( 'AC_Section_Masonry_2' ) ) {
 					) );
 
 					?>
-                </p>
-                <p>
-                    <label for="<?php echo $this->get_field_id( 'posts_nr' ); ?>"><?php esc_html_e( 'Number of posts (more than 3):', 'justwrite' ); ?></label>
-                    <input disabled class="widefat" id="<?php echo $this->get_field_id( 'posts_nr' ); ?>" name="<?php echo $this->get_field_name( 'posts_nr' ); ?>" type="text" value="5" />
-                </p>
-                <p>
-                    <label for="<?php echo $this->get_field_id( 'offset' ); ?>"><?php esc_html_e( 'Offset (number of posts to "displace" or pass over):', 'justwrite' ); ?></label>
-                    <input disabled class="widefat" id="<?php echo $this->get_field_id( 'offset' ); ?>" name="<?php echo $this->get_field_name( 'offset' ); ?>" type="text" value="<?php echo intval( $instance['offset'] ); ?>" />
                 </p>
                 <p>
                 	<b><?php _e( 'Display options:', 'justwrite' ); ?></b><br />
